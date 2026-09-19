@@ -1,10 +1,10 @@
 # 병사 도감
 
-병사 도감은 항목을 하나씩 열어 기본 능력치와 모든 스킬을 레벨 1~6에서 직접 확인한 뒤 기록합니다. 일괄 캡처·사후 OCR 자료는 확정 자료로 사용하지 않습니다.
+레벨 1~6 기본 능력치와 모든 스킬을 병종별로 직접 확인해 기록합니다.
 
 <div>
   <span class="status-badge done">확정 완료 3종</span>
-  <span class="status-badge pending">재검증 필요 2종</span>
+  <span class="status-badge pending">조사 중 2종</span>
 </div>
 
 ## 확정 완료
