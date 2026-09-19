@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: '9만 에이커 위키',
-  description: '9만 에이커(90,000 Acres) 비공식 게임 정보 위키 — 정책, 병사, 야생 유닛, 장비',
+  description: '9만 에이커(90,000 Acres) — HUNTERS 연맹의 Diablo2 제작 게임 정보 위키',
   lang: 'ko-KR',
   base: '/9man_acer_wiki/',
   lastUpdated: true,

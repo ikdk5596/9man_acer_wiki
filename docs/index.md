@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: "9만 에이커"
-  text: "비공식 게임 위키"
+  name: "9만 에이커 위키"
+  text: "HUNTERS 연맹의 Diablo2 제작"
   tagline: "90,000 Acres — 정책, 병사, 야생 유닛, 장비 데이터를 실기 화면에서 직접 검증해 기록합니다."
   image:
     src: /images/policies/icons/051_기병_정통.png
