@@ -63,7 +63,7 @@ print("detail pages written:", len(policies))
 cards = []
 for p in policies:
     cards.append(
-        f'<a class="icon-card" href="/policies/list/{p["num"]:03d}">'
+        f'<a class="icon-card" href="list/{p["num"]:03d}">'
         f'<img src="/images/policies/icons/{p["icon"]}" alt="{p["name"]}">'
         f'<span class="icon-name">{p["name"]}</span>'
         f'<span class="icon-num">No.{p["num"]}</span></a>'
