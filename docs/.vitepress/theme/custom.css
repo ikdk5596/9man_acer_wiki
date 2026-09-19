@@ -30,6 +30,23 @@
   -webkit-text-fill-color: transparent;
 }
 
+.VPHero .image-src {
+  max-width: 360px !important;
+  image-rendering: pixelated;
+}
+
+.VPHero .VPImage {
+  width: 320px !important;
+  height: 320px !important;
+}
+
+@media (max-width: 960px) {
+  .VPHero .VPImage {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
 /* 아이콘 그리드 카드 */
 .icon-grid {
   display: grid;

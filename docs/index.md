@@ -6,8 +6,8 @@ hero:
   text: "90,000 Acres — HUNTERS 연맹 Diablo2 제작"
   tagline: "정책, 병사, 야생 유닛, 장비 데이터를 실기 화면에서 직접 검증해 기록합니다."
   image:
-    src: /images/policies/icons/051_기병_정통.png
-    alt: 9만 에이커
+    src: /images/hero_hunter.png
+    alt: HUNTERS 연맹 Diablo2
   actions:
     - theme: brand
       text: 정책 도감 보기
