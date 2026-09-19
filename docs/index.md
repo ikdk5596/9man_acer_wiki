@@ -6,7 +6,7 @@ hero:
   tagline: "90,000 Acres — HUNTERS 연맹 Diablo2 제작"
   image:
     src: /images/hero_hunter.png
-    alt: 9만 에이커 위키 판다
+    alt: HUNTERS 연맹 Diablo2
   actions:
     - theme: brand
       text: 정책 도감 보기
