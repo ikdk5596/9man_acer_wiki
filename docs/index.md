@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "9만 에이커 위키"
-  tagline: "90,000 Acres — HUNTERS 연맹 Diablo2 제작""
+  tagline: "90,000 Acres — HUNTERS 연맹 Diablo2 제작"
   image:
     src: /images/hero_hunter.png
     alt: HUNTERS 연맹 Diablo2
