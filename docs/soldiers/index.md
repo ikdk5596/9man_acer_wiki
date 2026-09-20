@@ -12,7 +12,7 @@
 <a class="icon-card" href="/9man_acer_wiki/soldiers/창과_방패"><img src="/images/soldiers/roster_icons/창과_방패.png" alt="창과 방패"><span class="icon-name">창과 방패</span></a>
 <a class="icon-card" href="/9man_acer_wiki/soldiers/검과_방패"><img src="/images/soldiers/roster_icons/검과_방패.png" alt="검과 방패"><span class="icon-name">검과 방패</span></a>
 <a class="icon-card" href="/9man_acer_wiki/soldiers/도끼와_방패"><img src="/images/soldiers/roster_icons/도끼와_방패.png" alt="도끼와 방패"><span class="icon-name">도끼와 방패</span></a>
-<a class="icon-card" href="/9man_acer_wiki/soldiers/장궁"><img src="/images/soldiers/roster_icons/장궁.png" alt="장궁"><span class="icon-name">장궁</span></a>
+<a class="icon-card" href="/9man_acer_wiki/soldiers/장궁"><img src="/images/soldiers/장궁/icons/level01.png" alt="장궁"><span class="icon-name">장궁</span></a>
 <a class="icon-card" href="/9man_acer_wiki/soldiers/쇠뇌"><img src="/images/soldiers/roster_icons/쇠뇌.png" alt="쇠뇌"><span class="icon-name">쇠뇌</span></a>
 <a class="icon-card" href="/9man_acer_wiki/soldiers/독궁"><img src="/images/soldiers/roster_icons/독궁.png" alt="독궁"><span class="icon-name">독궁</span></a>
 <a class="icon-card" href="/9man_acer_wiki/soldiers/사냥꾼"><img src="/images/soldiers/roster_icons/사냥꾼.png" alt="사냥꾼"><span class="icon-name">사냥꾼</span></a>
@@ -24,4 +24,5 @@
 <a class="icon-card" href="/9man_acer_wiki/soldiers/중기병"><img src="/images/soldiers/roster_icons/중기병.png" alt="중기병"><span class="icon-name">중기병</span></a>
 <a class="icon-card" href="/9man_acer_wiki/soldiers/기병_활"><img src="/images/soldiers/roster_icons/기병_활.png" alt="기병 활"><span class="icon-name">기병 활</span></a>
 <a class="icon-card" href="/9man_acer_wiki/soldiers/기병_도끼"><img src="/images/soldiers/roster_icons/기병_도끼.png" alt="기병 도끼"><span class="icon-name">기병 도끼</span></a>
+<a class="icon-card" href="/9man_acer_wiki/soldiers/망치와_방패"><img src="/images/soldiers/roster_icons/망치와_방패.png" alt="망치와 방패"><span class="icon-name">망치와 방패</span></a>
 </div>
