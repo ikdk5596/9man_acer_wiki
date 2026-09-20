@@ -25,3 +25,7 @@ features:
     link: /soldiers/
     linkText: 바로가기
 ---
+
+## 도움 주신 분들
+
+bono · 뚜시 · 휴가좋아
