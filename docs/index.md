@@ -14,6 +14,9 @@ hero:
     - theme: alt
       text: 병사 도감 보기
       link: /soldiers/
+    - theme: alt
+      text: 장비 도감 보기
+      link: /equipment/
 
 features:
   - icon: 📜
@@ -23,5 +26,9 @@ features:
   - icon: ⚔️
     title: 병사 도감
     link: /soldiers/
+    linkText: 바로가기
+  - icon: 🛡️
+    title: 장비 도감
+    link: /equipment/
     linkText: 바로가기
 ---
