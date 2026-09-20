@@ -7,11 +7,12 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlparse
 import re
+import argparse
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 DIST = DOCS / ".vitepress/dist"
-BASE = "https://example.test/9man_acer_wiki/"
+
 
 
 class Elements(HTMLParser):
@@ -33,16 +34,28 @@ class Elements(HTMLParser):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--base", default="/9man_acer_wiki/")
+    args = parser.parse_args()
+    base_path = args.base
+    assert base_path.startswith("/") and base_path.endswith("/"), base_path
+    base_url = "https://example.test" + base_path
     source = Elements((DOCS / "soldiers/index.md").read_text(encoding="utf-8"))
     assert len(source.cards) == len(set(source.cards)) == 26, source.cards
-    expected = {path.stem for path in (DOCS / "public/images/soldiers/detail_icons").glob("*.png")}
-    assert set(source.cards) == expected, "Icons and list entries disagree"
+    expected = {path.stem for path in (DOCS / "public/images/soldiers/roster_icons").glob("*.png")}
+    card_names = {Path(unquote(urlparse(href).path)).name for href in source.cards}
+    assert card_names == expected, "Icons and list entries disagree"
+    for image in source.images:
+        assert (DOCS / "public" / unquote(image).lstrip("/")).is_file(), image
     pages = {path.stem for path in (DOCS / "soldiers").glob("*.md") if path.stem != "index"}
     assert pages == expected, (pages - expected, expected - pages)
     for name in expected:
         page = DOCS / "soldiers" / f"{name}.md"
         text = page.read_text(encoding="utf-8")
-        assert "## 레벨별 기본 능력치" in text, page
+        if name in {"투석차", "쇠뇌차"}:
+            assert "레벨 1로 취급" in text and "## 기본 능력치" in text, page
+        else:
+            assert "## 레벨별 기본 능력치" in text, page
         assert "## 스킬" in text, page
         assert re.search(r"\]\(/soldiers/\)", text), f"Missing return link: {page}"
         assert "비용 계수" not in text, page
@@ -52,19 +65,19 @@ def main():
     built = Elements((DIST / "soldiers/index.html").read_text(encoding="utf-8"))
     assert len(built.cards) == 26, len(built.cards)
     for href in built.cards:
-        url = urlparse(urljoin(BASE + "soldiers/", href))
-        assert url.path.startswith("/9man_acer_wiki/soldiers/"), href
-        relative = unquote(url.path.removeprefix("/9man_acer_wiki/"))
+        url = urlparse(urljoin(base_url + "soldiers/", href))
+        assert url.path.startswith(base_path + "soldiers/"), href
+        relative = unquote(url.path.removeprefix(base_path))
         html = DIST / (relative + ".html")
         assert html.is_file(), html
         detail = Elements(html.read_text(encoding="utf-8"))
-        assert "/9man_acer_wiki/soldiers/" in detail.links, html
+        assert base_path + "soldiers/" in detail.links, html
         for image in detail.images:
             if image.startswith("http") or image.startswith("data:"):
                 continue
-            url = urlparse(urljoin(BASE + relative, image))
-            assert url.path.startswith("/9man_acer_wiki/"), (html, image)
-            asset = DIST / unquote(url.path.removeprefix("/9man_acer_wiki/"))
+            url = urlparse(urljoin(base_url + relative, image))
+            assert url.path.startswith(base_path), (html, image)
+            asset = DIST / unquote(url.path.removeprefix(base_path))
             assert asset.is_file(), asset
     print("PASS: 26 unique catalog entries, detail pages, icons, return links, and built subpath assets.")
 

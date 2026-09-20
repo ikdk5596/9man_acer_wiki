@@ -46,7 +46,6 @@ for p in policies:
 
 | 항목 | 내용 |
 |---|---|
-| 번호 | No.{p['num']} |
 | 효과 | {p['effect']} |
 | 필요 조건 | {p['condition']} |
 
@@ -66,7 +65,7 @@ for p in policies:
         f'<a class="icon-card" href="list/{p["num"]:03d}">'
         f'<img src="/images/policies/icons/{p["icon"]}" alt="{p["name"]}">'
         f'<span class="icon-name">{p["name"]}</span>'
-        f'<span class="icon-num">No.{p["num"]}</span></a>'
+        '</a>'
     )
 
 index = "# 정책 도감\n\n<div class=\"icon-grid\">\n" + "\n".join(cards) + "\n</div>\n"
