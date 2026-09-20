@@ -24,5 +24,6 @@
 <a class="icon-card" href="/9man_acer_wiki/soldiers/중기병"><img src="/images/soldiers/roster_icons/중기병.png" alt="중기병"><span class="icon-name">중기병</span></a>
 <a class="icon-card" href="/9man_acer_wiki/soldiers/기병_활"><img src="/images/soldiers/roster_icons/기병_활.png" alt="기병 활"><span class="icon-name">기병 활</span></a>
 <a class="icon-card" href="/9man_acer_wiki/soldiers/기병_도끼"><img src="/images/soldiers/roster_icons/기병_도끼.png" alt="기병 도끼"><span class="icon-name">기병 도끼</span></a>
-<a class="icon-card" href="/9man_acer_wiki/soldiers/망치와_방패"><img src="/images/soldiers/roster_icons/망치와_방패.png" alt="망치와 방패"><span class="icon-name">망치와 방패</span></a>
+<a class="icon-card" href="/9man_acer_wiki/soldiers/투석차"><img src="/images/soldiers/roster_icons/투석차.png" alt="투석기"><span class="icon-name">투석기</span></a>
+<a class="icon-card" href="/9man_acer_wiki/soldiers/쇠뇌차"><img src="/images/soldiers/roster_icons/쇠뇌차.png" alt="쇠뇌차"><span class="icon-name">쇠뇌차</span></a>
 </div>
