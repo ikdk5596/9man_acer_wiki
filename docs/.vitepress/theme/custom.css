@@ -191,11 +191,12 @@
 /* 표 스타일 다듬기 */
 .vp-doc table {
   border-radius: 8px;
-  overflow: hidden;
+  overflow-x: auto;
 }
 
 .vp-doc table thead th {
   background: var(--vp-c-brand-soft);
+  white-space: nowrap;
 }
 
 .vp-doc table tr:hover {

@@ -32,10 +32,7 @@ export default defineConfig({
         {
           text: '병사 도감',
           items: [
-            { text: '개요', link: '/soldiers/' },
-            { text: '긴 창', link: '/soldiers/긴_창' },
-            { text: '장창', link: '/soldiers/장창' },
-            { text: '장검', link: '/soldiers/장검' },
+            { text: '전체 목록', link: '/soldiers/' },
           ],
         },
       ],
