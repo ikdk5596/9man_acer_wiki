@@ -3,7 +3,7 @@ import { createGuideApi } from './api.mjs'
 import { validateDownloadedImage } from './images.mjs'
 import { emulatorEnabled, MAX_IMAGE_BYTES, imageSlots, parseBody } from './content.mjs'
 
-const state = reactive({ ready: false, uid: null, error: '', epoch: 0, emulator: false })
+const state = reactive({ ready: false, uid: null, displayName: '', photoURL: '', error: '', epoch: 0, emulator: false })
 export const session = readonly(state)
 let pending
 export function errorText(error) {
@@ -37,7 +37,7 @@ async function initialize() {
   if (!config?.apiKey || !config?.projectId) throw new Error('공략 서비스의 Firebase 설정이 아직 준비되지 않았습니다.')
   const name = emulator ? 'acer-guides-emulator' : 'acer-guides'
   const app = appSdk.getApps().find(app => app.name === name) || appSdk.initializeApp(config, name)
-  const auth = authSdk.initializeAuth(app, { persistence: authSdk.inMemoryPersistence, popupRedirectResolver: authSdk.browserPopupRedirectResolver })
+  const auth = authSdk.initializeAuth(app, { persistence: authSdk.browserLocalPersistence, popupRedirectResolver: authSdk.browserPopupRedirectResolver })
   const db = dbSdk.getFirestore(app)
   const storage = storageSdk.getStorage(app)
   if (emulator) {
@@ -50,10 +50,27 @@ async function initialize() {
     const user = auth.currentUser
     return user?.emailVerified && user.providerData.some(p => p.providerId === 'google.com') ? user.uid : null
   }
-  authSdk.onAuthStateChanged(auth, () => {
-    state.uid = verifiedUid(); state.epoch++; state.ready = true
-    state.error = auth.currentUser && !state.uid ? '이메일이 확인된 Google 계정으로 로그인해 주세요.' : ''
-  }, error => { state.error = errorText(error); state.ready = true })
+  authSdk.onAuthStateChanged(auth, user => {
+    state.uid = verifiedUid()
+    const googleProfile = user?.providerData?.find(provider => provider.providerId === 'google.com')
+
+    state.displayName = state.uid
+      ? (user?.displayName || googleProfile?.displayName || user?.email?.split('@')[0] || '사용자')
+      : ''
+
+    state.photoURL = state.uid
+      ? (user?.photoURL || googleProfile?.photoURL || '')
+      : ''
+
+    state.epoch++
+    state.ready = true
+    state.error = user && !state.uid
+      ? '이메일이 확인된 Google 계정으로 로그인해 주세요.'
+      : ''
+  }, error => {
+    state.error = errorText(error)
+    state.ready = true
+  })
   await auth.authStateReady()
   const guideRef = id => {
     if (typeof id !== 'string' || !/^[a-zA-Z0-9_-]{1,128}$/.test(id)) throw new Error('올바르지 않은 공략 주소입니다.')
@@ -85,7 +102,7 @@ async function initialize() {
   return {
     ...api, read,
     async login() {
-      await authSdk.setPersistence(auth, authSdk.inMemoryPersistence)
+      await authSdk.setPersistence(auth, authSdk.browserLocalPersistence)
       const provider = new authSdk.GoogleAuthProvider()
       provider.setCustomParameters({ prompt: 'select_account' })
       await authSdk.signInWithPopup(auth, provider)
