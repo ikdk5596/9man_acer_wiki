@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "acer-wiki"
+  },
+  "targets": {
+    "acer-wiki": {
+      "hosting": {
+        "wiki": ["acer-wiki"]
+      }
+    }
+  }
+}

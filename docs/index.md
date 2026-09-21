@@ -17,6 +17,9 @@ hero:
     - theme: alt
       text: 장비 도감 보기
       link: /equipment/
+    - theme: alt
+      text: 영웅 도감 보기
+      link: /hero/
 
 features:
   - icon: 📜
@@ -31,8 +34,16 @@ features:
     title: 장비 도감
     link: /equipment/
     linkText: 바로가기
+  - icon: 👑
+    title: 영웅 도감
+    link: /hero/
+    linkText: 바로가기
+  - icon: ✍️
+    title: 개인공략
+    link: /guides/
+    linkText: 바로가기
 ---
 
-## 도움 주신 분들
+## Thanks to
 
-bono · 뚜시 · 휴가좋아
+bono · 뚜시 · 휴가좋아 · Cellob (목양)

@@ -46,6 +46,23 @@
   }
 }
 
+/* 데스크톱 검색 버튼: 여유 공간에서는 넓게, 좁은 화면에서는 축소 */
+@media (min-width: 768px) {
+  .VPNavBarSearch {
+    min-width: 0;
+  }
+
+  .VPNavBarSearch #local-search {
+    width: 280px;
+    max-width: 100%;
+  }
+
+  .VPNavBarSearch .DocSearch-Button {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
 /* 아이콘 그리드 카드 */
 .icon-grid {
   display: grid;

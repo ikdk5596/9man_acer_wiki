@@ -5,10 +5,27 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs",
+    "dev:guides": "node scripts/dev_guides.mjs",
+    "emulators:guides": "firebase emulators:start --only auth,firestore,storage --project demo-acer-wiki --config firebase.emulators.json",
+    "prebuild": "python scripts/sync_hero_talents.py",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs",
+    "build:firebase": "node scripts/build_firebase.mjs",
+    "check:firebase": "node scripts/check_firebase_build.mjs",
+    "deploy:firebase": "firebase deploy --only hosting:wiki --project acer-wiki --non-interactive"
   },
   "devDependencies": {
+    "@firebase/rules-unit-testing": "^5.0.2",
     "vitepress": "^1.6.4"
+  },
+  "dependencies": {
+    "@tiptap/extension-image": "^3.31.3",
+    "@tiptap/extension-table": "^3.31.3",
+    "@tiptap/extension-text-align": "^3.31.3",
+    "@tiptap/extension-text-style": "^3.31.3",
+    "@tiptap/pm": "^3.31.3",
+    "@tiptap/starter-kit": "^3.31.3",
+    "@tiptap/vue-3": "^3.31.3",
+    "firebase": "^12.19.0"
   }
 }

@@ -1,15 +1,39 @@
 import { defineConfig } from 'vitepress'
+import heroes from '../../scripts/data/heroes.json'
+import soldierNames from '../../scripts/data/soldier_names.json'
+
+// Keep the existing GitHub Pages build available during the Hosting migration.
+const base = process.env.WIKI_BASE || '/9man_acer_wiki/'
+// Unfinished guides are available only through an explicit local opt-in.
+const includeGuides = process.env.WIKI_GUIDES === '1'
+const heroGroups = [...new Set(heroes.map(hero => hero.troop))].map(troop => ({
+  text: Object.values(soldierNames).find(entry => entry.heroTroop === troop)?.name ?? troop,
+  collapsed: true,
+  items: heroes.filter(hero => hero.troop === troop).map(hero => ({
+    text: hero.name,
+    link: `/hero/${hero.name.trim().replace(/\s+/g, '_')}`,
+  })),
+}))
 
 export default defineConfig({
   title: '9만 에이커 위키',
   description: '9만 에이커(90,000 Acres) — HUNTERS 연맹의 Diablo2 제작 게임 정보 위키',
   lang: 'ko-KR',
-  base: '/9man_acer_wiki/',
+  base,
   lastUpdated: true,
   cleanUrls: true,
+  srcExclude: ['talents/**', ...(includeGuides ? [] : ['guides/**'])],
+
+  transformPageData(pageData) {
+    if (!includeGuides && pageData.relativePath === 'index.md') {
+      pageData.frontmatter.features = pageData.frontmatter.features?.filter(
+        (feature: { link?: string }) => !feature.link?.startsWith('/guides/'),
+      )
+    }
+  },
 
   head: [
-    ['link', { rel: 'icon', href: '/9man_acer_wiki/favicon.svg' }],
+    ['link', { rel: 'icon', href: `${base}favicon.svg` }],
   ],
 
   themeConfig: {
@@ -18,6 +42,8 @@ export default defineConfig({
       { text: '정책 도감', link: '/policies/' },
       { text: '병사 도감', link: '/soldiers/' },
       { text: '장비 도감', link: '/equipment/' },
+      { text: '영웅 도감', link: '/hero/' },
+      ...(includeGuides ? [{ text: '개인공략', link: '/guides/' }] : []),
     ],
 
     sidebar: {
@@ -101,6 +127,43 @@ export default defineConfig({
             { text: '현철 지팡이', link: '/equipment/현철_지팡이' },
           ],
         },
+        {
+          text: '전용 무기',
+          collapsed: true,
+          items: [
+            { text: '장창', link: '/equipment/장창' },
+            { text: '긴창', link: '/equipment/긴창' },
+            { text: '장과', link: '/equipment/장과' },
+            { text: '맥도', link: '/equipment/맥도' },
+            { text: '양손검', link: '/equipment/양손검' },
+            { text: '쌍극', link: '/equipment/쌍극' },
+            { text: '나무 방패', link: '/equipment/나무_방패' },
+            { text: '무거운 방패', link: '/equipment/무거운_방패' },
+            { text: '삭', link: '/equipment/삭' },
+            { text: '무쇠망치', link: '/equipment/무쇠망치' },
+            { text: '검&방패', link: '/equipment/검&방패' },
+            { text: '도끼&방패', link: '/equipment/도끼&방패' },
+            { text: '장궁', link: '/equipment/장궁' },
+            { text: '쇠뇌', link: '/equipment/쇠뇌' },
+            { text: '독궁', link: '/equipment/독궁' },
+            { text: '사냥활', link: '/equipment/사냥활' },
+            { text: '강화 쇠뇌', link: '/equipment/강화_쇠뇌' },
+            { text: '화궁', link: '/equipment/화궁' },
+            { text: '대검', link: '/equipment/대검' },
+            { text: '장극', link: '/equipment/장극' },
+            { text: '언월도', link: '/equipment/언월도' },
+            { text: '망치', link: '/equipment/망치' },
+            { text: '곡궁', link: '/equipment/곡궁' },
+            { text: '개산부', link: '/equipment/개산부' },
+          ],
+        },
+      ],
+      '/hero/': [
+        {
+          text: '영웅 도감',
+          items: [{ text: '병종별 전체 목록', link: '/hero/' }],
+        },
+        ...heroGroups,
       ],
       '/policies/': [
         {
@@ -121,22 +184,23 @@ export default defineConfig({
             { text: '맥도', link: '/soldiers/맥도' },
             { text: '장검', link: '/soldiers/장검' },
             { text: '쌍창', link: '/soldiers/쌍창' },
-            { text: '칼과 방패', link: '/soldiers/칼과_방패' },
+            { text: '칼방', link: '/soldiers/칼과_방패' },
             { text: '무거운 방패', link: '/soldiers/무거운_방패' },
-            { text: '창과 방패', link: '/soldiers/창과_방패' },
+            { text: '창방', link: '/soldiers/창과_방패' },
+            { text: '망치방패', link: '/soldiers/망치와_방패' },
             { text: '검과 방패', link: '/soldiers/검과_방패' },
-            { text: '도끼와 방패', link: '/soldiers/도끼와_방패' },
+            { text: '도끼방패', link: '/soldiers/도끼와_방패' },
             { text: '장궁', link: '/soldiers/장궁' },
             { text: '쇠뇌', link: '/soldiers/쇠뇌' },
             { text: '독궁', link: '/soldiers/독궁' },
             { text: '사냥꾼', link: '/soldiers/사냥꾼' },
             { text: '강화 쇠뇌', link: '/soldiers/강화_쇠뇌' },
             { text: '화궁', link: '/soldiers/화궁' },
-            { text: '기병 검', link: '/soldiers/기병_검' },
-            { text: '기병 창', link: '/soldiers/기병_창' },
-            { text: '기병 대도', link: '/soldiers/기병_대도' },
+            { text: '검기병', link: '/soldiers/기병_검' },
+            { text: '창기병', link: '/soldiers/기병_창' },
+            { text: '대도기병', link: '/soldiers/기병_대도' },
             { text: '중기병', link: '/soldiers/중기병' },
-            { text: '기병 활', link: '/soldiers/기병_활' },
+            { text: '궁기병', link: '/soldiers/기병_활' },
             { text: '기병 도끼', link: '/soldiers/기병_도끼' },
             { text: '투석기', link: '/soldiers/투석차' },
             { text: '쇠뇌차', link: '/soldiers/쇠뇌차' },
@@ -145,12 +209,20 @@ export default defineConfig({
       ],
     },
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/ikdk5596/9man_acer_wiki' },
-    ],
-
     search: {
       provider: 'local',
+      options: {
+        translations: {
+          button: { buttonText: '검색', buttonAriaLabel: '위키 검색' },
+          modal: {
+            displayDetails: '상세 결과 표시',
+            resetButtonTitle: '검색어 지우기',
+            backButtonTitle: '검색 닫기',
+            noResultsText: '검색 결과가 없습니다',
+            footer: { selectText: '선택', navigateText: '이동', closeText: '닫기' },
+          },
+        },
+      },
     },
 
     outline: {

@@ -1,0 +1,49 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function verifiedGoogle() {
+      return request.auth != null
+        && request.auth.token.firebase.sign_in_provider == 'google.com'
+        && request.auth.token.email_verified == true;
+    }
+    function validGuide(data) {
+      return data.keys().hasAll(['authorId', 'nickname', 'title', 'category', 'body', 'status', 'createdAt', 'updatedAt'])
+        && data.keys().hasOnly(['authorId', 'nickname', 'title', 'category', 'body', 'status', 'createdAt', 'updatedAt'])
+        && data.authorId is string
+        && data.nickname is string && data.nickname.size() >= 1 && data.nickname.size() <= 30
+        && data.title is string && data.title.size() >= 1 && data.title.size() <= 120
+        && data.category is string && data.category in ['초보자', '병사·조합', '전투', '성장·운영', '기타']
+        && data.body is string && data.body.size() <= 100000
+        && data.status is string && data.status in ['draft', 'published']
+        && data.createdAt is timestamp && data.updatedAt is timestamp;
+    }
+    match /guides/{guideId} {
+      // Keep ownership distinct from schema checks: reads use existing data.
+      function ownsGuide() {
+        return verifiedGoogle() && resource.data.authorId == request.auth.uid;
+      }
+      function canReadGuide() {
+        return resource.data.status == 'published' || ownsGuide();
+      }
+      allow get: if canReadGuide();
+      // Rules are not filters. Callers must constrain status or authorId.
+      allow list: if request.query.limit != null
+        && request.query.limit <= 20
+        && canReadGuide();
+      allow create: if verifiedGoogle()
+        && validGuide(request.resource.data)
+        && request.resource.data.authorId == request.auth.uid
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+      allow update: if ownsGuide()
+        && validGuide(request.resource.data)
+        && request.resource.data.authorId == resource.data.authorId
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if ownsGuide();
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

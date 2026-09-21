@@ -1,0 +1,85 @@
+.guides-ui { --guide-border: var(--acer-card-border, var(--vp-c-divider)); max-width: 1080px; margin: 0 auto; color: var(--vp-c-text-1); overflow-wrap: anywhere; }
+.guides-ui *, .guides-ui *::before, .guides-ui *::after { box-sizing: border-box; }
+.guides-ui h1 { font-size: 30px; margin: 0; line-height: 1.35; letter-spacing: -.04em; }
+.guides-ui h2.guide-title { border: 0; margin: 18px 0; padding: 0; font-size: 28px; line-height: 1.5; }
+.guides-ui p { margin: 10px 0; }
+.guide-topbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 22px; border-bottom: 2px solid var(--vp-c-brand-1); }
+.guide-eyebrow { font-size: 11px; letter-spacing: .16em; font-weight: 700; color: var(--vp-c-brand-1); }
+.guide-subtitle, .guide-hint { color: var(--vp-c-text-2); font-size: 13px; line-height: 1.65; }
+.guide-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.guides-ui button, .guides-ui .guide-button { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 7px 13px; border: 1px solid var(--guide-border); border-radius: 6px; background: var(--vp-c-bg); color: var(--vp-c-text-1); font: inherit; font-size: 13px; font-weight: 600; line-height: 1.5; cursor: pointer; text-decoration: none; white-space: nowrap; }
+.guides-ui button:hover:not(:disabled), .guides-ui .guide-button:hover { border-color: var(--vp-c-brand-1); color: var(--vp-c-brand-1); }
+.guides-ui button.primary, .guides-ui .guide-button.primary { background: var(--vp-c-brand-3); color: #fff; border-color: var(--vp-c-brand-3); }
+.guides-ui button:disabled { opacity: .48; cursor: not-allowed; }
+.guides-ui :is(button, a, input, select, [contenteditable]):focus-visible { outline: 3px solid var(--vp-c-brand-1); outline-offset: 3px; }
+.guides-ui button.danger { color: var(--vp-c-danger-1); }
+.guide-tabs { display: flex; gap: 8px; margin: 28px 0 14px; }
+.guide-tabs button[aria-pressed="true"], .guide-toolbar button[aria-pressed="true"] { background: var(--vp-c-brand-soft); border-color: var(--vp-c-brand-1); color: var(--vp-c-brand-1); }
+.guide-list { border-top: 1px solid var(--guide-border); }
+.guide-list-heading { display: flex; justify-content: space-between; padding: 12px 18px; font-size: 12px; color: var(--vp-c-text-2); background: var(--vp-c-bg-soft); }
+.guide-list-row { display: grid; grid-template-columns: minmax(0, 1fr) 180px; align-items: center; gap: 16px; padding: 20px 18px; border-bottom: 1px solid var(--guide-border); text-decoration: none; color: var(--vp-c-text-1); }
+.guide-list-row:hover { background: var(--vp-c-brand-soft); }
+.guide-list-row strong { display: block; margin-top: 7px; font-size: 16px; line-height: 1.55; }
+.guide-list-meta { display: flex; flex-direction: column; gap: 4px; text-align: right; font-size: 12px; color: var(--vp-c-text-2); }
+.guide-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--vp-c-text-2); }
+.guide-badge { display: inline-block; margin-right: 5px; padding: 2px 8px; border-radius: 4px; background: var(--vp-c-brand-soft); color: var(--vp-c-brand-1); font-size: 11px; font-weight: 600; }
+.guide-empty { padding: 55px 16px; text-align: center; color: var(--vp-c-text-2); }
+.guides-ui .guide-more { display: flex; margin: 22px auto; min-width: 160px; }
+.guide-error, .guide-notice { padding: 12px 16px; border-radius: 6px; font-size: 13px; line-height: 1.65; }
+.guide-error { color: var(--vp-c-danger-1); background: var(--vp-c-danger-soft); border: 1px solid var(--vp-c-danger-1); }
+.guide-notice { color: var(--vp-c-text-1); background: var(--vp-c-brand-soft); border: 1px solid var(--guide-border); }
+.guide-back { display: inline-block; margin: 20px 0; }
+.guide-article { padding: 22px 0; }
+.guide-login-card { display: flex; justify-content: space-between; gap: 20px; align-items: center; background: var(--vp-c-brand-soft); padding: 20px; border-radius: 8px; margin-top: 20px; }
+.guide-login-card p { font-size: 13px; color: var(--vp-c-text-2); }
+.guide-account { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 13px; padding: 16px 0 0; }
+.guide-fields, .guide-toolbar { border: 0; padding: 0; margin: 0; min-width: 0; }
+.guide-fields { margin: 26px 0 20px; }
+.guide-fields label { display: flex; flex-direction: column; gap: 7px; font-size: 13px; font-weight: 600; }
+.guide-field-row { display: flex; gap: 16px; margin-bottom: 16px; }
+.guide-nickname { flex: 1; }
+.guides-ui input:not([type="color"]), .guides-ui select { max-width: 100%; min-height: 40px; padding: 9px 12px; border: 1px solid var(--guide-border); border-radius: 5px; color: var(--vp-c-text-1); background: var(--vp-c-bg); font: inherit; font-size: 13px; }
+.guides-ui input::placeholder { color: var(--vp-c-text-3); font-weight: 400; }
+.guides-ui input.guide-title-input { font-size: 19px; padding: 14px; width: 100%; }
+.guide-editor-shell { border: 1px solid var(--guide-border); border-radius: 8px; overflow: hidden; background: var(--vp-c-bg); }
+.guide-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding: 10px; background: var(--vp-c-bg-soft); border-bottom: 1px solid var(--guide-border); }
+.guide-toolbar button { min-height: 34px; padding: 5px 9px; }
+.guide-toolbar select { min-height: 34px; padding: 5px 9px; }
+.guide-color { display: inline-flex; gap: 5px; align-items: center; padding: 4px; font-size: 12px; }
+.guide-color input { width: 25px; height: 26px; cursor: pointer; }
+.guide-preview-label { padding: 12px 20px; background: var(--vp-c-brand-soft); font-size: 13px; }
+.guide-document { padding: 20px 0; }
+.guide-edit-document { padding: 24px; }
+.guide-document :deep(.tiptap) { outline: none; font-size: 16px; line-height: 1.85; overflow-wrap: anywhere; }
+.guide-edit-document :deep(.tiptap) { min-height: 380px; }
+.guide-document :deep(p) { margin: 12px 0; }
+.guide-document :deep(h1), .guide-document :deep(h2), .guide-document :deep(h3) { margin: 24px 0 14px; padding: 0; border: 0; line-height: 1.5; }
+.guide-document :deep(h1) { font-size: 28px; }
+.guide-document :deep(h2) { font-size: 23px; }
+.guide-document :deep(h3) { font-size: 19px; }
+.guide-document :deep(ul) { padding-left: 26px; list-style: disc; }
+.guide-document :deep(ol) { padding-left: 26px; list-style: decimal; }
+.guide-document :deep(blockquote) { padding: 8px 18px; margin: 18px 0; background: var(--vp-c-bg-soft); border-left: 3px solid var(--vp-c-brand-1); color: var(--vp-c-text-2); }
+.guide-document :deep(img) { display: block; max-width: 100%; height: auto; margin: 18px 0; border-radius: 5px; }
+.guide-document :deep(.ProseMirror-selectednode) { outline: 3px solid var(--vp-c-brand-1); }
+.guide-document :deep(table) { display: block; overflow-x: auto; border-collapse: collapse; max-width: 100%; margin: 20px 0; }
+.guide-document :deep(td), .guide-document :deep(th) { min-width: 90px; padding: 8px 12px; border: 1px solid var(--guide-border); vertical-align: top; position: relative; }
+.guide-document :deep(th) { background: var(--vp-c-bg-soft); font-weight: 700; }
+.guide-document :deep(.selectedCell) { background: var(--vp-c-brand-soft); }
+.guide-document :deep(pre) { overflow-x: auto; padding: 16px; background: var(--vp-c-bg-soft); border-radius: 6px; }
+.guide-savebar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; border-top: 1px solid var(--guide-border); margin-top: 22px; }
+.guide-savebar > span { font-size: 12px; color: var(--vp-c-text-2); }
+@media (max-width: 640px) {
+  .guide-topbar { flex-wrap: wrap; gap: 14px; }
+  .guides-ui h1 { font-size: 26px; }
+  .guide-topbar .guide-actions { width: 100%; }
+  .guide-list-row { grid-template-columns: 1fr; gap: 8px; padding: 16px 10px; }
+  .guide-list-meta { flex-direction: row; text-align: left; gap: 14px; }
+  .guide-list-heading span:last-child { display: none; }
+  .guide-login-card { align-items: flex-start; flex-direction: column; }
+  .guide-field-row { flex-direction: column; }
+  .guide-edit-document { padding: 16px; }
+  .guide-savebar { flex-direction: column; align-items: stretch; }
+  .guide-savebar .guide-actions { justify-content: flex-end; }
+  .guide-account { flex-wrap: wrap; }
+}

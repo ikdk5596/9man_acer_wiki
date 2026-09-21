@@ -2,3 +2,10 @@ node_modules/
 docs/.vitepress/cache/
 docs/.vitepress/dist/
 .DS_Store
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+*.local
+__pycache__/
+*.py[cod]
