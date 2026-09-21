@@ -330,7 +330,7 @@
         "공격력": "26"
       }
     ],
-    "skills_sha256": "4c6d06faa9d4726b5c139a46e45a8a013a9c06174f54b0e8a7abc2ceb9f5fc37",
+    "skills_sha256": "054e8637e96aea74ba8f527b6e7e97d2994479d90847608f030ef97b320b653b",
     "troop": "기병",
     "metadata": []
   },
@@ -531,7 +531,7 @@
         "공격력": "37"
       }
     ],
-    "skills_sha256": "94d709db5d40277bccf41ccfb2ada7e61654694db1825e3c42494a7996eaf7d4",
+    "skills_sha256": "420464d34b956bc2e970ea07b5654232c7c98bf7b423679f08500c1d298974e2",
     "troop": "창병",
     "metadata": [
       "- 도감 등급 표시: ★★★★☆",
