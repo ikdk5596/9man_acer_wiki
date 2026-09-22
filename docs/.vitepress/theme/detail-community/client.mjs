@@ -40,15 +40,10 @@ export async function loadAlias(uid) {
   return snap.exists() ? String(snap.data().alias || '') : ''
 }
 
-export async function saveAlias(value) {
-  const alias = String(value || '').trim()
-  if (alias.length > 30) throw new Error('별칭은 30자 이하여야 합니다.')
-  const { auth, db, dbSdk } = await firebase()
-  const user = requireUser(auth)
-  await dbSdk.setDoc(dbSdk.doc(db, 'profiles', user.uid), {
-    alias,
-    updatedAt: dbSdk.serverTimestamp(),
-  })
+async function requireAlias(db, dbSdk, uid) {
+  const snap = await dbSdk.getDocFromServer(dbSdk.doc(db, 'profiles', uid))
+  const alias = snap.exists() ? String(snap.data().alias || '').trim() : ''
+  if (!alias) throw new Error('먼저 내 프로필에서 공개 별명을 설정해 주세요.')
   return alias
 }
 
@@ -75,8 +70,7 @@ export async function createPost(type, id, title, body) {
   const key = resourceKey(type, id)
   const { auth, db, dbSdk } = await firebase()
   const user = requireUser(auth)
-  const google = user.providerData.find(provider => provider.providerId === 'google.com')
-  const authorName = user.displayName || google?.displayName || '사용자'
+  const authorName = await requireAlias(db, dbSdk, user.uid)
   await dbSdk.addDoc(dbSdk.collection(db, 'detailPosts'), {
     resourceType: type,
     resourceId: String(id).trim(),
@@ -93,7 +87,12 @@ export async function createPost(type, id, title, body) {
 export async function updatePost(postId, title, body) {
   const { auth, db, dbSdk } = await firebase()
   requireUser(auth)
-  await dbSdk.updateDoc(dbSdk.doc(db, 'detailPosts', postId), {
+  const postRef = dbSdk.doc(db, 'detailPosts', postId)
+  const post = await dbSdk.getDocFromServer(postRef)
+  if (!post.exists()) throw new Error('수정할 글이 없습니다.')
+  const authorName = await requireAlias(db, dbSdk, String(post.data().authorId || ''))
+  await dbSdk.updateDoc(postRef, {
+    authorName,
     title: text(title, '제목', 100),
     body: text(body, '본문', 5000),
     updatedAt: dbSdk.serverTimestamp(),

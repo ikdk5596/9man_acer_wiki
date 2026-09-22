@@ -6,6 +6,35 @@ service cloud.firestore {
         && request.auth.token.firebase.sign_in_provider == 'google.com'
         && request.auth.token.email_verified == true;
     }
+    function canWriteGuides() {
+      return verifiedGoogle()
+        && exists(/databases/$(database)/documents/roles/$(request.auth.uid))
+        && (get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role == 'webmaster'
+          || (exists(/databases/$(database)/documents/rolePolicies/$(get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role))
+            && get(/databases/$(database)/documents/rolePolicies/$(get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role)).data.canWriteGuides == true));
+    }
+    function canWriteDetails() {
+      return verifiedGoogle()
+        && exists(/databases/$(database)/documents/roles/$(request.auth.uid))
+        && (get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role == 'webmaster'
+          || (exists(/databases/$(database)/documents/rolePolicies/$(get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role))
+            && get(/databases/$(database)/documents/rolePolicies/$(get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role)).data.canWriteDetails == true));
+    }
+    function canManagePosts() {
+      return verifiedGoogle()
+        && exists(/databases/$(database)/documents/roles/$(request.auth.uid))
+        && get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role in ['admin', 'webmaster'];
+    }
+    function isWebmaster() {
+      return verifiedGoogle()
+        && exists(/databases/$(database)/documents/roles/$(request.auth.uid))
+        && get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role == 'webmaster';
+    }
+    function isAdmin() {
+      return verifiedGoogle()
+        && exists(/databases/$(database)/documents/roles/$(request.auth.uid))
+        && get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role == 'admin';
+    }
     function validGuide(data) {
       return data.keys().hasAll(['authorId', 'nickname', 'title', 'category', 'body', 'status', 'createdAt', 'updatedAt'])
         && data.keys().hasOnly(['authorId', 'nickname', 'title', 'category', 'body', 'status', 'createdAt', 'updatedAt'])
@@ -19,8 +48,13 @@ service cloud.firestore {
     }
     function validProfile(data) {
       return data.keys().hasAll(['alias', 'updatedAt'])
-        && data.keys().hasOnly(['alias', 'updatedAt'])
-        && data.alias is string && data.alias.size() <= 30
+        && data.keys().hasOnly(['alias', 'bio', 'gameServer', 'guild', 'mainHeroes', 'photoVersion', 'updatedAt'])
+        && data.alias is string && data.alias.size() >= 1 && data.alias.size() <= 30
+        && (!data.keys().hasAny(['bio']) || (data.bio is string && data.bio.size() <= 500))
+        && (!data.keys().hasAny(['gameServer']) || (data.gameServer is string && data.gameServer.size() <= 40))
+        && (!data.keys().hasAny(['guild']) || (data.guild is string && data.guild.size() <= 40))
+        && (!data.keys().hasAny(['mainHeroes']) || (data.mainHeroes is list && data.mainHeroes.size() <= 5))
+        && (!data.keys().hasAny(['photoVersion']) || (data.photoVersion is int && data.photoVersion >= 0))
         && data.updatedAt is timestamp;
     }
     function validDetailPost(data) {
@@ -35,30 +69,47 @@ service cloud.firestore {
         && data.body is string && data.body.size() >= 1 && data.body.size() <= 5000
         && data.createdAt is timestamp && data.updatedAt is timestamp;
     }
+    function validRole(data) {
+      return data.keys().hasAll(['role', 'createdAt', 'updatedAt', 'updatedBy'])
+        && data.keys().hasOnly(['role', 'createdAt', 'updatedAt', 'updatedBy'])
+        && data.role is string && data.role in ['general', 'writer', 'admin', 'webmaster']
+        && data.createdAt is timestamp && data.updatedAt is timestamp
+        && data.updatedBy is string;
+    }
+    function validRolePolicy(data) {
+      return data.keys().hasAll(['canWriteGuides', 'canWriteDetails', 'updatedAt', 'updatedBy'])
+        && data.keys().hasOnly(['canWriteGuides', 'canWriteDetails', 'updatedAt', 'updatedBy'])
+        && data.canWriteGuides is bool && data.canWriteDetails is bool
+        && data.updatedAt is timestamp && data.updatedBy is string;
+    }
     match /guides/{guideId} {
       // Keep ownership distinct from schema checks: reads use existing data.
       function ownsGuide() {
         return verifiedGoogle() && resource.data.authorId == request.auth.uid;
       }
       function canReadGuide() {
-        return resource.data.status == 'published' || ownsGuide();
+        return resource.data.status == 'published' || ownsGuide() || canManagePosts();
       }
       allow get: if canReadGuide();
       // Rules are not filters. Callers must constrain status or authorId.
       allow list: if request.query.limit != null
         && request.query.limit <= 20
         && canReadGuide();
-      allow create: if verifiedGoogle()
+      allow create: if canWriteGuides()
         && validGuide(request.resource.data)
         && request.resource.data.authorId == request.auth.uid
+        && exists(/databases/$(database)/documents/profiles/$(request.auth.uid))
+        && request.resource.data.nickname == get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.alias
         && request.resource.data.createdAt == request.time
         && request.resource.data.updatedAt == request.time;
-      allow update: if ownsGuide()
+      allow update: if ((ownsGuide() && canWriteGuides()) || canManagePosts())
         && validGuide(request.resource.data)
+        && exists(/databases/$(database)/documents/profiles/$(request.resource.data.authorId))
+        && request.resource.data.nickname == get(/databases/$(database)/documents/profiles/$(request.resource.data.authorId)).data.alias
         && request.resource.data.authorId == resource.data.authorId
         && request.resource.data.createdAt == resource.data.createdAt
         && request.resource.data.updatedAt == request.time;
-      allow delete: if ownsGuide();
+      allow delete: if ownsGuide() || canManagePosts();
     }
     match /profiles/{uid} {
       allow get: if true;
@@ -75,21 +126,65 @@ service cloud.firestore {
       }
       allow get: if true;
       allow list: if request.query.limit != null && request.query.limit <= 30;
-      allow create: if verifiedGoogle()
+      allow create: if canWriteDetails()
         && validDetailPost(request.resource.data)
         && request.resource.data.authorId == request.auth.uid
+        && exists(/databases/$(database)/documents/profiles/$(request.auth.uid))
+        && request.resource.data.authorName == get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.alias
         && request.resource.data.createdAt == request.time
         && request.resource.data.updatedAt == request.time;
-      allow update: if ownsPost()
+      allow update: if ((ownsPost() && canWriteDetails()) || canManagePosts())
         && validDetailPost(request.resource.data)
+        && exists(/databases/$(database)/documents/profiles/$(request.resource.data.authorId))
+        && request.resource.data.authorName == get(/databases/$(database)/documents/profiles/$(request.resource.data.authorId)).data.alias
         && request.resource.data.resourceType == resource.data.resourceType
         && request.resource.data.resourceId == resource.data.resourceId
         && request.resource.data.resourceKey == resource.data.resourceKey
         && request.resource.data.authorId == resource.data.authorId
-        && request.resource.data.authorName == resource.data.authorName
         && request.resource.data.createdAt == resource.data.createdAt
         && request.resource.data.updatedAt == request.time;
-      allow delete: if ownsPost();
+      allow delete: if ownsPost() || canManagePosts();
+    }
+    match /roles/{uid} {
+      allow get: if verifiedGoogle() && (request.auth.uid == uid || canManagePosts());
+      allow list: if canManagePosts() && request.query.limit != null && request.query.limit <= 100;
+      allow create: if verifiedGoogle()
+        && validRole(request.resource.data)
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.updatedBy == request.auth.uid
+        && (
+          (request.auth.uid == uid && request.resource.data.role == 'general')
+          || (isWebmaster() && (uid != request.auth.uid || request.resource.data.role == 'webmaster'))
+          || (isAdmin() && request.resource.data.role in ['general', 'writer'])
+        );
+      allow update: if verifiedGoogle()
+        && validRole(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.updatedBy == request.auth.uid
+        && (
+          (isWebmaster() && (uid != request.auth.uid || request.resource.data.role == 'webmaster'))
+          || (isAdmin()
+            && resource.data.role in ['general', 'writer']
+            && request.resource.data.role in ['general', 'writer'])
+        );
+      allow delete: if verifiedGoogle()
+        && (
+          (isWebmaster() && uid != request.auth.uid)
+          || (isAdmin() && resource.data.role in ['general', 'writer'])
+        );
+    }
+    match /rolePolicies/{role} {
+      allow get: if verifiedGoogle();
+      allow list: if false;
+      allow create, update: if isWebmaster()
+        && role in ['general', 'writer', 'admin', 'webmaster']
+        && validRolePolicy(request.resource.data)
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.updatedBy == request.auth.uid
+        && (role != 'webmaster' || (request.resource.data.canWriteGuides == true && request.resource.data.canWriteDetails == true));
+      allow delete: if false;
     }
     match /{document=**} {
       allow read, write: if false;

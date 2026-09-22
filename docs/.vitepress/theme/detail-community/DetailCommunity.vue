@@ -1,24 +1,24 @@
 <script setup>
-import { computed, onMounted, ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { session, errorText } from '../guides/client.mjs'
-import { createPost, deletePost, listPosts, loadAlias, saveAlias, updatePost } from './client.mjs'
+import { createPost, deletePost, listPosts, updatePost } from './client.mjs'
+import { profileHref } from '../profile/navigation.mjs'
+import { canManagePosts, canWriteDetails, useAccessSession } from '../access/client.mjs'
 
 const props = defineProps({
   resourceType: { type: String, required: true },
   resourceId: { type: String, required: true },
 })
+const access = useAccessSession()
 
 const rows = ref([])
 const title = ref('')
 const body = ref('')
-const alias = ref('')
 const editingId = ref('')
 const loading = ref(false)
 const busy = ref(false)
-const aliasBusy = ref(false)
 const error = ref('')
 const notice = ref('')
-const displayName = computed(() => alias.value || session.displayName || '사용자')
 
 function formatDate(value) {
   return value?.toDate ? value.toDate().toLocaleString('ko-KR') : '저장 중'
@@ -29,7 +29,6 @@ async function load() {
   error.value = ''
   try {
     rows.value = await listPosts(props.resourceType, props.resourceId)
-    alias.value = session.uid ? await loadAlias(session.uid) : ''
   } catch (cause) {
     error.value = errorText(cause)
   } finally {
@@ -87,20 +86,6 @@ async function remove(row) {
   }
 }
 
-async function updateAlias() {
-  aliasBusy.value = true
-  error.value = ''
-  try {
-    alias.value = await saveAlias(alias.value)
-    notice.value = alias.value ? '별칭을 저장했습니다.' : '별칭을 삭제했습니다.'
-    await load()
-  } catch (cause) {
-    error.value = errorText(cause)
-  } finally {
-    aliasBusy.value = false
-  }
-}
-
 onMounted(load)
 watch(() => session.epoch, () => { if (session.ready) load() })
 </script>
@@ -118,14 +103,7 @@ watch(() => session.epoch, () => { if (session.ready) load() })
     <p v-if="error" class="detail-community-error" role="alert">{{ error }}</p>
     <p v-if="notice" class="detail-community-notice" role="status">{{ notice }}</p>
 
-    <template v-if="session.uid">
-      <div class="detail-alias">
-        <label for="detail-alias-input">내 별칭</label>
-        <input id="detail-alias-input" v-model="alias" maxlength="30" :placeholder="session.displayName || '사용자'">
-        <button type="button" :disabled="aliasBusy" @click="updateAlias">별칭 저장</button>
-        <small>글에는 {{ displayName }}(으)로 표시됩니다.</small>
-      </div>
-
+    <template v-if="session.uid && canWriteDetails(access.role)">
       <form class="detail-post-form" @submit.prevent="submit">
         <h3>{{ editingId ? '글 수정' : '새 글 작성' }}</h3>
         <label>제목<input v-model="title" maxlength="100" required></label>
@@ -136,15 +114,16 @@ watch(() => session.epoch, () => { if (session.ready) load() })
         </div>
       </form>
     </template>
-    <p v-else class="detail-community-empty">상단의 Google 로그인 후 공략과 팁을 작성할 수 있습니다.</p>
+    <p v-else-if="session.uid" class="detail-community-empty">현재 역할에 상세페이지 작성권한이 없습니다.</p>
+    <p v-else class="detail-community-empty">상단의 Google 로그인 후 상세페이지 작성권한이 있는 사용자만 글을 작성할 수 있습니다.</p>
 
     <p v-if="loading" class="detail-community-empty">글을 불러오는 중…</p>
     <p v-else-if="!rows.length" class="detail-community-empty">아직 등록된 글이 없습니다. 첫 공략을 남겨 보세요.</p>
     <article v-for="row in rows" v-else :key="row.id" class="detail-post">
       <div class="detail-post-head">
-        <div><strong>{{ row.title }}</strong><p>{{ row.authorLabel }} · {{ formatDate(row.createdAt) }}</p></div>
-        <div v-if="row.authorId === session.uid" class="detail-post-actions">
-          <button type="button" :disabled="busy" @click="edit(row)">수정</button>
+        <div><strong>{{ row.title }}</strong><p><a :href="profileHref(row.authorId)">{{ row.authorLabel }}</a> · {{ formatDate(row.createdAt) }}</p></div>
+        <div v-if="row.authorId === session.uid || canManagePosts(access.role)" class="detail-post-actions">
+          <button v-if="canWriteDetails(access.role)" type="button" :disabled="busy" @click="edit(row)">수정</button>
           <button type="button" :disabled="busy" @click="remove(row)">삭제</button>
         </div>
       </div>
@@ -172,6 +151,7 @@ watch(() => session.epoch, () => { if (session.ready) load() })
 .detail-post-head { display: flex; justify-content: space-between; gap: 16px; }
 .detail-post-head strong { font-size: 16px; }
 .detail-post-head p { margin-top: 4px; color: var(--vp-c-text-2); font-size: 13px; }
+.detail-post-head a { color: var(--vp-c-brand-1); font-weight: 700; text-decoration: none; }
 .detail-post-actions { display: flex; gap: 6px; }
 .detail-post-body { margin-top: 14px !important; white-space: pre-wrap; overflow-wrap: anywhere; }
 .detail-community-error, .detail-community-notice, .detail-community-empty { margin: 12px 0 !important; padding: 12px; border-radius: 8px; }

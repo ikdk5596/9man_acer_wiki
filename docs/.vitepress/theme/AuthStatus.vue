@@ -1,6 +1,10 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useGuideSession, getClient, errorText } from './guides/client.mjs'
+import { loadProfile } from './profile/client.mjs'
+import { profileHref } from './profile/navigation.mjs'
+import { ROLE_LABELS, useAccessSession } from './access/client.mjs'
+import { withBase } from 'vitepress'
 
 defineProps({
   mobile: {
@@ -10,12 +14,53 @@ defineProps({
 })
 
 const session = useGuideSession()
+const access = useAccessSession()
 const busy = ref(false)
 const error = ref('')
 const imageFailed = ref(false)
+const profileAlias = ref('')
+const profilePhoto = ref('')
+let generation = 0
 
-watch(() => session.photoURL, () => {
+const displayName = computed(() => profileAlias.value || session.displayName || '사용자')
+
+function revokePhoto() {
+  if (profilePhoto.value) URL.revokeObjectURL(profilePhoto.value)
+  profilePhoto.value = ''
+}
+
+async function loadOwnProfile() {
+  const uid = session.uid
+  const token = ++generation
+  revokePhoto()
+  profileAlias.value = ''
   imageFailed.value = false
+  if (!uid) return
+  try {
+    const result = await loadProfile(uid)
+    if (token !== generation || uid !== session.uid) return
+    profileAlias.value = result.profile.alias || ''
+    profilePhoto.value = result.photo ? URL.createObjectURL(result.photo) : ''
+    if (!profileAlias.value && !location.pathname.replace(/\/+$/, '').endsWith('/profile')) {
+      location.assign(profileHref(uid))
+    }
+  } catch (cause) {
+    if (token === generation) error.value = errorText(cause)
+  }
+}
+
+watch(() => profilePhoto.value, () => {
+  imageFailed.value = false
+})
+watch(() => [session.ready, session.epoch], () => { if (session.ready) loadOwnProfile() })
+onMounted(() => {
+  if (session.ready) loadOwnProfile()
+  window.addEventListener('wiki-profile-updated', loadOwnProfile)
+})
+onBeforeUnmount(() => {
+  generation++
+  revokePhoto()
+  window.removeEventListener('wiki-profile-updated', loadOwnProfile)
 })
 
 async function login() {
@@ -62,22 +107,24 @@ async function logout() {
     </button>
 
     <details v-else class="site-auth-user">
-      <summary :aria-label="`${session.displayName} 계정 메뉴`">
+      <summary :aria-label="`${displayName} 계정 메뉴`">
         <img
-          v-if="session.photoURL && !imageFailed"
-          :src="session.photoURL"
+          v-if="profilePhoto && !imageFailed"
+          :src="profilePhoto"
           alt=""
-          referrerpolicy="no-referrer"
           @error="imageFailed = true"
         >
         <span v-else class="site-auth-avatar" aria-hidden="true">
-          {{ session.displayName.slice(0, 1) }}
+          {{ displayName.slice(0, 1) }}
         </span>
-        <span class="site-auth-name">{{ session.displayName }}</span>
+        <span class="site-auth-name">{{ displayName }}</span>
       </summary>
 
       <div class="site-auth-menu">
-        <strong>{{ session.displayName }}</strong>
+        <strong>{{ displayName }}</strong>
+        <span class="site-auth-role">{{ ROLE_LABELS[access.role] }}</span>
+        <a :href="profileHref(session.uid)">내 프로필</a>
+        <a v-if="['admin', 'webmaster'].includes(access.role)" :href="withBase('/admin/permissions/')">권한 관리</a>
         <button type="button" :disabled="busy" @click="logout">
           {{ busy ? '처리 중…' : '로그아웃' }}
         </button>
@@ -177,6 +224,17 @@ async function logout() {
 
 .site-auth-menu button {
   padding: 7px 10px;
+}
+
+.site-auth-menu a {
+  color: var(--vp-c-brand-1);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-auth-role {
+  color: var(--vp-c-text-2);
+  font-size: 12px;
 }
 
 .site-auth-error {

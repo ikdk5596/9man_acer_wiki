@@ -9,6 +9,18 @@ service firebase.storage {
     function ownsPrefix(uid) {
       return verifiedGoogle() && request.auth.uid == uid;
     }
+    function canWriteGuides(uid) {
+      return ownsPrefix(uid)
+        && firestore.exists(/databases/(default)/documents/roles/$(uid))
+        && (firestore.get(/databases/(default)/documents/roles/$(uid)).data.role == 'webmaster'
+          || (firestore.exists(/databases/(default)/documents/rolePolicies/$(firestore.get(/databases/(default)/documents/roles/$(uid)).data.role))
+            && firestore.get(/databases/(default)/documents/rolePolicies/$(firestore.get(/databases/(default)/documents/roles/$(uid)).data.role)).data.canWriteGuides == true));
+    }
+    function canManagePosts() {
+      return verifiedGoogle()
+        && firestore.exists(/databases/(default)/documents/roles/$(request.auth.uid))
+        && firestore.get(/databases/(default)/documents/roles/$(request.auth.uid)).data.role in ['admin', 'webmaster'];
+    }
     function parentExists(guideId) {
       return firestore.exists(/databases/(default)/documents/guides/$(guideId));
     }
@@ -24,13 +36,24 @@ service firebase.storage {
       }
       // Always require a matching parent, including for the owner.
       allow get: if validSlot() && matchingParent()
-        && (parent(guideId).status == 'published' || ownsPrefix(uid));
+        && (parent(guideId).status == 'published' || ownsPrefix(uid) || canManagePosts());
       allow list: if false;
-      allow create, update: if validSlot() && ownsPrefix(uid) && matchingParent()
+      allow create, update: if validSlot() && (canWriteGuides(uid) || canManagePosts()) && matchingParent()
         && request.resource.size <= 1048576
         && request.resource.contentType == 'image/webp';
       // Orphan cleanup stays possible after deleting the Firestore document.
-      allow delete: if validSlot() && ownsPrefix(uid);
+      allow delete: if validSlot() && (ownsPrefix(uid) || canManagePosts());
+    }
+    match /profile-images/{uid}/{filename} {
+      function validProfileImage() {
+        return filename == 'profile.webp';
+      }
+      allow get: if validProfileImage();
+      allow list: if false;
+      allow create, update: if validProfileImage() && ownsPrefix(uid)
+        && request.resource.size <= 1048576
+        && request.resource.contentType == 'image/webp';
+      allow delete: if validProfileImage() && ownsPrefix(uid);
     }
     match /{path=**} {
       allow read, write: if false;
