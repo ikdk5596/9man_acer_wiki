@@ -17,6 +17,24 @@ service cloud.firestore {
         && data.status is string && data.status in ['draft', 'published']
         && data.createdAt is timestamp && data.updatedAt is timestamp;
     }
+    function validProfile(data) {
+      return data.keys().hasAll(['alias', 'updatedAt'])
+        && data.keys().hasOnly(['alias', 'updatedAt'])
+        && data.alias is string && data.alias.size() <= 30
+        && data.updatedAt is timestamp;
+    }
+    function validDetailPost(data) {
+      return data.keys().hasAll(['resourceType', 'resourceId', 'resourceKey', 'authorId', 'authorName', 'title', 'body', 'createdAt', 'updatedAt'])
+        && data.keys().hasOnly(['resourceType', 'resourceId', 'resourceKey', 'authorId', 'authorName', 'title', 'body', 'createdAt', 'updatedAt'])
+        && data.resourceType is string && data.resourceType in ['soldier', 'exclusive-weapon']
+        && data.resourceId is string && data.resourceId.size() >= 1 && data.resourceId.size() <= 100
+        && data.resourceKey == data.resourceType + ':' + data.resourceId
+        && data.authorId is string
+        && data.authorName is string && data.authorName.size() >= 1 && data.authorName.size() <= 100
+        && data.title is string && data.title.size() >= 1 && data.title.size() <= 100
+        && data.body is string && data.body.size() >= 1 && data.body.size() <= 5000
+        && data.createdAt is timestamp && data.updatedAt is timestamp;
+    }
     match /guides/{guideId} {
       // Keep ownership distinct from schema checks: reads use existing data.
       function ownsGuide() {
@@ -41,6 +59,37 @@ service cloud.firestore {
         && request.resource.data.createdAt == resource.data.createdAt
         && request.resource.data.updatedAt == request.time;
       allow delete: if ownsGuide();
+    }
+    match /profiles/{uid} {
+      allow get: if true;
+      allow list: if false;
+      allow create, update: if verifiedGoogle()
+        && request.auth.uid == uid
+        && validProfile(request.resource.data)
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if verifiedGoogle() && request.auth.uid == uid;
+    }
+    match /detailPosts/{postId} {
+      function ownsPost() {
+        return verifiedGoogle() && resource.data.authorId == request.auth.uid;
+      }
+      allow get: if true;
+      allow list: if request.query.limit != null && request.query.limit <= 30;
+      allow create: if verifiedGoogle()
+        && validDetailPost(request.resource.data)
+        && request.resource.data.authorId == request.auth.uid
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+      allow update: if ownsPost()
+        && validDetailPost(request.resource.data)
+        && request.resource.data.resourceType == resource.data.resourceType
+        && request.resource.data.resourceId == resource.data.resourceId
+        && request.resource.data.resourceKey == resource.data.resourceKey
+        && request.resource.data.authorId == resource.data.authorId
+        && request.resource.data.authorName == resource.data.authorName
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if ownsPost();
     }
     match /{document=**} {
       allow read, write: if false;
