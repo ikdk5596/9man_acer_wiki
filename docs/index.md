@@ -46,4 +46,4 @@ features:
 
 ## Thanks to
 
-bono · 뚜시 · 휴가좋아 · Cellob (목양)
+bono · 뚜시 · 휴가좋아 · Cellob (목양) · 일월묘
