@@ -43,7 +43,11 @@ export default defineConfig({
       { text: '병사 도감', link: '/soldiers/' },
       { text: '장비 도감', link: '/equipment/' },
       { text: '영웅 도감', link: '/hero/' },
-      ...(includeGuides ? [{ text: '개인공략', link: '/guides/' }] : []),
+      { text: '\uB4F1\uAE09\uD45C', items: [
+        { text: '\uBCD1\uC885\uBCC4 \uB4F1\uAE09', link: '/tiers/soldiers/' },
+        { text: '\uC815\uCC45\uBCC4 \uB4F1\uAE09', link: '/tiers/policies/' },
+      ] },
+      ...(includeGuides ? [{ text: '\uAC1C\uC778\uACF5\uB7B5', link: '/guides/' }] : []),
     ],
 
     sidebar: {
@@ -166,6 +170,7 @@ export default defineConfig({
         ...heroGroups,
       ],
       '/policies/': [
+        { text: '\uC815\uCC45\uBCC4 \uB4F1\uAE09', items: [{ text: '\uB4F1\uAE09\uD45C', link: '/tiers/policies/' }] },
         {
           text: '정책 도감',
           items: [
@@ -174,6 +179,7 @@ export default defineConfig({
         },
       ],
       '/soldiers/': [
+        { text: '\uBCD1\uC885\uBCC4 \uB4F1\uAE09', items: [{ text: '\uB4F1\uAE09\uD45C', link: '/tiers/soldiers/' }] },
         {
           text: '병사 도감',
           items: [
