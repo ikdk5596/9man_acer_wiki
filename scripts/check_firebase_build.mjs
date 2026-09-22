@@ -40,12 +40,28 @@ for (const file of pages) {
 }
 const home = readFileSync(resolve(dist, 'index.html'), 'utf8')
 assert(home.includes('href="/favicon.svg"'), 'Firebase favicon must use the site root')
-assert(!existsSync(resolve(dist, 'guides')), 'Unfinished board routes must not be deployed')
+const guideIndex = resolve(dist, 'guides/index.html')
+const guideWriteHtml = resolve(dist, 'guides/write.html')
+const guideWriteIndex = resolve(dist, 'guides/write/index.html')
+
+assert(existsSync(guideIndex), 'Personal guide board page must be deployed')
+assert(
+  existsSync(guideWriteHtml) || existsSync(guideWriteIndex),
+  'Personal guide editor page must be deployed',
+)
+
+assert(
+  !files.some(file => file.endsWith('.map')),
+  'Production build must not contain source maps',
+)
+
 for (const file of files.filter(file => /\.(?:html|js|json)$/.test(file))) {
   const name = relative(dist, file).split(sep).join('/')
-  assert(!/GuideBoard|GuideEditor|guides_(?:index|write)/.test(name), `Board bundle must not be deployed: ${name}`)
   const content = readFileSync(file, 'utf8')
-  assert(!/\/guides\/|acer-guides|guide-images\//.test(content), `Board link or client leaked into production: ${name}`)
+  assert(
+    !/(?:demo-acer-wiki|127\.0\.0\.1:(?:9099|8180|9199)|localhost:(?:9099|8180|9199))/i.test(content),
+    `Firebase emulator setting leaked into production: ${name}`,
+  )
 }
 const config = JSON.parse(readFileSync(resolve(root, 'firebase.json'), 'utf8'))
 const rc = JSON.parse(readFileSync(resolve(root, '.firebaserc'), 'utf8'))
@@ -55,4 +71,4 @@ assert.equal(config.hosting.cleanUrls, true)
 assert(!config.hosting.rewrites, 'Do not replace missing wiki pages with an SPA homepage')
 assert.equal(rc.projects.default, 'acer-wiki')
 assert.deepEqual(rc.targets['acer-wiki'].hosting.wiki, ['acer-wiki'])
-console.log(`PASS: Firebase build — ${pages.length} HTML pages, ${references} local references, root favicon, exact hosting target; unfinished board excluded.`)
+console.log(`PASS: Firebase build — ${pages.length} HTML pages, ${references} local references, root favicon, exact hosting target; profiles, permissions and personal guides included; emulator settings excluded.`)

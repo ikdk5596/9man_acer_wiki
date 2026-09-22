@@ -22,7 +22,7 @@ if (talents.status !== 0) process.exit(talents.status ?? 1)
 rmSync(resolve(root, 'docs/.vitepress/dist'), { recursive: true, force: true })
 const result = spawnSync(process.execPath, [resolve(root, 'node_modules/vitepress/bin/vitepress.js'), 'build', 'docs'], {
   cwd: root,
-  env: { ...process.env, WIKI_BASE: '/', WIKI_GUIDES: '0', VITE_GUIDE_EMULATORS: '0' },
+  env: { ...process.env, WIKI_BASE: '/', WIKI_GUIDES: '1', VITE_GUIDE_EMULATORS: '0' },
   stdio: 'inherit',
 })
 if (result.error) console.error(result.error.message)
