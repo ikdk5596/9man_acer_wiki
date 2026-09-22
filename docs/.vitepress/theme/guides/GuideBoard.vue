@@ -45,7 +45,7 @@ async function load(append = false) {
   } catch (cause) { if (current()) error.value = errorText(cause) }
   finally { if (current()) loading.value = false }
 }
-watch(() => [session.ready, session.epoch, id.value, mine.value], () => { if (session.ready) load() })
+watch(() => [session.ready, session.epoch, id.value, mine.value], () => { if (session.ready) load() }, { immediate: true })
 async function auth(logout = false) {
   busy.value = true; error.value = ''
   try { const client = await getClient(); await (logout ? client.logout() : client.login()) }
