@@ -82,6 +82,24 @@ service cloud.firestore {
         && data.canWriteGuides is bool && data.canWriteDetails is bool
         && data.updatedAt is timestamp && data.updatedBy is string;
     }
+    function validTierList(data, kind) {
+      return data.keys().hasAll(['tiers', 'updatedAt', 'updatedBy'])
+        && data.keys().hasOnly(['tiers', 'updatedAt', 'updatedBy'])
+        && data.tiers is map
+        && data.tiers.keys().hasAll(['S', 'A', 'B', 'C', 'D', 'E', 'F'])
+        && data.tiers.keys().hasOnly(['S', 'A', 'B', 'C', 'D', 'E', 'F'])
+        && data.tiers.S is list && data.tiers.A is list && data.tiers.B is list
+        && data.tiers.C is list && data.tiers.D is list && data.tiers.E is list && data.tiers.F is list
+        && (
+          (kind == 'soldiers'
+            && data.tiers.S.size() <= 26 && data.tiers.A.size() <= 26 && data.tiers.B.size() <= 26
+            && data.tiers.C.size() <= 26 && data.tiers.D.size() <= 26 && data.tiers.E.size() <= 26 && data.tiers.F.size() <= 26)
+          || (kind == 'policies'
+            && data.tiers.S.size() <= 51 && data.tiers.A.size() <= 51 && data.tiers.B.size() <= 51
+            && data.tiers.C.size() <= 51 && data.tiers.D.size() <= 51 && data.tiers.E.size() <= 51 && data.tiers.F.size() <= 51)
+        )
+        && data.updatedAt is timestamp && data.updatedBy is string;
+    }
     match /guides/{guideId} {
       // Keep ownership distinct from schema checks: reads use existing data.
       function ownsGuide() {
@@ -184,6 +202,16 @@ service cloud.firestore {
         && request.resource.data.updatedAt == request.time
         && request.resource.data.updatedBy == request.auth.uid
         && (role != 'webmaster' || (request.resource.data.canWriteGuides == true && request.resource.data.canWriteDetails == true));
+      allow delete: if false;
+    }
+    match /tierLists/{kind} {
+      allow get: if kind in ['soldiers', 'policies'];
+      allow list: if false;
+      allow create, update: if kind in ['soldiers', 'policies']
+        && canManagePosts()
+        && validTierList(request.resource.data, kind)
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.updatedBy == request.auth.uid;
       allow delete: if false;
     }
     match /{document=**} {

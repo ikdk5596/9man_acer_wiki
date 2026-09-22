@@ -125,6 +125,7 @@ async function logout() {
         <span class="site-auth-role">{{ ROLE_LABELS[access.role] }}</span>
         <a :href="profileHref(session.uid)">내 프로필</a>
         <a v-if="['admin', 'webmaster'].includes(access.role)" :href="withBase('/admin/permissions/')">권한 관리</a>
+        <a v-if="['admin', 'webmaster'].includes(access.role)" :href="withBase('/admin/tiers/')">&#46321;&#44553;&#54364; &#44288;&#47532;</a>
         <button type="button" :disabled="busy" @click="logout">
           {{ busy ? '처리 중…' : '로그아웃' }}
         </button>
