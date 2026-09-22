@@ -7,8 +7,11 @@ import { guideExtensions } from './extensions.mjs'
 import { CATEGORIES, EMPTY_DOC, parseBody, serializeEditor, resolveImages, imageSlots, nextImageSlot, safeLink, validateMetadata } from './content.mjs'
 import { compressImage, loadImages, revokeImages } from './images.mjs'
 import { guideHref, useGuideId } from './navigation.mjs'
+import { canManagePosts, canWriteGuides, useAccessSession } from '../access/client.mjs'
+import { loadProfile } from '../profile/client.mjs'
 
 const session = useGuideSession(), requestedId = useGuideId(), router = useRouter()
+const access = useAccessSession()
 const editor = shallowRef(null), guideId = ref(''), status = ref('draft')
 const title = ref(''), nickname = ref(''), category = ref('초보자')
 const dirty = ref(false), busy = ref(false), loading = ref(false), uploading = ref(false), preview = ref(false)
@@ -16,10 +19,11 @@ const error = ref(''), notice = ref(''), imageErrors = ref([]), fileInput = ref(
 let urls = new Map(), persistedSlots = [], generation = 0, previousUid = null, initializing = false
 let oldRouteGuard, routeGuard
 const locked = computed(() => busy.value || loading.value || imageErrors.value.length > 0 || (!!requestedId.value && !loaded.value))
-const canSave = computed(() => !!session.uid && !locked.value)
+const allowedToWrite = computed(() => canWriteGuides(access.role))
+const canSave = computed(() => !!session.uid && allowedToWrite.value && !locked.value)
 function markDirty() { if (!initializing) { dirty.value = true; notice.value = '' } }
 watch([title, nickname, category], markDirty, { flush: 'sync' })
-watch([locked, preview], () => editor.value?.setEditable(!locked.value && !preview.value))
+watch([locked, preview, allowedToWrite], () => editor.value?.setEditable(allowedToWrite.value && !locked.value && !preview.value))
 function reset() {
   initializing = true
   editor.value?.commands.setContent(EMPTY_DOC, { emitUpdate: false })
@@ -28,26 +32,40 @@ function reset() {
   dirty.value = false; loaded.value = false; preview.value = false; imageErrors.value = []; error.value = ''; notice.value = ''
   initializing = false
 }
+async function requiredAlias(uid) {
+  const result = await loadProfile(uid)
+  const alias = String(result.profile.alias || '').trim()
+  if (!alias) throw new Error('먼저 내 프로필에서 공개 별명을 설정해 주세요.')
+  return alias
+}
 async function load() {
   const token = ++generation, epoch = session.epoch
   const current = () => token === generation && epoch === session.epoch
   const changedAccount = previousUid && previousUid !== session.uid
   previousUid = session.uid
   if (changedAccount) { reset(); notice.value = '계정이 변경되어 이전 계정의 편집 내용을 지웠습니다.' }
-  if (!requestedId.value) { loading.value = false; return }
+  if (!requestedId.value) {
+    if (session.uid) {
+      try { nickname.value = await requiredAlias(session.uid) }
+      catch (cause) { error.value = errorText(cause) }
+    }
+    loading.value = false
+    return
+  }
   reset(); guideId.value = requestedId.value
   if (!session.uid) return
   loading.value = true
   try {
+    const alias = await requiredAlias(session.uid)
     const client = await getClient(); const guide = await client.read(requestedId.value)
     if (!current()) return
     if (!guide) throw new Error('공략이 없거나 삭제되었습니다.')
-    if (guide.authorId !== session.uid) throw new Error('본인이 작성한 공략만 수정할 수 있습니다.')
+    if (guide.authorId !== session.uid) throw new Error(canManagePosts(access.role) ? '관리자는 공략 게시판에서 다른 사용자의 글을 삭제할 수 있습니다. 수정은 작성자만 가능합니다.' : '본인이 작성한 공략만 수정할 수 있습니다.')
     const result = await loadImages(client, guide, current)
     if (!current()) { revokeImages(result.urls); return }
     initializing = true
     urls = result.urls; persistedSlots = imageSlots(result.doc); imageErrors.value = result.errors
-    title.value = guide.title; nickname.value = guide.nickname; category.value = guide.category; status.value = guide.status
+    title.value = guide.title; nickname.value = alias; category.value = guide.category; status.value = guide.status
     editor.value.commands.setContent(resolveImages(result.doc, urls), { emitUpdate: false, errorOnInvalidContent: true })
     dirty.value = false; loaded.value = true
   } catch (cause) { if (current()) error.value = errorText(cause) }
@@ -67,6 +85,7 @@ async function logout() {
 }
 async function persist(targetStatus, uid, epoch) {
   if (epoch !== session.epoch || uid !== session.uid) throw new Error('로그인 계정이 변경되었습니다.')
+  nickname.value = await requiredAlias(uid)
   const fields = { ...validateMetadata({ title: title.value, nickname: nickname.value, category: category.value }), body: serializeEditor(editor.value.getJSON(), urls), status: targetStatus }
   const client = await getClient()
   const saved = await client.save(guideId.value || null, fields, uid)
@@ -95,6 +114,7 @@ function togglePreview() {
 async function insertFiles(files) {
   if (!files?.length || locked.value || preview.value) return
   if (!session.uid) { error.value = '사진을 올리려면 Google 로그인이 필요합니다.'; return }
+  if (!allowedToWrite.value) { error.value = '개인공략 작성권한이 필요합니다.'; return }
   const uid = session.uid, epoch = session.epoch, token = generation
   const current = () => uid === session.uid && epoch === session.epoch && token === generation
   busy.value = true; uploading.value = true; error.value = ''
@@ -174,17 +194,18 @@ onBeforeUnmount(() => {
     <div v-else class="guide-account"><span>Google 계정 로그인됨 · 실명 대신 아래 별명을 공개합니다.</span><button :disabled="busy" @click="logout">로그아웃</button></div>
     <p class="guide-hint">로그인은 이 탭의 메모리에만 유지됩니다. 새로고침하면 다시 로그인해야 합니다. 저장하지 않은 글은 브라우저에 보관하지 않습니다.</p>
     <p v-if="session.emulator" class="guide-notice">로컬 테스트 · 실제 서비스에 저장되지 않습니다</p>
+    <p v-if="session.uid && access.ready && !allowedToWrite" class="guide-error">개인공략 작성권한이 없습니다. 관리자에게 게시글작성권한을 요청해 주세요.</p>
     <p v-if="error || session.error" role="alert" class="guide-error">{{ error || session.error }}</p>
     <p v-if="notice" role="status" class="guide-notice">{{ notice }} <a v-if="guideId && !dirty" :href="guideHref('/guides/', guideId)">저장된 글 보기 →</a></p>
     <p v-if="loading" role="status">저장된 공략을 불러오는 중…</p>
     <div v-if="imageErrors.length" class="guide-error" role="alert"><p>사진을 불러오지 못해 원본 보호를 위해 저장을 막았습니다.</p><ul><li v-for="message in imageErrors" :key="message">{{ message }}</li></ul><button @click="load">다시 불러오기</button></div>
-    <fieldset class="guide-fields" :disabled="locked || preview">
-      <div class="guide-field-row"><label>분류<select v-model="category"><option v-for="item in CATEGORIES" :key="item">{{ item }}</option></select></label><label class="guide-nickname">공개 별명<input v-model="nickname" maxlength="30" autocomplete="off" placeholder="게임에서 쓰는 별명 (1~30자)"></label></div>
+    <fieldset class="guide-fields" :disabled="locked || preview || !allowedToWrite">
+      <div class="guide-field-row"><label>분류<select v-model="category"><option v-for="item in CATEGORIES" :key="item">{{ item }}</option></select></label><p class="guide-hint">작성자: {{ nickname || '프로필 공개 별명 미설정' }}</p></div>
       <label>제목<input v-model="title" class="guide-title-input" maxlength="120" placeholder="공략 제목을 입력해 주세요 (1~120자)"></label>
     </fieldset>
     <div class="guide-editor-shell" :class="{ 'is-preview': preview }">
       <div v-if="preview" class="guide-preview-label">미리보기 · 아직 저장하지 않은 내용도 포함합니다.</div>
-      <fieldset v-else class="guide-toolbar" :disabled="locked" aria-label="본문 서식">
+      <fieldset v-else class="guide-toolbar" :disabled="locked || !allowedToWrite" aria-label="본문 서식">
         <select aria-label="문단 스타일" @change="Number($event.target.value) ? editor.chain().focus().toggleHeading({ level: Number($event.target.value) }).run() : editor.chain().focus().setParagraph().run()"><option value="0">본문</option><option value="1">제목 1</option><option value="2">제목 2</option><option value="3">제목 3</option></select>
         <button v-for="tool in tools" :key="tool.name" type="button" :aria-label="tool.label" :title="tool.label" :aria-pressed="editor?.isActive(tool.name) || false" @click="tool.run(editor)">{{ tool.short }}</button>
         <label class="guide-color" title="글자 색상">글자색<input type="color" aria-label="글자 색상" value="#c9862b" @input="editor.chain().focus().setColor($event.target.value).run()"></label>
@@ -199,7 +220,7 @@ onBeforeUnmount(() => {
       <EditorContent v-if="editor" :editor="editor" class="guide-document guide-edit-document" />
     </div>
     <input ref="fileInput" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden @change="insertFiles($event.target.files)">
-    <p class="guide-hint">사진 최대 10장 · JPEG/PNG/WebP 원본 12 MiB 이하 · 자동으로 1600px / 1 MiB 이하 WebP 변환. 사진 첨부 시 제목·별명으로 초안을 먼저 저장합니다.</p>
+    <p class="guide-hint">사진 최대 10장 · JPEG/PNG/WebP 원본 12 MiB 이하 · 자동으로 1600px / 1 MiB 이하 WebP 변환. 작성자명은 내 프로필의 공개 별명으로 자동 저장됩니다.</p>
     <footer class="guide-savebar">
       <span role="status">{{ uploading ? '사진 변환·업로드 중…' : busy ? '서버에 저장 중…' : dirty ? '저장하지 않은 변경사항' : status === 'published' ? '공개 공략' : '나만 보는 초안' }}</span>
       <div class="guide-actions"><button :disabled="locked" @click="togglePreview">{{ preview ? '편집으로' : '미리보기' }}</button><button :disabled="!canSave" @click="save(status)">{{ status === 'published' ? '변경 저장' : '초안 저장' }}</button><button v-if="status !== 'published'" class="primary" :disabled="!canSave" @click="save('published')">공개하기</button></div>
