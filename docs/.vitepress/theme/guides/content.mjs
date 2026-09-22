@@ -70,12 +70,14 @@ function mapNodes(doc, fn) {
   if (node.content) node.content = node.content.map(n => mapNodes(n, fn))
   return node
 }
-export function resolveImages(doc, urls) {
+export function resolveImages(doc, urls, loading = false) {
   validateDoc(doc)
   return mapNodes(doc, n => {
     if (n.type !== 'image') return n
     const slot = Number(n.attrs.src.split(':')[1]); const url = urls.get(slot)
-    return url ? { ...n, attrs: { ...n.attrs, src: url } } : { type: 'paragraph', content: [{ type: 'text', text: `[사진 ${slot + 1}을 불러오지 못했습니다]` }] }
+    if (url) return { ...n, attrs: { ...n.attrs, src: url } }
+    const text = loading ? `[\uC0AC\uC9C4 ${slot + 1} \uBD88\uB7EC\uC624\uB294 \uC911\u2026]` : `[\uC0AC\uC9C4 ${slot + 1}\uC744 \uBD88\uB7EC\uC624\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4]`
+    return { type: 'paragraph', content: [{ type: 'text', text }] }
   })
 }
 export function serializeEditor(doc, urls) {

@@ -36,14 +36,29 @@ export function revokeImages(urls) {
 export async function loadImages(client, guide, isCurrent = () => true) {
   const urls = new Map(); const errors = []
   const doc = parseBody(guide.body)
-  for (const slot of imageSlots(doc)) {
-    if (!isCurrent()) break
+  const slots = imageSlots(doc)
+
+  const results = await Promise.all(slots.map(async slot => {
+    if (!isCurrent()) return null
     try {
       const blob = await client.image(guide, slot)
-      if (!isCurrent()) break
-      urls.set(slot, URL.createObjectURL(blob))
-    } catch (error) { errors.push(`사진 ${slot + 1}: ${error.message}${error.code ? ` (${error.code})` : ''}`) }
+      return { slot, blob }
+    } catch (error) {
+      return { slot, error }
+    }
+  }))
+
+  if (!isCurrent()) return { doc, urls, errors }
+
+  for (const result of results) {
+    if (!result) continue
+    if (result.error) {
+      errors.push(`사진 ${result.slot + 1}: ${result.error.message}${result.error.code ? ` (${result.error.code})` : ''}`)
+      continue
+    }
+    urls.set(result.slot, URL.createObjectURL(result.blob))
   }
+
   if (!isCurrent()) revokeImages(urls)
   return { doc, urls, errors }
 }

@@ -17,6 +17,10 @@ export function errorText(error) {
     'storage/unauthorized': '사진에 접근할 권한이 없습니다.',
     'failed-precondition': '목록 색인 등 서버 설정이 준비되지 않았습니다.',
   }
+  const storageStage = error?.message?.match(/^\[(UPLOAD|READ)\]/)?.[1]
+  if (code === 'storage/unauthorized' && storageStage) {
+    return `${messages[code]} [${storageStage}] (${code})`
+  }
   return messages[code] ? `${messages[code]} (${code})` : `${error?.message || '요청을 처리하지 못했습니다.'}${code ? ` (${code})` : ''}`
 }
 export function useGuideSession() {
@@ -131,9 +135,25 @@ async function initialize() {
       if (!guide || guide.authorId !== uid) throw new Error('사진을 추가하기 전에 내 공략을 저장해 주세요.')
       if (imageSlots(parseBody(guide.body)).includes(slot)) throw new Error('저장된 글에서 사용하는 사진은 덮어쓸 수 없습니다. 사진을 제거한 뒤 먼저 저장해 주세요.')
       if (blob.type !== 'image/webp' || blob.size > MAX_IMAGE_BYTES) throw new Error('사진은 1 MiB 이하 WebP여야 합니다.')
-      await storageSdk.uploadBytes(imageRef(uid, id, slot), blob, { contentType: 'image/webp', cacheControl: 'private, no-store' })
+      try {
+        await storageSdk.uploadBytes(imageRef(uid, id, slot), blob, { contentType: 'image/webp', cacheControl: 'private, no-store' })
+      } catch (error) {
+        if (error?.code === 'storage/unauthorized') {
+          error.message = `[UPLOAD] ${error.message}`
+        }
+        throw error
+      }
+
       api.guard(uid)
-      return this.image({ id, authorId: uid }, slot)
+
+      try {
+        return await this.image({ id, authorId: uid }, slot)
+      } catch (error) {
+        if (error?.code === 'storage/unauthorized') {
+          error.message = `[READ] ${error.message}`
+        }
+        throw error
+      }
     },
   }
 }

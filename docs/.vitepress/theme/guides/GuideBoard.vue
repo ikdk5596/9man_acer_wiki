@@ -30,11 +30,15 @@ async function load(append = false) {
       const found = await client.read(id.value)
       if (!current()) return
       if (!found) throw new Error('공략이 없거나 삭제되었습니다.')
+      const doc = JSON.parse(found.body)
+      const instance = new Editor({ extensions: guideExtensions(), content: resolveImages(doc, new Map(), true), editable: false, enableContentCheck: true, editorProps: { attributes: { 'aria-label': '공략 본문' }, handleClick(view, pos, event) { const link = event.target.closest?.('a'); if (link) { window.open(link.href, '_blank', 'noopener,noreferrer'); return true } return false } } })
+      reader.value = instance; guide.value = found
+      loading.value = false
+
       const loaded = await loadImages(client, found, current)
       if (!current()) { revokeImages(loaded.urls); return }
       urls = loaded.urls; imageErrors.value = loaded.errors
-      const instance = new Editor({ extensions: guideExtensions(), content: resolveImages(loaded.doc, urls), editable: false, enableContentCheck: true, editorProps: { attributes: { 'aria-label': '공략 본문' }, handleClick(view, pos, event) { const link = event.target.closest?.('a'); if (link) { window.open(link.href, '_blank', 'noopener,noreferrer'); return true } return false } } })
-      reader.value = instance; guide.value = found
+      instance.commands.setContent(resolveImages(loaded.doc, urls), { emitUpdate: false })
     } else {
       if (mine.value && !session.uid) return
       const result = await client.list(mine.value, session.uid, append ? cursor : null)
