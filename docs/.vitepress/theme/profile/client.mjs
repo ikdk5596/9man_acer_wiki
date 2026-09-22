@@ -76,11 +76,13 @@ export async function loadProfile(uid) {
   const snap = await dbSdk.getDocFromServer(dbSdk.doc(db, 'profiles', uid))
   const profile = snap.exists() ? { ...EMPTY_PROFILE, ...snap.data() } : { ...EMPTY_PROFILE }
   let photo = null
-  try {
-    photo = await storageSdk.getBlob(photoRef(storageSdk, storage, uid), 1048576)
-    if (photo.type && photo.type !== 'image/webp') throw new Error('올바른 WebP 프로필 사진이 아닙니다.')
-  } catch (error) {
-    if (error?.code !== 'storage/object-not-found') throw error
+  if (Number.isInteger(profile.photoVersion) && profile.photoVersion > 0) {
+    try {
+      photo = await storageSdk.getBlob(photoRef(storageSdk, storage, uid), 1048576)
+      if (photo.type && photo.type !== 'image/webp') throw new Error('올바른 WebP 프로필 사진이 아닙니다.')
+    } catch (error) {
+      if (error?.code !== 'storage/object-not-found') throw error
+    }
   }
   return { profile, photo }
 }
