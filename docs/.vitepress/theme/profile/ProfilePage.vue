@@ -195,7 +195,7 @@ onBeforeUnmount(() => {
           <label>게임 서버<input v-model="fields.gameServer" maxlength="40"></label>
           <label>길드<input v-model="fields.guild" maxlength="40"></label>
         </div>
-        <label>주력 영웅<input v-model="fields.mainHeroes" maxlength="200" placeholder="쉼표로 구분해 최대 5명"></label>
+        <label>주력 병종<input v-model="fields.mainHeroes" maxlength="200" placeholder="쉼표로 구분해 최대 5개"></label>
         <div class="profile-actions">
           <button class="primary" type="submit" :disabled="busy">{{ busy ? '저장 중…' : '저장' }}</button>
           <button v-if="profile.alias" type="button" :disabled="busy" @click="cancelEdit">취소</button>
@@ -205,7 +205,7 @@ onBeforeUnmount(() => {
       <section class="profile-info" aria-label="게임 정보">
         <div><span>게임 서버</span><strong>{{ profile.gameServer || '미입력' }}</strong></div>
         <div><span>길드</span><strong>{{ profile.guild || '미입력' }}</strong></div>
-        <div class="profile-heroes"><span>주력 영웅</span><p v-if="profile.mainHeroes?.length"><b v-for="hero in profile.mainHeroes" :key="hero">{{ hero }}</b></p><strong v-else>미입력</strong></div>
+        <div class="profile-heroes"><span>주력 병종</span><p v-if="profile.mainHeroes?.length"><b v-for="hero in profile.mainHeroes" :key="hero">{{ hero }}</b></p><strong v-else>미입력</strong></div>
       </section>
 
       <section class="profile-guides" aria-label="작성한 공개 공략">

@@ -19,9 +19,9 @@ function cleanText(value, name, max, required = false) {
 
 function cleanHeroes(value) {
   const heroes = Array.from(new Set((Array.isArray(value) ? value : String(value || '').split(','))
-    .map(item => cleanText(item, '주력 영웅', 40))
+    .map(item => cleanText(item, '주력 병종', 40))
     .filter(Boolean)))
-  if (heroes.length > 5) throw new Error('주력 영웅은 최대 5명까지 입력할 수 있습니다.')
+  if (heroes.length > 5) throw new Error('주력 병종은 최대 5개까지 입력할 수 있습니다.')
   return heroes
 }
 
