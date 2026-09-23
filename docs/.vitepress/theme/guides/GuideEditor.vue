@@ -208,7 +208,7 @@ onBeforeUnmount(() => {
       <fieldset v-else class="guide-toolbar" :disabled="locked || !allowedToWrite" aria-label="본문 서식">
         <select aria-label="문단 스타일" @change="Number($event.target.value) ? editor.chain().focus().toggleHeading({ level: Number($event.target.value) }).run() : editor.chain().focus().setParagraph().run()"><option value="0">본문</option><option value="1">제목 1</option><option value="2">제목 2</option><option value="3">제목 3</option></select>
         <button v-for="tool in tools" :key="tool.name" type="button" :aria-label="tool.label" :title="tool.label" :aria-pressed="editor?.isActive(tool.name) || false" @click="tool.run(editor)">{{ tool.short }}</button>
-        <label class="guide-color" title="글자 색상">글자색<input type="color" aria-label="글자 색상" value="#c9862b" @input="editor.chain().focus().setColor($event.target.value).run()"></label>
+        <label class="guide-color" title="글자 색상">글자색<input type="color" aria-label="글자 색상" value="#c9862b" @input="editor.chain().focus().setColor($event.target.value).run(); $event.target.value = '#c9862b'"></label>
         <button title="글자 색상 초기화" @click="editor.chain().focus().unsetColor().run()">색 지우기</button>
         <select aria-label="문단 정렬" @change="editor.chain().focus().setTextAlign($event.target.value).run()"><option value="left">왼쪽 정렬</option><option value="center">가운데 정렬</option><option value="right">오른쪽 정렬</option><option value="justify">양쪽 정렬</option></select>
         <button @click="setLink">링크</button>
