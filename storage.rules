@@ -9,13 +9,6 @@ service firebase.storage {
     function ownsPrefix(uid) {
       return verifiedGoogle() && request.auth.uid == uid;
     }
-    function canWriteGuides(uid) {
-      return ownsPrefix(uid)
-        && firestore.exists(/databases/(default)/documents/roles/$(uid))
-        && (firestore.get(/databases/(default)/documents/roles/$(uid)).data.role == 'webmaster'
-          || (firestore.exists(/databases/(default)/documents/rolePolicies/$(firestore.get(/databases/(default)/documents/roles/$(uid)).data.role))
-            && firestore.get(/databases/(default)/documents/rolePolicies/$(firestore.get(/databases/(default)/documents/roles/$(uid)).data.role)).data.canWriteGuides == true));
-    }
     function canManagePosts() {
       return verifiedGoogle()
         && firestore.exists(/databases/(default)/documents/roles/$(request.auth.uid))
@@ -38,7 +31,7 @@ service firebase.storage {
       allow get: if validSlot() && matchingParent()
         && (parent(guideId).status == 'published' || ownsPrefix(uid) || canManagePosts());
       allow list: if false;
-      allow create, update: if validSlot() && (canWriteGuides(uid) || canManagePosts()) && matchingParent()
+      allow create, update: if validSlot() && ownsPrefix(uid) && matchingParent()
         && request.resource.size <= 1048576
         && request.resource.contentType == 'image/webp';
       // Orphan cleanup stays possible after deleting the Firestore document.
