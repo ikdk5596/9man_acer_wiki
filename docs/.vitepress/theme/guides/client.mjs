@@ -36,8 +36,14 @@ async function initialize() {
   const [appSdk, authSdk, dbSdk, storageSdk, configModule] = await Promise.all([
     import('firebase/app'), import('firebase/auth'), import('firebase/firestore'), import('firebase/storage'), import('../../firebase-config.json'),
   ])
-  const emulator = import.meta.env.VITE_GUIDE_EMULATORS === '1' && emulatorEnabled(location.hostname, '?guideEmulator=1')
-  const config = emulator ? { apiKey: 'demo-key', projectId: 'demo-acer-wiki', authDomain: 'demo-acer-wiki.firebaseapp.com', storageBucket: 'demo-acer-wiki.appspot.com', appId: 'demo-acer-wiki' } : configModule.default
+  let emulator = false
+  let config = configModule.default
+  if (import.meta.env.DEV) {
+    emulator = import.meta.env.VITE_GUIDE_EMULATORS === '1' && emulatorEnabled(location.hostname, '?guideEmulator=1')
+    if (emulator) {
+      config = { apiKey: 'demo-key', projectId: 'demo-acer-wiki', authDomain: 'demo-acer-wiki.firebaseapp.com', storageBucket: 'demo-acer-wiki.appspot.com', appId: 'demo-acer-wiki' }
+    }
+  }
   if (!config?.apiKey || !config?.projectId) throw new Error('공략 서비스의 Firebase 설정이 아직 준비되지 않았습니다.')
   const name = emulator ? 'acer-guides-emulator' : 'acer-guides'
   const app = appSdk.getApps().find(app => app.name === name) || appSdk.initializeApp(config, name)
