@@ -286,7 +286,7 @@ service cloud.firestore {
           && data.departureDate.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
           && data.capacity is int
           && data.capacity >= 1
-          && data.capacity <= 20
+          && data.capacity <= 40
           && data.approvedCount is int
           && data.approvedCount >= 0
           && data.approvedCount <= data.capacity

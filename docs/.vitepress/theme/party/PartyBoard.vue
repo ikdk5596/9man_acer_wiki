@@ -407,7 +407,7 @@ onMounted(refreshParties)
             v-model.number="partyForm.capacity"
             type="number"
             min="1"
-            max="20"
+            max="40"
             required
           >
         </label>

@@ -27,8 +27,8 @@ function partyType(value) {
 
 function capacity(value) {
   const result = Number(value)
-  if (!Number.isInteger(result) || result < 1 || result > 20) {
-    throw new Error('모집인원은 1~20명으로 입력해 주세요.')
+  if (!Number.isInteger(result) || result < 1 || result > 40) {
+    throw new Error('모집인원은 1~40명으로 입력해 주세요.')
   }
   return result
 }
