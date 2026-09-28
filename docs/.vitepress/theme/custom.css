@@ -219,3 +219,8 @@
 .vp-doc table tr:hover {
   background: var(--vp-c-bg-soft);
 }
+/* Dark mode: normalize stored guide default dark text colors only. */
+.dark .guide-document [style*="color: rgb(44, 44, 44)"],
+.dark .guide-document [style*="color: rgb(0, 0, 0)"] {
+  color: var(--vp-c-text-1) !important;
+}
