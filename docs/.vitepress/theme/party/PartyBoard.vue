@@ -62,6 +62,69 @@ const canManageSelectedParty = computed(() =>
   )
 )
 
+const troopGroups = Object.freeze({
+  방패병: new Set([
+    '칼방',
+    '무거운 방패',
+    '창방',
+    '망치방패',
+    '검과 방패',
+    '도끼방패',
+  ]),
+  궁병: new Set([
+    '장궁',
+    '쇠뇌',
+    '독궁',
+    '사냥꾼',
+    '강화 쇠뇌',
+    '화궁',
+  ]),
+  창병: new Set([
+    '장창',
+    '긴 창',
+    '장과',
+    '맥도',
+    '장검',
+    '쌍창',
+  ]),
+  기병: new Set([
+    '검기병',
+    '창기병',
+    '대도기병',
+    '중기병',
+    '궁기병',
+    '기병 도끼',
+  ]),
+})
+
+const approvedTroopCounts = computed(() => {
+  const counts = {
+    방패병: 0,
+    궁병: 0,
+    창병: 0,
+    기병: 0,
+  }
+
+  for (const application of applications.value) {
+    if (application.status !== 'approved') continue
+
+    for (const troop of [
+      application.primaryTroop,
+      application.secondaryTroop,
+    ]) {
+      if (!troop) continue
+
+      for (const [group, names] of Object.entries(troopGroups)) {
+        if (names.has(troop)) {
+          counts[group] += 1
+          break
+        }
+      }
+    }
+  }
+
+  return counts
+})
 const selectedFull = computed(() => {
   if (!selectedParty.value) return false
 
@@ -571,6 +634,28 @@ onMounted(refreshParties)
         </div>
 
         <template v-if="modalMode === 'manage' && canManageSelectedParty">
+          <div class="party-troop-counter">
+            <strong>승인 병종 카운터</strong>
+
+            <div class="party-troop-counter-items">
+              <span>
+                <small>방패병</small>
+                <b>{{ approvedTroopCounts.방패병 }}</b>
+              </span>
+              <span>
+                <small>궁병</small>
+                <b>{{ approvedTroopCounts.궁병 }}</b>
+              </span>
+              <span>
+                <small>창병</small>
+                <b>{{ approvedTroopCounts.창병 }}</b>
+              </span>
+              <span>
+                <small>기병</small>
+                <b>{{ approvedTroopCounts.기병 }}</b>
+              </span>
+            </div>
+          </div>
           <div class="party-section-title">
             <h3>신청자 관리</h3>
 
@@ -1145,6 +1230,56 @@ onMounted(refreshParties)
 
   .party-modal {
     padding: 16px;
+  }
+}
+
+.party-troop-counter {
+  margin: 20px 0 24px;
+  padding: 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+}
+
+.party-troop-counter > strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.party-troop-counter-items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.party-troop-counter-items > span {
+  display: flex;
+  min-width: 0;
+  padding: 10px 8px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.party-troop-counter-items small {
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+}
+
+.party-troop-counter-items b {
+  color: var(--vp-c-text-1);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+  .party-troop-counter-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 </style>
