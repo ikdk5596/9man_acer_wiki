@@ -174,7 +174,7 @@ async function submitParty() {
   }
 }
 
-async function openParty(party) {
+async function openParty(party, mode = 'apply') {
   clearMessages()
   selectedParty.value = party
   myApplication.value = null
@@ -184,7 +184,15 @@ async function openParty(party) {
   if (!loggedIn.value) return
 
   try {
-    if (party.leaderId === session.uid || canManagePosts(access.role)) {
+    const canManage =
+      party.leaderId === session.uid || canManagePosts(access.role)
+
+    if (mode === 'manage' && canManage) {
+      await refreshApplications()
+      return
+    }
+
+    if (party.leaderId === session.uid) {
       await refreshApplications()
       return
     }
@@ -467,31 +475,39 @@ onMounted(refreshParties)
           </span>
         </button>
 
-        <button
-          class="party-button"
-          :class="{
-            primary:
-              party.leaderId === session.uid ||
-              canManagePosts(access.role) ||
-              Number(party.approvedCount || 0) < Number(party.capacity || 0)
-          }"
-          type="button"
-          :disabled="
-            party.leaderId !== session.uid &&
-            !canManagePosts(access.role) &&
-            Number(party.approvedCount || 0) >=
-              Number(party.capacity || 0)
-          "
-          @click="openParty(party)"
-        >
-          {{
-            party.leaderId === session.uid || canManagePosts(access.role)
-              ? '관리'
-              : Number(party.approvedCount || 0) >= Number(party.capacity || 0)
+        <div class="party-row-actions">
+          <button
+            v-if="party.leaderId !== session.uid"
+            class="party-button"
+            :class="{
+              primary:
+                Number(party.approvedCount || 0) < Number(party.capacity || 0)
+            }"
+            type="button"
+            :disabled="
+              Number(party.approvedCount || 0) >= Number(party.capacity || 0)
+            "
+            @click="openParty(party, 'apply')"
+          >
+            {{
+              Number(party.approvedCount || 0) >= Number(party.capacity || 0)
                 ? '모집완료'
                 : '신청'
-          }}
-        </button>
+            }}
+          </button>
+
+          <button
+            v-if="
+              party.leaderId === session.uid ||
+              canManagePosts(access.role)
+            "
+            class="party-button primary"
+            type="button"
+            @click="openParty(party, 'manage')"
+          >
+            관리
+          </button>
+        </div>
       </article>
     </div>
 
