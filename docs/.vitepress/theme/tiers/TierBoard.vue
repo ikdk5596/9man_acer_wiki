@@ -3,7 +3,7 @@ import { computed, onMounted, reactive, ref } from 'vue'
 import { withBase } from 'vitepress'
 import { access, canManagePosts, ensureAccess, useAccessSession } from '../access/client.mjs'
 import { catalogFor, TIER_KEYS } from './catalog.mjs'
-import { emptyTiers, loadTierList, saveTierList } from './client.mjs'
+import { BOARD_KEYS, emptyBoards, loadTierList, saveTierList } from './client.mjs'
 
 const props = defineProps({
   kind: { type: String, required: true },
@@ -11,9 +11,13 @@ const props = defineProps({
 })
 
 useAccessSession()
+
 const catalog = catalogFor(props.kind)
 const itemMap = new Map(catalog.map(item => [item.id, item]))
-const tiers = reactive(emptyTiers())
+
+const boards = reactive(emptyBoards(props.kind))
+const activeBoardKey = ref('overall')
+
 const loading = ref(true)
 const saving = ref(false)
 const error = ref('')
@@ -21,41 +25,97 @@ const notice = ref('')
 const updatedAt = ref(null)
 const dragging = ref('')
 
-const title = computed(() => props.kind === 'soldiers' ? '병종별 등급' : '정책별 등급')
-const canEdit = computed(() => canManagePosts(access.role))
-const assigned = computed(() => new Set(TIER_KEYS.flatMap(tier => tiers[tier])))
-const unclassified = computed(() => catalog.filter(item => !assigned.value.has(item.id)))
-const hasRanks = computed(() => TIER_KEYS.some(tier => tiers[tier].length > 0))
+const pageTitle = computed(() => {
+  if (props.kind === 'soldiers') return '병종별 티어 등급표'
+  if (props.kind === 'heroes') return '영웅 티어 등급표'
+  return '정책별 티어 등급표'
+})
 
-function replaceTiers(value) {
-  for (const tier of TIER_KEYS) tiers[tier].splice(0, tiers[tier].length, ...(value[tier] || []))
+const canEdit = computed(() => canManagePosts(access.role))
+
+const activeBoard = computed(() => boards[activeBoardKey.value])
+
+const tiers = computed(() => activeBoard.value.tiers)
+
+const assigned = computed(() =>
+  new Set(TIER_KEYS.flatMap(tier => tiers.value[tier]))
+)
+
+const unclassified = computed(() =>
+  catalog.filter(item => !assigned.value.has(item.id))
+)
+
+const hasRanks = computed(() =>
+  TIER_KEYS.some(tier => tiers.value[tier].length > 0)
+)
+
+function replaceBoards(value) {
+  for (const boardKey of BOARD_KEYS) {
+    const source = value?.[boardKey]
+    if (!source) continue
+
+    boards[boardKey].tabLabel = source.tabLabel || boards[boardKey].tabLabel
+    boards[boardKey].title = source.title || boards[boardKey].title
+
+    for (const tier of TIER_KEYS) {
+      boards[boardKey].tiers[tier].splice(
+        0,
+        boards[boardKey].tiers[tier].length,
+        ...(source.tiers?.[tier] || [])
+      )
+    }
+  }
+}
+
+function selectBoard(boardKey) {
+  if (!BOARD_KEYS.includes(boardKey)) return
+
+  activeBoardKey.value = boardKey
+  dragging.value = ''
+  error.value = ''
+  notice.value = ''
 }
 
 function removeEverywhere(id) {
   for (const tier of TIER_KEYS) {
-    const index = tiers[tier].indexOf(id)
-    if (index >= 0) tiers[tier].splice(index, 1)
+    const index = tiers.value[tier].indexOf(id)
+    if (index >= 0) {
+      tiers.value[tier].splice(index, 1)
+    }
   }
 }
 
 function move(id, target, index = null) {
   if (!props.edit || !canEdit.value || !itemMap.has(id)) return
+
   removeEverywhere(id)
-  if (!TIER_KEYS.includes(target)) return
-  const position = Number.isInteger(index) ? Math.max(0, Math.min(index, tiers[target].length)) : tiers[target].length
-  tiers[target].splice(position, 0, id)
+
+  if (!TIER_KEYS.includes(target)) {
+    notice.value = ''
+    return
+  }
+
+  const position = Number.isInteger(index)
+    ? Math.max(0, Math.min(index, tiers.value[target].length))
+    : tiers.value[target].length
+
+  tiers.value[target].splice(position, 0, id)
   notice.value = ''
 }
 
 function startDrag(event, id) {
   if (!props.edit || !canEdit.value) return
+
   dragging.value = id
   event.dataTransfer.effectAllowed = 'move'
   event.dataTransfer.setData('text/plain', id)
 }
 
 function dropped(event, target, index = null) {
-  const id = event.dataTransfer.getData('text/plain') || dragging.value
+  const id =
+    event.dataTransfer.getData('text/plain') ||
+    dragging.value
+
   move(id, target, index)
   dragging.value = ''
 }
@@ -65,20 +125,35 @@ function itemFor(id) {
 }
 
 function formattedDate(value) {
-  return value instanceof Date ? new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' }).format(value) : ''
+  return value instanceof Date
+    ? new Intl.DateTimeFormat('ko-KR', {
+        dateStyle: 'medium',
+        timeStyle: 'short',
+      }).format(value)
+    : ''
 }
 
 async function save() {
   saving.value = true
   error.value = ''
   notice.value = ''
+
   try {
-    replaceTiers(await saveTierList(props.kind, tiers))
+    const savedBoards = await saveTierList(props.kind, {
+      boards,
+    })
+
+    replaceBoards(savedBoards)
+
     const result = await loadTierList(props.kind)
+    replaceBoards(result.boards)
     updatedAt.value = result.updatedAt
+
     notice.value = '등급표를 저장했습니다.'
   } catch (cause) {
-    error.value = cause?.message || '등급표를 저장하지 못했습니다.'
+    error.value =
+      cause?.message ||
+      '등급표를 저장하지 못했습니다.'
   } finally {
     saving.value = false
   }
@@ -87,11 +162,15 @@ async function save() {
 onMounted(async () => {
   try {
     await ensureAccess()
+
     const result = await loadTierList(props.kind)
-    replaceTiers(result.tiers)
+
+    replaceBoards(result.boards)
     updatedAt.value = result.updatedAt
   } catch (cause) {
-    error.value = cause?.message || '등급표를 불러오지 못했습니다.'
+    error.value =
+      cause?.message ||
+      '등급표를 불러오지 못했습니다.'
   } finally {
     loading.value = false
   }
@@ -103,120 +182,579 @@ onMounted(async () => {
     <div class="tier-heading">
       <div>
         <p class="tier-kicker">TIER LIST</p>
-        <h1>{{ title }}</h1>
+        <h1>{{ pageTitle }}</h1>
       </div>
-      <button v-if="edit && canEdit" type="button" :disabled="saving || loading" @click="save">
+
+      <button
+        v-if="edit && canEdit"
+        type="button"
+        :disabled="saving || loading"
+        @click="save"
+      >
         {{ saving ? '저장 중…' : '등급표 저장' }}
       </button>
     </div>
 
-    <p v-if="edit && !loading && !canEdit" class="tier-error">관리자 이상만 등급표를 수정할 수 있습니다.</p>
-    <p v-if="error" class="tier-error" role="alert">{{ error }}</p>
-    <p v-if="notice" class="tier-notice" role="status">{{ notice }}</p>
-    <p v-if="loading" class="tier-empty">등급표를 불러오는 중…</p>
-    <p v-else-if="!edit && !hasRanks" class="tier-empty">아직 등록된 등급표가 없습니다.</p>
+    <p
+      v-if="edit && !loading && !canEdit"
+      class="tier-error"
+    >
+      관리자 이상만 등급표를 수정할 수 있습니다.
+    </p>
 
-    <div v-else class="tier-rows">
-      <div
-        v-for="tier in TIER_KEYS"
-        :key="tier"
-        class="tier-row"
-        :class="`tier-${tier.toLowerCase()}`"
-        @dragover.prevent
-        @drop.prevent="dropped($event, tier)"
+    <p
+      v-if="error"
+      class="tier-error"
+      role="alert"
+    >
+      {{ error }}
+    </p>
+
+    <p
+      v-if="notice"
+      class="tier-notice"
+      role="status"
+    >
+      {{ notice }}
+    </p>
+
+    <p
+      v-if="loading"
+      class="tier-empty"
+    >
+      등급표를 불러오는 중…
+    </p>
+
+    <template v-else>
+      <div class="tier-tabs" role="tablist" aria-label="등급표 선택">
+        <button
+          v-for="boardKey in BOARD_KEYS"
+          :key="boardKey"
+          type="button"
+          class="tier-tab"
+          :class="{ active: activeBoardKey === boardKey }"
+          :aria-selected="activeBoardKey === boardKey"
+          role="tab"
+          @click="selectBoard(boardKey)"
+        >
+          {{ boards[boardKey].tabLabel }}
+        </button>
+      </div>
+
+      <section
+        v-if="edit && canEdit"
+        class="tier-board-settings"
       >
-        <strong class="tier-label">{{ tier }}</strong>
-        <div class="tier-items">
-          <article
-            v-for="(id, index) in tiers[tier]"
-            :key="id"
-            class="tier-card"
-            :class="{ dragging: dragging === id }"
-            :draggable="edit && canEdit"
-            @dragstart="startDrag($event, id)"
-            @dragend="dragging = ''"
-            @dragover.prevent
-            @drop.stop.prevent="dropped($event, tier, index)"
+        <div class="tier-field">
+          <label :for="`tier-tab-${activeBoardKey}`">
+            탭 이름
+          </label>
+
+          <input
+            :id="`tier-tab-${activeBoardKey}`"
+            v-model="activeBoard.tabLabel"
+            type="text"
+            maxlength="30"
+            placeholder="탭 이름"
+            @input="notice = ''"
           >
-            <a :href="withBase(itemFor(id).href)">
-              <img :src="withBase(itemFor(id).image)" :alt="itemFor(id).name">
-              <span>{{ itemFor(id).name }}</span>
-            </a>
-            <select v-if="edit && canEdit" :value="tier" :aria-label="`${itemFor(id).name} 등급`" @change="move(id, $event.target.value)">
-              <option value="">미분류</option>
-              <option v-for="key in TIER_KEYS" :key="key" :value="key">{{ key }}</option>
-            </select>
-          </article>
-          <span v-if="!tiers[tier].length" class="tier-placeholder">{{ edit ? '여기로 드래그' : '—' }}</span>
+        </div>
+
+        <div class="tier-field">
+          <label :for="`tier-title-${activeBoardKey}`">
+            등급표 제목
+          </label>
+
+          <input
+            :id="`tier-title-${activeBoardKey}`"
+            v-model="activeBoard.title"
+            type="text"
+            maxlength="60"
+            placeholder="등급표 제목"
+            @input="notice = ''"
+          >
+        </div>
+      </section>
+
+      <div class="tier-current-heading">
+        <p class="tier-current-context">
+          {{ activeBoard.tabLabel }}
+        </p>
+
+        <h2>
+          {{ activeBoard.title }}
+        </h2>
+      </div>
+
+      <p
+        v-if="!edit && !hasRanks"
+        class="tier-empty"
+      >
+        아직 등록된 등급표가 없습니다.
+      </p>
+
+      <div
+        v-else
+        class="tier-rows"
+      >
+        <div
+          v-for="tier in TIER_KEYS"
+          :key="tier"
+          class="tier-row"
+          :class="`tier-${tier.toLowerCase()}`"
+          @dragover.prevent
+          @drop.prevent="dropped($event, tier)"
+        >
+          <strong class="tier-label">
+            {{ tier }}
+          </strong>
+
+          <div class="tier-items">
+            <article
+              v-for="(id, index) in tiers[tier]"
+              :key="id"
+              class="tier-card"
+              :class="{ dragging: dragging === id }"
+              :draggable="edit && canEdit"
+              @dragstart="startDrag($event, id)"
+              @dragend="dragging = ''"
+              @dragover.prevent
+              @drop.stop.prevent="dropped($event, tier, index)"
+            >
+              <a :href="withBase(itemFor(id).href)">
+                <img
+                  :src="withBase(itemFor(id).image)"
+                  :alt="itemFor(id).name"
+                >
+                <span>
+                  {{ itemFor(id).name }}
+                </span>
+              </a>
+
+              <select
+                v-if="edit && canEdit"
+                :value="tier"
+                :aria-label="`${itemFor(id).name} 등급`"
+                @change="move(id, $event.target.value)"
+              >
+                <option value="">
+                  미분류
+                </option>
+
+                <option
+                  v-for="key in TIER_KEYS"
+                  :key="key"
+                  :value="key"
+                >
+                  {{ key }}
+                </option>
+              </select>
+            </article>
+
+            <span
+              v-if="!tiers[tier].length"
+              class="tier-placeholder"
+            >
+              {{ edit ? '여기로 드래그' : '—' }}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <section v-if="edit && canEdit && !loading" class="tier-unclassified" @dragover.prevent @drop.prevent="dropped($event, '')">
-      <h2>미분류 <small>{{ unclassified.length }}개</small></h2>
-      <p>이미지를 원하는 등급 칸으로 드래그하세요. 모바일에서는 선택 상자를 사용할 수 있습니다.</p>
-      <div class="tier-pool">
-        <article
-          v-for="item in unclassified"
-          :key="item.id"
-          class="tier-card"
-          draggable="true"
-          @dragstart="startDrag($event, item.id)"
-          @dragend="dragging = ''"
-        >
-          <a :href="withBase(item.href)">
-            <img :src="withBase(item.image)" :alt="item.name">
-            <span>{{ item.name }}</span>
-          </a>
-          <select value="" :aria-label="`${item.name} 등급`" @change="move(item.id, $event.target.value)">
-            <option value="">미분류</option>
-            <option v-for="key in TIER_KEYS" :key="key" :value="key">{{ key }}</option>
-          </select>
-        </article>
-      </div>
-    </section>
+      <section
+        v-if="edit && canEdit"
+        class="tier-unclassified"
+        @dragover.prevent
+        @drop.prevent="dropped($event, '')"
+      >
+        <h2>
+          미분류
+          <small>{{ unclassified.length }}개</small>
+        </h2>
 
-    <p v-if="updatedAt" class="tier-updated">마지막 수정: {{ formattedDate(updatedAt) }}</p>
+        <p>
+          이미지를 원하는 등급 칸으로 드래그하세요.
+          모바일에서는 선택 상자를 사용할 수 있습니다.
+        </p>
+
+        <div class="tier-pool">
+          <article
+            v-for="item in unclassified"
+            :key="item.id"
+            class="tier-card"
+            draggable="true"
+            @dragstart="startDrag($event, item.id)"
+            @dragend="dragging = ''"
+          >
+            <a :href="withBase(item.href)">
+              <img
+                :src="withBase(item.image)"
+                :alt="item.name"
+              >
+              <span>{{ item.name }}</span>
+            </a>
+
+            <select
+              value=""
+              :aria-label="`${item.name} 등급`"
+              @change="move(item.id, $event.target.value)"
+            >
+              <option value="">
+                미분류
+              </option>
+
+              <option
+                v-for="key in TIER_KEYS"
+                :key="key"
+                :value="key"
+              >
+                {{ key }}
+              </option>
+            </select>
+          </article>
+        </div>
+      </section>
+
+      <p
+        v-if="updatedAt"
+        class="tier-updated"
+      >
+        마지막 수정: {{ formattedDate(updatedAt) }}
+      </p>
+    </template>
   </section>
 </template>
 
 <style scoped>
-.tier-board { margin: 18px 0 40px; }
-.tier-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:22px; }
-.tier-heading h1 { margin:0; border:0; font-size:32px; }
-.tier-kicker { margin:0 0 4px !important; color:var(--vp-c-brand-1); font-size:12px; font-weight:800; letter-spacing:.12em; }
-.tier-heading button { border:0; border-radius:9px; padding:10px 16px; background:var(--vp-c-brand-1); color:#fff; cursor:pointer; font-weight:700; }
-.tier-heading button:disabled { cursor:wait; opacity:.6; }
-.tier-rows { overflow:hidden; border:1px solid var(--vp-c-divider); border-radius:14px; }
-.tier-row { display:grid; grid-template-columns:72px 1fr; min-height:118px; border-bottom:1px solid var(--vp-c-divider); }
-.tier-row:last-child { border-bottom:0; }
-.tier-label { display:grid; place-items:center; color:#1b1b1f; font-size:34px; }
-.tier-s .tier-label { background:#ff7f7f; } .tier-a .tier-label { background:#ffbf7f; }
-.tier-b .tier-label { background:#ffdf7f; } .tier-c .tier-label { background:#ffff7f; }
-.tier-d .tier-label { background:#bfff7f; } .tier-e .tier-label { background:#7fffff; }
-.tier-f .tier-label { background:#bf9fff; }
-.tier-items,.tier-pool { display:flex; flex-wrap:wrap; align-items:center; gap:10px; padding:12px; background:var(--vp-c-bg-soft); }
-.tier-card { width:88px; padding:7px; border:1px solid var(--vp-c-divider); border-radius:10px; background:var(--vp-c-bg); box-shadow:var(--vp-shadow-1); text-align:center; }
-.tier-card.dragging { opacity:.4; }
-.tier-card a { display:grid; gap:5px; color:var(--vp-c-text-1); font-size:12px; font-weight:700; line-height:1.25; text-decoration:none; }
-.tier-card img { width:72px; height:72px; margin:auto; border-radius:8px; object-fit:cover; }
-.tier-card select { width:100%; margin-top:7px; padding:4px; border:1px solid var(--vp-c-divider); border-radius:6px; background:var(--vp-c-bg); color:var(--vp-c-text-1); }
-.tier-placeholder { color:var(--vp-c-text-3); font-size:13px; }
-.tier-unclassified { margin-top:24px; padding:18px; border:1px dashed var(--vp-c-divider); border-radius:14px; }
-.tier-unclassified h2 { margin:0; border:0; font-size:20px; }
-.tier-unclassified h2 small { color:var(--vp-c-text-2); font-size:13px; }
-.tier-unclassified > p { color:var(--vp-c-text-2); font-size:13px; }
-.tier-pool { padding:0; background:transparent; }
-.tier-error,.tier-notice,.tier-empty { padding:13px; border-radius:9px; }
-.tier-error { background:var(--vp-c-danger-soft); color:var(--vp-c-danger-1); }
-.tier-notice { background:var(--vp-c-success-soft); color:var(--vp-c-success-1); }
-.tier-empty { background:var(--vp-c-bg-soft); color:var(--vp-c-text-2); }
-.tier-updated { margin-top:16px !important; color:var(--vp-c-text-2); font-size:12px; text-align:right; }
-@media (max-width:640px) {
-  .tier-heading { align-items:stretch; flex-direction:column; }
-  .tier-row { grid-template-columns:48px 1fr; min-height:96px; }
-  .tier-label { font-size:25px; }
-  .tier-card { width:76px; }
-  .tier-card img { width:60px; height:60px; }
+.tier-board {
+  margin: 18px 0 40px;
+}
+
+.tier-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.tier-heading h1 {
+  margin: 0;
+  border: 0;
+  font-size: 32px;
+}
+
+.tier-kicker {
+  margin: 0 0 4px !important;
+  color: var(--vp-c-brand-1);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.tier-heading > button {
+  border: 0;
+  border-radius: 9px;
+  padding: 10px 16px;
+  background: var(--vp-c-brand-1);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tier-heading > button:disabled {
+  cursor: wait;
+  opacity: .6;
+}
+
+.tier-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 22px;
+}
+
+.tier-tab {
+  min-height: 54px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  transition:
+    border-color .15s ease,
+    background .15s ease,
+    color .15s ease,
+    transform .15s ease;
+}
+
+.tier-tab:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
+}
+
+.tier-tab.active {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+}
+
+.tier-board-settings {
+  display: grid;
+  grid-template-columns: minmax(180px, .65fr) minmax(260px, 1.35fr);
+  gap: 14px;
+  margin-bottom: 22px;
+  padding: 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: var(--vp-c-bg-soft);
+}
+
+.tier-field {
+  display: grid;
+  gap: 7px;
+}
+
+.tier-field label {
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.tier-field input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 9px;
+  padding: 10px 12px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font: inherit;
+}
+
+.tier-field input:focus {
+  border-color: var(--vp-c-brand-1);
+  outline: none;
+}
+
+.tier-current-heading {
+  margin: 0 0 14px;
+}
+
+.tier-current-context {
+  margin: 0 0 3px !important;
+  color: var(--vp-c-brand-1);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.tier-current-heading h2 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+.tier-rows {
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+}
+
+.tier-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  min-height: 118px;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.tier-row:last-child {
+  border-bottom: 0;
+}
+
+.tier-label {
+  display: grid;
+  place-items: center;
+  color: #1b1b1f;
+  font-size: 34px;
+}
+
+.tier-s .tier-label {
+  background: #ff7f7f;
+}
+
+.tier-a .tier-label {
+  background: #ffbf7f;
+}
+
+.tier-b .tier-label {
+  background: #ffdf7f;
+}
+
+.tier-c .tier-label {
+  background: #ffff7f;
+}
+
+.tier-d .tier-label {
+  background: #bfff7f;
+}
+
+.tier-e .tier-label {
+  background: #7fffff;
+}
+
+.tier-f .tier-label {
+  background: #bf9fff;
+}
+
+.tier-items,
+.tier-pool {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--vp-c-bg-soft);
+}
+
+.tier-card {
+  width: 88px;
+  padding: 7px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg);
+  box-shadow: var(--vp-shadow-1);
+  text-align: center;
+}
+
+.tier-card.dragging {
+  opacity: .4;
+}
+
+.tier-card a {
+  display: grid;
+  gap: 5px;
+  color: var(--vp-c-text-1);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.tier-card img {
+  width: 72px;
+  height: 72px;
+  margin: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.tier-card select {
+  width: 100%;
+  margin-top: 7px;
+  padding: 4px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+}
+
+.tier-placeholder {
+  color: var(--vp-c-text-3);
+  font-size: 13px;
+}
+
+.tier-unclassified {
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px dashed var(--vp-c-divider);
+  border-radius: 14px;
+}
+
+.tier-unclassified h2 {
+  margin: 0;
+  border: 0;
+  font-size: 20px;
+}
+
+.tier-unclassified h2 small {
+  margin-left: 6px;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+}
+
+.tier-unclassified > p {
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+}
+
+.tier-pool {
+  padding: 0;
+  background: transparent;
+}
+
+.tier-error,
+.tier-notice,
+.tier-empty {
+  padding: 13px;
+  border-radius: 9px;
+}
+
+.tier-error {
+  background: var(--vp-c-danger-soft);
+  color: var(--vp-c-danger-1);
+}
+
+.tier-notice {
+  background: var(--vp-c-success-soft);
+  color: var(--vp-c-success-1);
+}
+
+.tier-empty {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+}
+
+.tier-updated {
+  margin-top: 16px !important;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .tier-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .tier-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tier-board-settings {
+    grid-template-columns: 1fr;
+  }
+
+  .tier-row {
+    grid-template-columns: 48px 1fr;
+    min-height: 96px;
+  }
+
+  .tier-label {
+    font-size: 25px;
+  }
+
+  .tier-card {
+    width: 76px;
+  }
+
+  .tier-card img {
+    width: 60px;
+    height: 60px;
+  }
 }
 </style>

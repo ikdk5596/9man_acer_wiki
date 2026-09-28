@@ -82,23 +82,55 @@ service cloud.firestore {
         && data.canWriteGuides is bool && data.canWriteDetails is bool
         && data.updatedAt is timestamp && data.updatedBy is string;
     }
-    function validTierList(data, kind) {
-      return data.keys().hasAll(['tiers', 'updatedAt', 'updatedBy'])
-        && data.keys().hasOnly(['tiers', 'updatedAt', 'updatedBy'])
-        && data.tiers is map
-        && data.tiers.keys().hasAll(['S', 'A', 'B', 'C', 'D', 'E', 'F'])
-        && data.tiers.keys().hasOnly(['S', 'A', 'B', 'C', 'D', 'E', 'F'])
-        && data.tiers.S is list && data.tiers.A is list && data.tiers.B is list
-        && data.tiers.C is list && data.tiers.D is list && data.tiers.E is list && data.tiers.F is list
+    function validTierRows(tiers, kind) {
+      return tiers is map
+        && tiers.keys().hasAll(['S', 'A', 'B', 'C', 'D', 'E', 'F'])
+        && tiers.keys().hasOnly(['S', 'A', 'B', 'C', 'D', 'E', 'F'])
+        && tiers.S is list && tiers.A is list && tiers.B is list
+        && tiers.C is list && tiers.D is list && tiers.E is list && tiers.F is list
         && (
           (kind == 'soldiers'
-            && data.tiers.S.size() <= 26 && data.tiers.A.size() <= 26 && data.tiers.B.size() <= 26
-            && data.tiers.C.size() <= 26 && data.tiers.D.size() <= 26 && data.tiers.E.size() <= 26 && data.tiers.F.size() <= 26)
+            && tiers.S.size() <= 26 && tiers.A.size() <= 26 && tiers.B.size() <= 26
+            && tiers.C.size() <= 26 && tiers.D.size() <= 26 && tiers.E.size() <= 26 && tiers.F.size() <= 26)
+          || (kind == 'heroes'
+            && tiers.S.size() <= 59 && tiers.A.size() <= 59 && tiers.B.size() <= 59
+            && tiers.C.size() <= 59 && tiers.D.size() <= 59 && tiers.E.size() <= 59 && tiers.F.size() <= 59)
           || (kind == 'policies'
-            && data.tiers.S.size() <= 51 && data.tiers.A.size() <= 51 && data.tiers.B.size() <= 51
-            && data.tiers.C.size() <= 51 && data.tiers.D.size() <= 51 && data.tiers.E.size() <= 51 && data.tiers.F.size() <= 51)
-        )
-        && data.updatedAt is timestamp && data.updatedBy is string;
+            && tiers.S.size() <= 51 && tiers.A.size() <= 51 && tiers.B.size() <= 51
+            && tiers.C.size() <= 51 && tiers.D.size() <= 51 && tiers.E.size() <= 51 && tiers.F.size() <= 51)
+        );
+    }
+
+    function validTierBoard(board, kind) {
+      return board is map
+        && board.keys().hasAll(['tabLabel', 'title', 'tiers'])
+        && board.keys().hasOnly(['tabLabel', 'title', 'tiers'])
+        && board.tabLabel is string
+        && board.tabLabel.size() >= 1
+        && board.tabLabel.size() <= 30
+        && board.title is string
+        && board.title.size() >= 1
+        && board.title.size() <= 60
+        && validTierRows(board.tiers, kind);
+    }
+
+    function validTierBoards(boards, kind) {
+      return boards is map
+        && boards.keys().hasAll(['overall', 'pvp', 'pve', 'beginner'])
+        && boards.keys().hasOnly(['overall', 'pvp', 'pve', 'beginner'])
+        && validTierBoard(boards.overall, kind)
+        && validTierBoard(boards.pvp, kind)
+        && validTierBoard(boards.pve, kind)
+        && validTierBoard(boards.beginner, kind);
+    }
+
+    function validTierList(data, kind) {
+      return data.keys().hasAll(['tiers', 'boards', 'updatedAt', 'updatedBy'])
+        && data.keys().hasOnly(['tiers', 'boards', 'updatedAt', 'updatedBy'])
+        && validTierRows(data.tiers, kind)
+        && validTierBoards(data.boards, kind)
+        && data.updatedAt is timestamp
+        && data.updatedBy is string;
     }
     match /guides/{guideId} {
       // Keep ownership distinct from schema checks: reads use existing data.
@@ -205,9 +237,9 @@ service cloud.firestore {
       allow delete: if false;
     }
     match /tierLists/{kind} {
-      allow get: if kind in ['soldiers', 'policies'];
+      allow get: if kind in ['soldiers', 'heroes', 'policies'];
       allow list: if false;
-      allow create, update: if kind in ['soldiers', 'policies']
+      allow create, update: if kind in ['soldiers', 'heroes', 'policies']
         && canManagePosts()
         && validTierList(request.resource.data, kind)
         && request.resource.data.updatedAt == request.time

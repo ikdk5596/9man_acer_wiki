@@ -45,6 +45,7 @@ export default defineConfig({
       { text: '영웅 도감', link: '/hero/' },
       { text: '\uB4F1\uAE09\uD45C', items: [
         { text: '\uBCD1\uC885\uBCC4 \uB4F1\uAE09', link: '/tiers/soldiers/' },
+        { text: '\uC601\uC6C5 \uD2F0\uC5B4', link: '/tiers/heroes/' },
         { text: '\uC815\uCC45\uBCC4 \uB4F1\uAE09', link: '/tiers/policies/' },
       ] },
       ...(includeGuides ? [{ text: '\uAC1C\uC778\uACF5\uB7B5', link: '/guides/' }] : []),
@@ -163,6 +164,7 @@ export default defineConfig({
         },
       ],
       '/hero/': [
+        { text: '\uC601\uC6C5 \uD2F0\uC5B4', items: [{ text: '\uB4F1\uAE09\uD45C', link: '/tiers/heroes/' }] },
         {
           text: '영웅 도감',
           items: [{ text: '병종별 전체 목록', link: '/hero/' }],
