@@ -1,9 +1,10 @@
-import { h } from 'vue'
+﻿import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import AuthStatus from './AuthStatus.vue'
 import DetailCommunity from './detail-community/DetailCommunity.vue'
 import TierBoard from './tiers/TierBoard.vue'
+import PartyBoard from './party/PartyBoard.vue'
 import './custom.css'
 
 export default {
@@ -11,6 +12,7 @@ export default {
   enhanceApp({ app }) {
     app.component('DetailCommunity', DetailCommunity)
     app.component('TierBoard', TierBoard)
+    app.component('PartyBoard', PartyBoard)
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {

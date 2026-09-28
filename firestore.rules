@@ -246,6 +246,292 @@ service cloud.firestore {
         && request.resource.data.updatedBy == request.auth.uid;
       allow delete: if false;
     }
+    match /partyPosts/{partyId} {
+      function validParty(data) {
+        return data.keys().hasAll([
+            'leaderId',
+            'leaderName',
+            'name',
+            'type',
+            'departureDate',
+            'capacity',
+            'approvedCount',
+            'description',
+            'createdAt',
+            'updatedAt'
+          ])
+          && data.keys().hasOnly([
+            'leaderId',
+            'leaderName',
+            'name',
+            'type',
+            'departureDate',
+            'capacity',
+            'approvedCount',
+            'description',
+            'createdAt',
+            'updatedAt'
+          ])
+          && data.leaderId is string
+          && data.leaderId.size() >= 1
+          && data.leaderName is string
+          && data.leaderName.size() >= 1
+          && data.leaderName.size() <= 30
+          && data.name is string
+          && data.name.size() >= 1
+          && data.name.size() <= 60
+          && data.type is string
+          && data.type in ['rank', 'free']
+          && data.departureDate is string
+          && data.departureDate.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+          && data.capacity is int
+          && data.capacity >= 1
+          && data.capacity <= 20
+          && data.approvedCount is int
+          && data.approvedCount >= 0
+          && data.approvedCount <= data.capacity
+          && data.description is string
+          && data.description.size() <= 1000
+          && data.createdAt is timestamp
+          && data.updatedAt is timestamp;
+      }
+
+      function managesParty() {
+        return verifiedGoogle()
+          && (
+            resource.data.leaderId == request.auth.uid
+            || canManagePosts()
+          );
+      }
+
+      function validApplication(data) {
+        return data.keys().hasAll([
+            'applicantId',
+            'gameNickname',
+            'gameUid',
+            'rank',
+            'primaryTroop',
+            'secondaryTroop',
+            'battleTime',
+            'note',
+            'status',
+            'createdAt',
+            'updatedAt'
+          ])
+          && data.keys().hasOnly([
+            'applicantId',
+            'gameNickname',
+            'gameUid',
+            'rank',
+            'primaryTroop',
+            'secondaryTroop',
+            'battleTime',
+            'note',
+            'status',
+            'createdAt',
+            'updatedAt'
+          ])
+          && data.applicantId is string
+          && data.applicantId.size() >= 1
+          && data.gameNickname is string
+          && data.gameNickname.size() >= 1
+          && data.gameNickname.size() <= 30
+          && data.gameUid is string
+          && data.gameUid.size() >= 1
+          && data.gameUid.size() <= 50
+          && data.rank is string
+          && data.rank.size() >= 1
+          && data.rank.size() <= 30
+          && data.primaryTroop is string
+          && data.primaryTroop.size() >= 1
+          && data.primaryTroop.size() <= 100
+          && data.secondaryTroop is string
+          && data.secondaryTroop.size() <= 100
+          && data.battleTime is string
+          && data.battleTime.size() >= 1
+          && data.battleTime.size() <= 100
+          && data.note is string
+          && data.note.size() <= 500
+          && data.status is string
+          && data.status in ['pending', 'approved', 'rejected']
+          && data.createdAt is timestamp
+          && data.updatedAt is timestamp;
+      }
+
+      allow get: if true;
+
+      allow list: if request.query.limit != null
+        && request.query.limit <= 100;
+
+      allow create: if verifiedGoogle()
+        && validParty(request.resource.data)
+        && request.resource.data.leaderId == request.auth.uid
+        && exists(/databases/$(database)/documents/profiles/$(request.auth.uid))
+        && request.resource.data.leaderName
+          == get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.alias
+        && request.resource.data.approvedCount == 0
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+
+      // 모집글 자체 수정.
+      // approvedCount는 이 경로에서 직접 변경할 수 없다.
+      allow update: if verifiedGoogle()
+        && validParty(request.resource.data)
+        && (
+          (
+            managesParty()
+            && request.resource.data.leaderId == resource.data.leaderId
+            && request.resource.data.leaderName == resource.data.leaderName
+            && request.resource.data.createdAt == resource.data.createdAt
+            && request.resource.data.approvedCount == resource.data.approvedCount
+            && request.resource.data.updatedAt == request.time
+          )
+          ||
+          (
+            // 신청 승인/승인해제 transaction의 counter 변경.
+            managesParty()
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['approvedCount', 'updatedAt'])
+            && request.resource.data.createdAt == resource.data.createdAt
+            && request.resource.data.leaderId == resource.data.leaderId
+            && request.resource.data.approvedCount
+              >= resource.data.approvedCount - 1
+            && request.resource.data.approvedCount
+              <= resource.data.approvedCount + 1
+            && request.resource.data.approvedCount
+              != resource.data.approvedCount
+            && request.resource.data.updatedAt == request.time
+          )
+        );
+
+      // applications 서브컬렉션을 남기지 않도록
+      // 현재는 부모 모집글 삭제를 허용하지 않는다.
+      allow delete: if false;
+
+      match /applications/{applicantUid} {
+        function partyBefore() {
+          return get(
+            /databases/$(database)/documents/partyPosts/$(partyId)
+          );
+        }
+
+        function partyAfter() {
+          return getAfter(
+            /databases/$(database)/documents/partyPosts/$(partyId)
+          );
+        }
+
+        function managesParentParty() {
+          return verifiedGoogle()
+            && (
+              partyBefore().data.leaderId == request.auth.uid
+              || canManagePosts()
+            );
+        }
+
+        function ownsApplication() {
+          return verifiedGoogle()
+            && applicantUid == request.auth.uid
+            && resource.data.applicantId == request.auth.uid;
+        }
+
+        allow get: if verifiedGoogle()
+          && (
+            applicantUid == request.auth.uid
+            || managesParentParty()
+          );
+
+        allow list: if managesParentParty()
+          && request.query.limit != null
+          && request.query.limit <= 20;
+
+        // 신청 문서 ID/applicantId는 Firebase Auth UID.
+        // gameUid는 사용자가 입력하는 별도의 게임 UID.
+        allow create: if verifiedGoogle()
+          && applicantUid == request.auth.uid
+          && validApplication(request.resource.data)
+          && request.resource.data.applicantId == request.auth.uid
+          && request.resource.data.status == 'pending'
+          && request.resource.data.createdAt == request.time
+          && request.resource.data.updatedAt == request.time
+          && exists(
+            /databases/$(database)/documents/partyPosts/$(partyId)
+          )
+          && partyBefore().data.leaderId != request.auth.uid
+          && partyBefore().data.approvedCount < partyBefore().data.capacity;
+
+        allow update: if validApplication(request.resource.data)
+          && (
+            (
+              // 신청자는 pending 상태의 자기 신청 내용만 수정.
+              ownsApplication()
+              && resource.data.status == 'pending'
+              && request.resource.data.status == 'pending'
+              && request.resource.data.applicantId
+                == resource.data.applicantId
+              && request.resource.data.createdAt
+                == resource.data.createdAt
+              && request.resource.data.diff(resource.data).affectedKeys()
+                .hasOnly([
+                  'gameNickname',
+                  'gameUid',
+                  'rank',
+                  'primaryTroop',
+                  'secondaryTroop',
+                  'battleTime',
+                  'note',
+                  'updatedAt'
+                ])
+              && request.resource.data.updatedAt == request.time
+            )
+            ||
+            (
+              // 파티장/admin/webmaster는 상태만 변경.
+              managesParentParty()
+              && request.resource.data.applicantId
+                == resource.data.applicantId
+              && request.resource.data.createdAt
+                == resource.data.createdAt
+              && request.resource.data.diff(resource.data).affectedKeys()
+                .hasOnly(['status', 'updatedAt'])
+              && request.resource.data.status != resource.data.status
+              && request.resource.data.updatedAt == request.time
+              && (
+                (
+                  // pending/rejected -> approved
+                  resource.data.status != 'approved'
+                  && request.resource.data.status == 'approved'
+                  && partyAfter().data.approvedCount
+                    == partyBefore().data.approvedCount + 1
+                  && partyAfter().data.approvedCount
+                    <= partyAfter().data.capacity
+                )
+                ||
+                (
+                  // approved -> pending/rejected
+                  resource.data.status == 'approved'
+                  && request.resource.data.status != 'approved'
+                  && partyBefore().data.approvedCount > 0
+                  && partyAfter().data.approvedCount
+                    == partyBefore().data.approvedCount - 1
+                )
+                ||
+                (
+                  // pending <-> rejected
+                  resource.data.status != 'approved'
+                  && request.resource.data.status != 'approved'
+                  && partyAfter().data.approvedCount
+                    == partyBefore().data.approvedCount
+                )
+              )
+            )
+          );
+
+        // 승인된 신청은 신청자가 직접 삭제할 수 없다.
+        allow delete: if ownsApplication()
+          && resource.data.status != 'approved';
+      }
+    }
     match /{document=**} {
       allow read, write: if false;
     }

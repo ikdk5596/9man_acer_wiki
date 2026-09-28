@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+﻿import { defineConfig } from 'vitepress'
 import heroes from '../../scripts/data/heroes.json'
 import soldierNames from '../../scripts/data/soldier_names.json'
 
@@ -43,6 +43,7 @@ export default defineConfig({
       { text: '병사 도감', link: '/soldiers/' },
       { text: '장비 도감', link: '/equipment/' },
       { text: '영웅 도감', link: '/hero/' },
+      { text: '파티 모집', link: '/party/' },
       { text: '\uB4F1\uAE09\uD45C', items: [
         { text: '\uBCD1\uC885\uBCC4 \uB4F1\uAE09', link: '/tiers/soldiers/' },
         { text: '\uC601\uC6C5 \uD2F0\uC5B4', link: '/tiers/heroes/' },
