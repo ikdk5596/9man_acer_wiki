@@ -26,6 +26,7 @@ const noticeText = ref('')
 
 const showCreate = ref(false)
 const selectedParty = ref(null)
+const modalMode = ref('apply')
 const myApplication = ref(null)
 const applications = ref([])
 const applicationsLoading = ref(false)
@@ -177,6 +178,7 @@ async function submitParty() {
 async function openParty(party, mode = 'apply') {
   clearMessages()
   selectedParty.value = party
+  modalMode.value = mode
   myApplication.value = null
   applications.value = []
   resetApplicationForm()
@@ -210,6 +212,7 @@ async function openParty(party, mode = 'apply') {
 
 function closeParty() {
   selectedParty.value = null
+  modalMode.value = 'apply'
   myApplication.value = null
   applications.value = []
   resetApplicationForm()
@@ -567,7 +570,7 @@ onMounted(refreshParties)
           {{ selectedParty.description }}
         </div>
 
-        <template v-if="canManageSelectedParty">
+        <template v-if="modalMode === 'manage' && canManageSelectedParty">
           <div class="party-section-title">
             <h3>신청자 관리</h3>
 
