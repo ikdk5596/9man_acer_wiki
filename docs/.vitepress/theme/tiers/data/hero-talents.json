@@ -1,0 +1,2084 @@
+{
+  "schemaVersion": 1,
+  "heroCount": 59,
+  "heroes": [
+    {
+      "heroId": "진도_(숙지)",
+      "heroName": "진도 (숙지)",
+      "troop": "장창",
+      "talents": {
+        "beginner": [
+          "talent_245682e13fd7",
+          "talent_6ba476f27cc2",
+          "talent_9f2e532cfe24",
+          "talent_0ff5be05720a",
+          "talent_f97d7a585801",
+          "talent_5e259c21e1df",
+          "talent_ff927a8b127c",
+          "talent_8b341d0686f6"
+        ],
+        "intermediate": [
+          "talent_12a3ac718848",
+          "talent_bd89c886b52f",
+          "talent_50776c82f93f",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_b670ae5bb85e",
+          "talent_02f82e107738",
+          "talent_b73981304217",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_4eb4172945e9",
+          "talent_1b66a0fcf3f7"
+        ]
+      }
+    },
+    {
+      "heroId": "조운_(자룡)",
+      "heroName": "조운 (자룡)",
+      "troop": "장창",
+      "talents": {
+        "beginner": [
+          "talent_245682e13fd7",
+          "talent_6ba476f27cc2",
+          "talent_9f2e532cfe24",
+          "talent_0ff5be05720a",
+          "talent_f97d7a585801",
+          "talent_5e259c21e1df",
+          "talent_ff927a8b127c",
+          "talent_8b341d0686f6"
+        ],
+        "intermediate": [
+          "talent_12a3ac718848",
+          "talent_bd89c886b52f",
+          "talent_50776c82f93f",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_b670ae5bb85e",
+          "talent_02f82e107738",
+          "talent_b73981304217",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_4eb4172945e9",
+          "talent_8ecf0fd1a313"
+        ]
+      }
+    },
+    {
+      "heroId": "양묘진",
+      "heroName": "양묘진",
+      "troop": "장창",
+      "talents": {
+        "beginner": [
+          "talent_245682e13fd7",
+          "talent_6ba476f27cc2",
+          "talent_9f2e532cfe24",
+          "talent_0ff5be05720a",
+          "talent_f97d7a585801",
+          "talent_5e259c21e1df",
+          "talent_ff927a8b127c",
+          "talent_8b341d0686f6"
+        ],
+        "intermediate": [
+          "talent_12a3ac718848",
+          "talent_bd89c886b52f",
+          "talent_50776c82f93f",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_b670ae5bb85e",
+          "talent_02f82e107738",
+          "talent_b73981304217",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_4eb4172945e9",
+          "talent_bc6f65d82162"
+        ]
+      }
+    },
+    {
+      "heroId": "장합_(준예)",
+      "heroName": "장합 (준예)",
+      "troop": "긴 창",
+      "talents": {
+        "beginner": [
+          "talent_22c785645a6a",
+          "talent_d9a7dd96e11b",
+          "talent_99361567e2c7",
+          "talent_de05542197b9",
+          "talent_40507cb85128",
+          "talent_0be284ae43c7",
+          "talent_5c61edf8961a",
+          "talent_396e6aac0d94"
+        ],
+        "intermediate": [
+          "talent_f3d29e70111f",
+          "talent_0191b226bb94",
+          "talent_8f874f77a6b4",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_66750264e5cc",
+          "talent_0db47484e39d",
+          "talent_3305da4abc2d",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_45c6996fd1f5"
+        ]
+      }
+    },
+    {
+      "heroId": "진양옥_(정소)",
+      "heroName": "진양옥 (정소)",
+      "troop": "긴 창",
+      "talents": {
+        "beginner": [
+          "talent_22c785645a6a",
+          "talent_d9a7dd96e11b",
+          "talent_99361567e2c7",
+          "talent_de05542197b9",
+          "talent_40507cb85128",
+          "talent_0be284ae43c7",
+          "talent_5c61edf8961a",
+          "talent_396e6aac0d94"
+        ],
+        "intermediate": [
+          "talent_f3d29e70111f",
+          "talent_0191b226bb94",
+          "talent_8f874f77a6b4",
+          "talent_3f7157c399d3",
+          "talent_e68cc5409537",
+          "talent_3c1c483e467c",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_66750264e5cc",
+          "talent_0db47484e39d",
+          "talent_3305da4abc2d",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_5064fb174572"
+        ]
+      }
+    },
+    {
+      "heroId": "백기",
+      "heroName": "백기",
+      "troop": "장과",
+      "talents": {
+        "beginner": [
+          "talent_4358dcf7775e",
+          "talent_011d205696c6",
+          "talent_0e42e07b7cc4",
+          "talent_0530edbb1f6a",
+          "talent_2dfc5ec27ae0",
+          "talent_64760b37cd38",
+          "talent_ac8bb1a54d2f",
+          "talent_fcff9300b84e"
+        ],
+        "intermediate": [
+          "talent_1c7257f5d9f7",
+          "talent_a629f4fa4989",
+          "talent_1e5e2366bec1",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_a5705522d455",
+          "talent_578a7b575cbe",
+          "talent_24a36c940680",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_04ab30aaa6dd"
+        ]
+      }
+    },
+    {
+      "heroId": "주유_(공근)",
+      "heroName": "주유 (공근)",
+      "troop": "장과",
+      "talents": {
+        "beginner": [
+          "talent_4358dcf7775e",
+          "talent_011d205696c6",
+          "talent_0e42e07b7cc4",
+          "talent_0530edbb1f6a",
+          "talent_2dfc5ec27ae0",
+          "talent_64760b37cd38",
+          "talent_ac8bb1a54d2f",
+          "talent_fcff9300b84e"
+        ],
+        "intermediate": [
+          "talent_1c7257f5d9f7",
+          "talent_a629f4fa4989",
+          "talent_1e5e2366bec1",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_a5705522d455",
+          "talent_578a7b575cbe",
+          "talent_24a36c940680",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_e19e7c098560"
+        ]
+      }
+    },
+    {
+      "heroId": "이목",
+      "heroName": "이목",
+      "troop": "장과",
+      "talents": {
+        "beginner": [
+          "talent_4358dcf7775e",
+          "talent_011d205696c6",
+          "talent_0e42e07b7cc4",
+          "talent_0530edbb1f6a",
+          "talent_2dfc5ec27ae0",
+          "talent_64760b37cd38",
+          "talent_ac8bb1a54d2f",
+          "talent_fcff9300b84e"
+        ],
+        "intermediate": [
+          "talent_1c7257f5d9f7",
+          "talent_a629f4fa4989",
+          "talent_1e5e2366bec1",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_a5705522d455",
+          "talent_578a7b575cbe",
+          "talent_24a36c940680",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_6411e1dc00f9"
+        ]
+      }
+    },
+    {
+      "heroId": "이사업",
+      "heroName": "이사업",
+      "troop": "맥도",
+      "talents": {
+        "beginner": [
+          "talent_b402044d0445",
+          "talent_66d4dc690d92",
+          "talent_03558950e75a",
+          "talent_1b21c1da6d38",
+          "talent_c8bfceeb9ff8",
+          "talent_97ca3f71fdb3",
+          "talent_39b87c19bd36"
+        ],
+        "intermediate": [
+          "talent_d357e4c254ef",
+          "talent_207a5b24e3a0",
+          "talent_d2fd928cc4bf",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_1d71820c4a0e",
+          "talent_1cac8c231e94",
+          "talent_2877083b7e42",
+          "talent_46c40785eff5",
+          "talent_afcaeeeb138a"
+        ]
+      }
+    },
+    {
+      "heroId": "우금_(문칙)",
+      "heroName": "우금 (문칙)",
+      "troop": "맥도",
+      "talents": {
+        "beginner": [
+          "talent_b402044d0445",
+          "talent_66d4dc690d92",
+          "talent_03558950e75a",
+          "talent_1b21c1da6d38",
+          "talent_c8bfceeb9ff8",
+          "talent_97ca3f71fdb3",
+          "talent_39b87c19bd36"
+        ],
+        "intermediate": [
+          "talent_d357e4c254ef",
+          "talent_207a5b24e3a0",
+          "talent_d2fd928cc4bf",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_1d71820c4a0e",
+          "talent_1cac8c231e94",
+          "talent_2877083b7e42",
+          "talent_46c40785eff5",
+          "talent_0e0c04691d0a"
+        ]
+      }
+    },
+    {
+      "heroId": "강유_(백약)",
+      "heroName": "강유 (백약)",
+      "troop": "장검",
+      "talents": {
+        "beginner": [
+          "talent_18c1868f3759",
+          "talent_3991ea9614ba",
+          "talent_27d0a62648c6",
+          "talent_5a15dee3f3ab",
+          "talent_4dd54fb3d7b2",
+          "talent_2db4ff2bdfd5",
+          "talent_9aad7df1a4ab",
+          "talent_1a23e9bf8e69"
+        ],
+        "intermediate": [
+          "talent_7ee33d149e0d",
+          "talent_5f9a6ef617c8",
+          "talent_77f682986651",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_5aa8e718ccb6",
+          "talent_fd7a43f12327",
+          "talent_39752c12f274",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_9954aa757a3b"
+        ]
+      }
+    },
+    {
+      "heroId": "여몽_(자명)",
+      "heroName": "여몽 (자명)",
+      "troop": "장검",
+      "talents": {
+        "beginner": [
+          "talent_18c1868f3759",
+          "talent_3991ea9614ba",
+          "talent_27d0a62648c6",
+          "talent_5a15dee3f3ab",
+          "talent_4dd54fb3d7b2",
+          "talent_2db4ff2bdfd5",
+          "talent_9aad7df1a4ab",
+          "talent_1a23e9bf8e69"
+        ],
+        "intermediate": [
+          "talent_7ee33d149e0d",
+          "talent_5f9a6ef617c8",
+          "talent_77f682986651",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_5aa8e718ccb6",
+          "talent_fd7a43f12327",
+          "talent_39752c12f274",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_c219f588a9cb"
+        ]
+      }
+    },
+    {
+      "heroId": "신기질_(유안)",
+      "heroName": "신기질 (유안)",
+      "troop": "장검",
+      "talents": {
+        "beginner": [
+          "talent_18c1868f3759",
+          "talent_3991ea9614ba",
+          "talent_27d0a62648c6",
+          "talent_5a15dee3f3ab",
+          "talent_4dd54fb3d7b2",
+          "talent_2db4ff2bdfd5",
+          "talent_9aad7df1a4ab",
+          "talent_1a23e9bf8e69"
+        ],
+        "intermediate": [
+          "talent_7ee33d149e0d",
+          "talent_5f9a6ef617c8",
+          "talent_77f682986651",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_5aa8e718ccb6",
+          "talent_fd7a43f12327",
+          "talent_39752c12f274",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_d56856a740e7"
+        ]
+      }
+    },
+    {
+      "heroId": "문앙_(차건)",
+      "heroName": "문앙 (차건)",
+      "troop": "쌍창",
+      "talents": {
+        "beginner": [
+          "talent_d8d69dc537dd",
+          "talent_ff4872286ec9",
+          "talent_f7db1233170c",
+          "talent_90a3f951058d",
+          "talent_7302bb0a4a1c",
+          "talent_e44126313b73",
+          "talent_542f3fcb38d1",
+          "talent_4d46cf1503cf"
+        ],
+        "intermediate": [
+          "talent_b3bd60c5b8e0",
+          "talent_c0dab2b0b7c7",
+          "talent_1b4e8425c429",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_aa0b27baa95f",
+          "talent_393b3e5bc44b",
+          "talent_0054c0e75e66",
+          "talent_83f4acd4e530",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_e69b37063d35"
+        ]
+      }
+    },
+    {
+      "heroId": "전위",
+      "heroName": "전위",
+      "troop": "쌍창",
+      "talents": {
+        "beginner": [
+          "talent_d8d69dc537dd",
+          "talent_ff4872286ec9",
+          "talent_f7db1233170c",
+          "talent_90a3f951058d",
+          "talent_7302bb0a4a1c",
+          "talent_e44126313b73",
+          "talent_542f3fcb38d1",
+          "talent_4d46cf1503cf"
+        ],
+        "intermediate": [
+          "talent_b3bd60c5b8e0",
+          "talent_c0dab2b0b7c7",
+          "talent_1b4e8425c429",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_aa0b27baa95f",
+          "talent_393b3e5bc44b",
+          "talent_0054c0e75e66",
+          "talent_83f4acd4e530",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_d2dcdd4d3dc8"
+        ]
+      }
+    },
+    {
+      "heroId": "진경_(숙보)",
+      "heroName": "진경 (숙보)",
+      "troop": "쌍창",
+      "talents": {
+        "beginner": [
+          "talent_d8d69dc537dd",
+          "talent_ff4872286ec9",
+          "talent_f7db1233170c",
+          "talent_90a3f951058d",
+          "talent_7302bb0a4a1c",
+          "talent_e44126313b73",
+          "talent_542f3fcb38d1",
+          "talent_4d46cf1503cf"
+        ],
+        "intermediate": [
+          "talent_b3bd60c5b8e0",
+          "talent_c0dab2b0b7c7",
+          "talent_1b4e8425c429",
+          "talent_3f7157c399d3",
+          "talent_4370196060a2",
+          "talent_30935d16a9e6",
+          "talent_92412a021d2a"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_aa0b27baa95f",
+          "talent_393b3e5bc44b",
+          "talent_0054c0e75e66",
+          "talent_83f4acd4e530",
+          "talent_46c40785eff5",
+          "talent_64c3640bd463",
+          "talent_5d833bccfc6f"
+        ]
+      }
+    },
+    {
+      "heroId": "허성_(문향)",
+      "heroName": "허성 (문향)",
+      "troop": "칼&방패",
+      "talents": {
+        "beginner": [
+          "talent_21e96a9ffa53",
+          "talent_dd8fa6cc4a3a",
+          "talent_9b1a434f7d74",
+          "talent_48753ce2e2a3",
+          "talent_2512389a1d9b",
+          "talent_f29eeeb4e2e5",
+          "talent_de14013a4f1f",
+          "talent_e55d474392f7"
+        ],
+        "intermediate": [
+          "talent_9a49d6755021",
+          "talent_6b490262a9c3",
+          "talent_04f3a650699e",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_5e3ed3168335",
+          "talent_9cd54b31b84c",
+          "talent_e0cadeaa9f78",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_71240300f3f5"
+        ]
+      }
+    },
+    {
+      "heroId": "악진_(문겸)",
+      "heroName": "악진 (문겸)",
+      "troop": "칼&방패",
+      "talents": {
+        "beginner": [
+          "talent_21e96a9ffa53",
+          "talent_dd8fa6cc4a3a",
+          "talent_9b1a434f7d74",
+          "talent_48753ce2e2a3",
+          "talent_2512389a1d9b",
+          "talent_f29eeeb4e2e5",
+          "talent_de14013a4f1f",
+          "talent_e55d474392f7"
+        ],
+        "intermediate": [
+          "talent_9a49d6755021",
+          "talent_6b490262a9c3",
+          "talent_04f3a650699e",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_5e3ed3168335",
+          "talent_9cd54b31b84c",
+          "talent_e0cadeaa9f78",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_d5a2401ef5af"
+        ]
+      }
+    },
+    {
+      "heroId": "하후돈_(원양)",
+      "heroName": "하후돈 (원양)",
+      "troop": "칼&방패",
+      "talents": {
+        "beginner": [
+          "talent_21e96a9ffa53",
+          "talent_dd8fa6cc4a3a",
+          "talent_9b1a434f7d74",
+          "talent_48753ce2e2a3",
+          "talent_2512389a1d9b",
+          "talent_f29eeeb4e2e5",
+          "talent_de14013a4f1f",
+          "talent_e55d474392f7"
+        ],
+        "intermediate": [
+          "talent_9a49d6755021",
+          "talent_6b490262a9c3",
+          "talent_04f3a650699e",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_5e3ed3168335",
+          "talent_9cd54b31b84c",
+          "talent_e0cadeaa9f78",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_d9032a93f68c"
+        ]
+      }
+    },
+    {
+      "heroId": "조인_(자효)",
+      "heroName": "조인 (자효)",
+      "troop": "무거운 방패",
+      "talents": {
+        "beginner": [
+          "talent_167063c28c96",
+          "talent_a2a45c398de9",
+          "talent_fcbf9106553d",
+          "talent_1af0f066f6d5",
+          "talent_c1a0b26557a5",
+          "talent_040d5ac18e68",
+          "talent_2349f3cbe2d2",
+          "talent_dfe33cfd193d"
+        ],
+        "intermediate": [
+          "talent_8628573e28c3",
+          "talent_1811c0e514bd",
+          "talent_7cbe6ea54442",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_e13089ffa915",
+          "talent_f6d347827927",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_3b29a0eedde3"
+        ]
+      }
+    },
+    {
+      "heroId": "주태_(유평)",
+      "heroName": "주태 (유평)",
+      "troop": "무거운 방패",
+      "talents": {
+        "beginner": [
+          "talent_167063c28c96",
+          "talent_a2a45c398de9",
+          "talent_fcbf9106553d",
+          "talent_1af0f066f6d5",
+          "talent_c1a0b26557a5",
+          "talent_040d5ac18e68",
+          "talent_2349f3cbe2d2",
+          "talent_dfe33cfd193d"
+        ],
+        "intermediate": [
+          "talent_8628573e28c3",
+          "talent_1811c0e514bd",
+          "talent_7cbe6ea54442",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_e13089ffa915",
+          "talent_f6d347827927",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_ade1e03cc6a4"
+        ]
+      }
+    },
+    {
+      "heroId": "위효관",
+      "heroName": "위효관",
+      "troop": "무거운 방패",
+      "talents": {
+        "beginner": [
+          "talent_167063c28c96",
+          "talent_a2a45c398de9",
+          "talent_fcbf9106553d",
+          "talent_1af0f066f6d5",
+          "talent_c1a0b26557a5",
+          "talent_040d5ac18e68",
+          "talent_2349f3cbe2d2",
+          "talent_dfe33cfd193d"
+        ],
+        "intermediate": [
+          "talent_8628573e28c3",
+          "talent_1811c0e514bd",
+          "talent_7cbe6ea54442",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_e13089ffa915",
+          "talent_f6d347827927",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_30fd79938b8e"
+        ]
+      }
+    },
+    {
+      "heroId": "장비_(익덕)",
+      "heroName": "장비 (익덕)",
+      "troop": "창&방패",
+      "talents": {
+        "beginner": [
+          "talent_80d895ace2af",
+          "talent_d35997fb4130",
+          "talent_c247d89adc97",
+          "talent_291f81d58c24",
+          "talent_61774cfc746e",
+          "talent_ae652b3ac7f4",
+          "talent_e399b42b97ed",
+          "talent_9b64c4297636"
+        ],
+        "intermediate": [
+          "talent_a39f880320d3",
+          "talent_c71ca3970dc5",
+          "talent_a8e660df061f",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_251df7cb93ce",
+          "talent_e9ffd0383abf",
+          "talent_f52af989911c",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_f67bf302270d"
+        ]
+      }
+    },
+    {
+      "heroId": "고순",
+      "heroName": "고순",
+      "troop": "창&방패",
+      "talents": {
+        "beginner": [
+          "talent_80d895ace2af",
+          "talent_d35997fb4130",
+          "talent_c247d89adc97",
+          "talent_291f81d58c24",
+          "talent_61774cfc746e",
+          "talent_ae652b3ac7f4",
+          "talent_e399b42b97ed",
+          "talent_9b64c4297636"
+        ],
+        "intermediate": [
+          "talent_a39f880320d3",
+          "talent_c71ca3970dc5",
+          "talent_a8e660df061f",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_251df7cb93ce",
+          "talent_e9ffd0383abf",
+          "talent_f52af989911c",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_31d71607c209"
+        ]
+      }
+    },
+    {
+      "heroId": "황개_(공복)",
+      "heroName": "황개 (공복)",
+      "troop": "망치&방패",
+      "talents": {
+        "beginner": [
+          "talent_2357e756b51d",
+          "talent_6905f57953ae",
+          "talent_d436d2996c97",
+          "talent_0e1766580c43",
+          "talent_6fbacf6413df",
+          "talent_8c5408a9bd5b",
+          "talent_b505fa3338cc",
+          "talent_b9507ccc28d4"
+        ],
+        "intermediate": [
+          "talent_47acea6fc45b",
+          "talent_1809708f2927",
+          "talent_65b1d0f06642",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_7eb0420b6f8d",
+          "talent_aabde75d45ec",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_65b952203a9c"
+        ]
+      }
+    },
+    {
+      "heroId": "염파",
+      "heroName": "염파",
+      "troop": "망치&방패",
+      "talents": {
+        "beginner": [
+          "talent_2357e756b51d",
+          "talent_6905f57953ae",
+          "talent_d436d2996c97",
+          "talent_0e1766580c43",
+          "talent_6fbacf6413df",
+          "talent_8c5408a9bd5b",
+          "talent_b505fa3338cc",
+          "talent_b9507ccc28d4"
+        ],
+        "intermediate": [
+          "talent_47acea6fc45b",
+          "talent_1809708f2927",
+          "talent_65b1d0f06642",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_7eb0420b6f8d",
+          "talent_aabde75d45ec",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_57ae704b3703"
+        ]
+      }
+    },
+    {
+      "heroId": "조조_(맹덕)",
+      "heroName": "조조 (맹덕)",
+      "troop": "검&방패",
+      "talents": {
+        "beginner": [
+          "talent_26001ca3cde0",
+          "talent_6f12a9328e65",
+          "talent_c9e188074ed7",
+          "talent_f9d4d199401e",
+          "talent_4812be2e2ddc",
+          "talent_b3f8fe1cf8c0",
+          "talent_5024593be27f",
+          "talent_f7a44c46d174"
+        ],
+        "intermediate": [
+          "talent_7a23864531f9",
+          "talent_cba1fb008cbb",
+          "talent_3bbf57084d8d",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_7105e9d08681",
+          "talent_d1ac5cdeab7e",
+          "talent_cd8c3c352e12",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_8aa08664cf38"
+        ]
+      }
+    },
+    {
+      "heroId": "등애_(사재)",
+      "heroName": "등애 (사재)",
+      "troop": "검&방패",
+      "talents": {
+        "beginner": [
+          "talent_26001ca3cde0",
+          "talent_6f12a9328e65",
+          "talent_c9e188074ed7",
+          "talent_f9d4d199401e",
+          "talent_4812be2e2ddc",
+          "talent_b3f8fe1cf8c0",
+          "talent_5024593be27f",
+          "talent_f7a44c46d174"
+        ],
+        "intermediate": [
+          "talent_7a23864531f9",
+          "talent_cba1fb008cbb",
+          "talent_3bbf57084d8d",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_7105e9d08681",
+          "talent_d1ac5cdeab7e",
+          "talent_cd8c3c352e12",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_ebec253512b0"
+        ]
+      }
+    },
+    {
+      "heroId": "맹획",
+      "heroName": "맹획",
+      "troop": "도끼&방패",
+      "talents": {
+        "beginner": [
+          "talent_7491ed6c409d",
+          "talent_8157451ae460",
+          "talent_0a030600e018",
+          "talent_d015099d4541",
+          "talent_ee6e735dc872",
+          "talent_0c10cfb22ad1",
+          "talent_85c56eff414f",
+          "talent_17f575e9db41"
+        ],
+        "intermediate": [
+          "talent_0fd9104be610",
+          "talent_aa2d636d782f",
+          "talent_7d1bbdaebbd8",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_7d6f0718bfc4",
+          "talent_1d05e7eb8a2f",
+          "talent_15782aa7307c",
+          "talent_62a25998e7bb",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_ab29fd1e6d9c"
+        ]
+      }
+    },
+    {
+      "heroId": "번쾌",
+      "heroName": "번쾌",
+      "troop": "도끼&방패",
+      "talents": {
+        "beginner": [
+          "talent_7491ed6c409d",
+          "talent_8157451ae460",
+          "talent_0a030600e018",
+          "talent_d015099d4541",
+          "talent_ee6e735dc872",
+          "talent_0c10cfb22ad1",
+          "talent_85c56eff414f",
+          "talent_17f575e9db41"
+        ],
+        "intermediate": [
+          "talent_0fd9104be610",
+          "talent_aa2d636d782f",
+          "talent_7d1bbdaebbd8",
+          "talent_b2c298a6d368",
+          "talent_5449c813098d",
+          "talent_e4d30b20f7d6",
+          "talent_dafc027269ac"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_7d6f0718bfc4",
+          "talent_1d05e7eb8a2f",
+          "talent_15782aa7307c",
+          "talent_62a25998e7bb",
+          "talent_92f5d10b1200",
+          "talent_94125f8d27b3",
+          "talent_373786584c15",
+          "talent_6769715794e0"
+        ]
+      }
+    },
+    {
+      "heroId": "황충_(한승)",
+      "heroName": "황충 (한승)",
+      "troop": "장궁",
+      "talents": {
+        "beginner": [
+          "talent_a60e9296438b",
+          "talent_fe2dbae4e4b6",
+          "talent_f52a9cbddd82",
+          "talent_4b2b17f89a58",
+          "talent_e72eaaa7d2b7",
+          "talent_50077f4db682",
+          "talent_3d7993297a65",
+          "talent_ea8db2f6fbf2"
+        ],
+        "intermediate": [
+          "talent_2dfeeec013bc",
+          "talent_6c0c875247fc",
+          "talent_990fece20357",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_29c57db2ec23",
+          "talent_a97d2078ab94",
+          "talent_38cc6f508010",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_027fa19592c1"
+        ]
+      }
+    },
+    {
+      "heroId": "한당_(의공)",
+      "heroName": "한당 (의공)",
+      "troop": "장궁",
+      "talents": {
+        "beginner": [
+          "talent_a60e9296438b",
+          "talent_fe2dbae4e4b6",
+          "talent_f52a9cbddd82",
+          "talent_4b2b17f89a58",
+          "talent_e72eaaa7d2b7",
+          "talent_50077f4db682",
+          "talent_3d7993297a65",
+          "talent_ea8db2f6fbf2"
+        ],
+        "intermediate": [
+          "talent_2dfeeec013bc",
+          "talent_6c0c875247fc",
+          "talent_990fece20357",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_29c57db2ec23",
+          "talent_a97d2078ab94",
+          "talent_38cc6f508010",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_b74e9ccb71e4"
+        ]
+      }
+    },
+    {
+      "heroId": "유비_(현덕)",
+      "heroName": "유비 (현덕)",
+      "troop": "쇠뇌",
+      "talents": {
+        "beginner": [
+          "talent_bfd0e68cfbbf",
+          "talent_2b80ea51348c",
+          "talent_04106d3b74f3",
+          "talent_62daeac0576b",
+          "talent_66a292611c1d",
+          "talent_0fc883c4f2a9",
+          "talent_9b4bcdad48c9",
+          "talent_cd5c32896526"
+        ],
+        "intermediate": [
+          "talent_7c5eff342fed",
+          "talent_04b385979d71",
+          "talent_18c030f80a9d",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_048db0835090",
+          "talent_691b9324d9fd",
+          "talent_3ef1044d6e0b",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_307b6c445fc2"
+        ]
+      }
+    },
+    {
+      "heroId": "유총",
+      "heroName": "유총",
+      "troop": "쇠뇌",
+      "talents": {
+        "beginner": [
+          "talent_bfd0e68cfbbf",
+          "talent_2b80ea51348c",
+          "talent_04106d3b74f3",
+          "talent_62daeac0576b",
+          "talent_66a292611c1d",
+          "talent_0fc883c4f2a9",
+          "talent_9b4bcdad48c9",
+          "talent_cd5c32896526"
+        ],
+        "intermediate": [
+          "talent_7c5eff342fed",
+          "talent_04b385979d71",
+          "talent_18c030f80a9d",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_048db0835090",
+          "talent_691b9324d9fd",
+          "talent_3ef1044d6e0b",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_c60e18352186"
+        ]
+      }
+    },
+    {
+      "heroId": "초선",
+      "heroName": "초선",
+      "troop": "쇠뇌",
+      "talents": {
+        "beginner": [
+          "talent_bfd0e68cfbbf",
+          "talent_2b80ea51348c",
+          "talent_04106d3b74f3",
+          "talent_62daeac0576b",
+          "talent_66a292611c1d",
+          "talent_0fc883c4f2a9",
+          "talent_9b4bcdad48c9",
+          "talent_cd5c32896526"
+        ],
+        "intermediate": [
+          "talent_7c5eff342fed",
+          "talent_04b385979d71",
+          "talent_18c030f80a9d",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_77603c1fa682"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_048db0835090",
+          "talent_691b9324d9fd",
+          "talent_3ef1044d6e0b",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_bd1a02090263"
+        ]
+      }
+    },
+    {
+      "heroId": "왕이",
+      "heroName": "왕이",
+      "troop": "독궁",
+      "talents": {
+        "beginner": [
+          "talent_386ca8da64ed",
+          "talent_878a7011eed8",
+          "talent_1a1f4122374e",
+          "talent_bcdf4e46b71e",
+          "talent_c7389f6da737",
+          "talent_c3aeb6673650",
+          "talent_36bc8df884c1",
+          "talent_0bc215483ac1"
+        ],
+        "intermediate": [
+          "talent_bb0c7e91e6a9",
+          "talent_d7d3380d0179",
+          "talent_ffef4817c34c",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_0e7a401a5014",
+          "talent_734d424e3530",
+          "talent_c24c4233dfe8",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_d29e98c927dc"
+        ]
+      }
+    },
+    {
+      "heroId": "이유_(문우)",
+      "heroName": "이유 (문우)",
+      "troop": "독궁",
+      "talents": {
+        "beginner": [
+          "talent_386ca8da64ed",
+          "talent_878a7011eed8",
+          "talent_1a1f4122374e",
+          "talent_bcdf4e46b71e",
+          "talent_c7389f6da737",
+          "talent_c3aeb6673650",
+          "talent_36bc8df884c1",
+          "talent_0bc215483ac1"
+        ],
+        "intermediate": [
+          "talent_bb0c7e91e6a9",
+          "talent_d7d3380d0179",
+          "talent_ffef4817c34c",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_0e7a401a5014",
+          "talent_734d424e3530",
+          "talent_c24c4233dfe8",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_4578b34256aa"
+        ]
+      }
+    },
+    {
+      "heroId": "양유기_(숙)",
+      "heroName": "양유기 (숙)",
+      "troop": "사냥꾼",
+      "talents": {
+        "beginner": [
+          "talent_87a66919cffc",
+          "talent_e0de698820f7",
+          "talent_78e8cab26913",
+          "talent_c004d0244880",
+          "talent_c5bd108b9fad",
+          "talent_6ae887d5080d",
+          "talent_3efd431c993c",
+          "talent_29f17e8e4318"
+        ],
+        "intermediate": [
+          "talent_c56092cc6354",
+          "talent_439ac2786385",
+          "talent_2d149b78da5f",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_45bddaebf236",
+          "talent_2f1c13ae9d60",
+          "talent_1d30ede20f3b",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_fc3130248a43"
+        ]
+      }
+    },
+    {
+      "heroId": "손권_(중모)",
+      "heroName": "손권 (중모)",
+      "troop": "사냥꾼",
+      "talents": {
+        "beginner": [
+          "talent_87a66919cffc",
+          "talent_e0de698820f7",
+          "talent_78e8cab26913",
+          "talent_c004d0244880",
+          "talent_c5bd108b9fad",
+          "talent_6ae887d5080d",
+          "talent_3efd431c993c",
+          "talent_29f17e8e4318"
+        ],
+        "intermediate": [
+          "talent_c56092cc6354",
+          "talent_439ac2786385",
+          "talent_2d149b78da5f",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_45bddaebf236",
+          "talent_2f1c13ae9d60",
+          "talent_1d30ede20f3b",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_0ca855225f06"
+        ]
+      }
+    },
+    {
+      "heroId": "양홍옥",
+      "heroName": "양홍옥",
+      "troop": "사냥꾼",
+      "talents": {
+        "beginner": [
+          "talent_87a66919cffc",
+          "talent_e0de698820f7",
+          "talent_78e8cab26913",
+          "talent_c004d0244880",
+          "talent_c5bd108b9fad",
+          "talent_6ae887d5080d",
+          "talent_3efd431c993c",
+          "talent_29f17e8e4318"
+        ],
+        "intermediate": [
+          "talent_c56092cc6354",
+          "talent_439ac2786385",
+          "talent_2d149b78da5f",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_45bddaebf236",
+          "talent_2f1c13ae9d60",
+          "talent_1d30ede20f3b",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_d69e0c497e37"
+        ]
+      }
+    },
+    {
+      "heroId": "채문희",
+      "heroName": "채문희",
+      "troop": "사냥꾼",
+      "talents": {
+        "beginner": [
+          "talent_87a66919cffc",
+          "talent_e0de698820f7",
+          "talent_78e8cab26913",
+          "talent_c004d0244880",
+          "talent_c5bd108b9fad",
+          "talent_6ae887d5080d",
+          "talent_3efd431c993c",
+          "talent_29f17e8e4318"
+        ],
+        "intermediate": [
+          "talent_c56092cc6354",
+          "talent_439ac2786385",
+          "talent_2d149b78da5f",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_45bddaebf236",
+          "talent_2f1c13ae9d60",
+          "talent_1d30ede20f3b",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_5747bf5aa3b2"
+        ]
+      }
+    },
+    {
+      "heroId": "조휴_(문열)",
+      "heroName": "조휴 (문열)",
+      "troop": "강화 쇠뇌",
+      "talents": {
+        "beginner": [
+          "talent_cbe2968513a1",
+          "talent_e627fb51fc43",
+          "talent_2de6de832d20",
+          "talent_73eaa402aec0",
+          "talent_efb6665440c5",
+          "talent_9c96d7474c31",
+          "talent_8bc281960413"
+        ],
+        "intermediate": [
+          "talent_2c4afeda5fec",
+          "talent_547c18447694",
+          "talent_787bb608a3f6",
+          "talent_9f95eac90a44",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_78012e3c04a8",
+          "talent_fb1b5b1225f1",
+          "talent_8ae92fe07334",
+          "talent_1b63079cef75",
+          "talent_ec7e6bb491d0"
+        ]
+      }
+    },
+    {
+      "heroId": "손상향",
+      "heroName": "손상향",
+      "troop": "강화 쇠뇌",
+      "talents": {
+        "beginner": [
+          "talent_cbe2968513a1",
+          "talent_e627fb51fc43",
+          "talent_2de6de832d20",
+          "talent_73eaa402aec0",
+          "talent_efb6665440c5",
+          "talent_9c96d7474c31",
+          "talent_8bc281960413"
+        ],
+        "intermediate": [
+          "talent_2c4afeda5fec",
+          "talent_547c18447694",
+          "talent_787bb608a3f6",
+          "talent_9f95eac90a44",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_bf5ee3e68681",
+          "talent_78012e3c04a8",
+          "talent_fb1b5b1225f1",
+          "talent_8ae92fe07334",
+          "talent_1b63079cef75",
+          "talent_dabea1682ec0"
+        ]
+      }
+    },
+    {
+      "heroId": "육손_(백언)",
+      "heroName": "육손 (백언)",
+      "troop": "화궁",
+      "talents": {
+        "beginner": [
+          "talent_707a42dc8536",
+          "talent_2c48b4e3af0b",
+          "talent_89ec7d782e3d",
+          "talent_5b76613cf348",
+          "talent_e131c4e9401a",
+          "talent_18bbf9995821",
+          "talent_2df14a086964",
+          "talent_90664b2e5127"
+        ],
+        "intermediate": [
+          "talent_e9dba3c5a951",
+          "talent_786334b34e87",
+          "talent_17c8790f1352",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_9c686aaa6fec",
+          "talent_6df706ba8a08",
+          "talent_d4ba3b23035c",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_794b79a533ca"
+        ]
+      }
+    },
+    {
+      "heroId": "주원장",
+      "heroName": "주원장",
+      "troop": "화궁",
+      "talents": {
+        "beginner": [
+          "talent_707a42dc8536",
+          "talent_2c48b4e3af0b",
+          "talent_89ec7d782e3d",
+          "talent_5b76613cf348",
+          "talent_e131c4e9401a",
+          "talent_18bbf9995821",
+          "talent_2df14a086964",
+          "talent_90664b2e5127"
+        ],
+        "intermediate": [
+          "talent_e9dba3c5a951",
+          "talent_786334b34e87",
+          "talent_17c8790f1352",
+          "talent_9f95eac90a44",
+          "talent_74634980e0e7",
+          "talent_539cbeecad41",
+          "talent_855df3b2dd90"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_9c686aaa6fec",
+          "talent_6df706ba8a08",
+          "talent_d4ba3b23035c",
+          "talent_1b63079cef75",
+          "talent_9b8f9bb09a4d",
+          "talent_aa4531e49ba6"
+        ]
+      }
+    },
+    {
+      "heroId": "장료_(문원)",
+      "heroName": "장료 (문원)",
+      "troop": "기병(검)",
+      "talents": {
+        "beginner": [
+          "talent_98e4879cb954",
+          "talent_1da9a0854f28",
+          "talent_6e22db23376d",
+          "talent_5f32d9071114",
+          "talent_cc65080a93d9",
+          "talent_339088477872",
+          "talent_046969bad901",
+          "talent_e66676e2d98d"
+        ],
+        "intermediate": [
+          "talent_74fbfc5527fd",
+          "talent_7d317a27d276",
+          "talent_a68fcc94c379",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_da9928ebdd2d",
+          "talent_bd855370b084",
+          "talent_2b0510e70c6a",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_a91c3a086d83"
+        ]
+      }
+    },
+    {
+      "heroId": "곽거병",
+      "heroName": "곽거병",
+      "troop": "기병(검)",
+      "talents": {
+        "beginner": [
+          "talent_98e4879cb954",
+          "talent_1da9a0854f28",
+          "talent_6e22db23376d",
+          "talent_5f32d9071114",
+          "talent_cc65080a93d9",
+          "talent_339088477872",
+          "talent_046969bad901",
+          "talent_e66676e2d98d"
+        ],
+        "intermediate": [
+          "talent_74fbfc5527fd",
+          "talent_7d317a27d276",
+          "talent_a68fcc94c379",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_da9928ebdd2d",
+          "talent_bd855370b084",
+          "talent_2b0510e70c6a",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_288e2b98af22"
+        ]
+      }
+    },
+    {
+      "heroId": "여포_(봉선)",
+      "heroName": "여포 (봉선)",
+      "troop": "기병(창)",
+      "talents": {
+        "beginner": [
+          "talent_a74fe04a3831",
+          "talent_35979800a1fa",
+          "talent_f45dfda1387a",
+          "talent_17f1445e71c9",
+          "talent_78f57c33400e",
+          "talent_0e02653befdf",
+          "talent_a56cfc8f17c0",
+          "talent_def36aa84dbd"
+        ],
+        "intermediate": [
+          "talent_e1ca07873a89",
+          "talent_c4d32b72e55e",
+          "talent_91785ed4e1f0",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_5e36d061b9a6",
+          "talent_d71a10c8074d",
+          "talent_a5518ec5c4fe",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_26efa74788dc"
+        ]
+      }
+    },
+    {
+      "heroId": "마초_(맹기)",
+      "heroName": "마초 (맹기)",
+      "troop": "기병(창)",
+      "talents": {
+        "beginner": [
+          "talent_a74fe04a3831",
+          "talent_35979800a1fa",
+          "talent_f45dfda1387a",
+          "talent_17f1445e71c9",
+          "talent_78f57c33400e",
+          "talent_0e02653befdf",
+          "talent_a56cfc8f17c0",
+          "talent_def36aa84dbd"
+        ],
+        "intermediate": [
+          "talent_e1ca07873a89",
+          "talent_c4d32b72e55e",
+          "talent_91785ed4e1f0",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_5e36d061b9a6",
+          "talent_d71a10c8074d",
+          "talent_a5518ec5c4fe",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_fc6a6cdc7d8f"
+        ]
+      }
+    },
+    {
+      "heroId": "항우",
+      "heroName": "항우",
+      "troop": "기병(창)",
+      "talents": {
+        "beginner": [
+          "talent_a74fe04a3831",
+          "talent_35979800a1fa",
+          "talent_f45dfda1387a",
+          "talent_17f1445e71c9",
+          "talent_78f57c33400e",
+          "talent_0e02653befdf",
+          "talent_a56cfc8f17c0",
+          "talent_def36aa84dbd"
+        ],
+        "intermediate": [
+          "talent_e1ca07873a89",
+          "talent_c4d32b72e55e",
+          "talent_91785ed4e1f0",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_5e36d061b9a6",
+          "talent_d71a10c8074d",
+          "talent_a5518ec5c4fe",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_cc6f956a8281"
+        ]
+      }
+    },
+    {
+      "heroId": "관우_(운장)",
+      "heroName": "관우 (운장)",
+      "troop": "기병(대도)",
+      "talents": {
+        "beginner": [
+          "talent_0403be34b3df",
+          "talent_5a59d596d07d",
+          "talent_3c655bf8cb52",
+          "talent_e58be4d1e3aa",
+          "talent_d8028cd4aeb3",
+          "talent_db14648a840d",
+          "talent_b7cbb92fbd27",
+          "talent_989114620340"
+        ],
+        "intermediate": [
+          "talent_36c105f434f6",
+          "talent_0ab80bb3763f",
+          "talent_0339c0af585a",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_bb81f84e7022",
+          "talent_9e5472c7a500",
+          "talent_6d4f49136086",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_9874b344889d"
+        ]
+      }
+    },
+    {
+      "heroId": "관은병",
+      "heroName": "관은병",
+      "troop": "기병(대도)",
+      "talents": {
+        "beginner": [
+          "talent_0403be34b3df",
+          "talent_5a59d596d07d",
+          "talent_3c655bf8cb52",
+          "talent_e58be4d1e3aa",
+          "talent_d8028cd4aeb3",
+          "talent_db14648a840d",
+          "talent_b7cbb92fbd27",
+          "talent_989114620340"
+        ],
+        "intermediate": [
+          "talent_36c105f434f6",
+          "talent_0ab80bb3763f",
+          "talent_0339c0af585a",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_bb81f84e7022",
+          "talent_9e5472c7a500",
+          "talent_6d4f49136086",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_756b0c67ee49"
+        ]
+      }
+    },
+    {
+      "heroId": "허저_(중강)",
+      "heroName": "허저 (중강)",
+      "troop": "중기병",
+      "talents": {
+        "beginner": [
+          "talent_e92cfa2a95df",
+          "talent_335716ab5e8a",
+          "talent_8a5f281b762d",
+          "talent_6365dcd8bcff",
+          "talent_cb9b4ee4e472",
+          "talent_b2ae3158820e",
+          "talent_8024db32bbb5",
+          "talent_6b16274d8247"
+        ],
+        "intermediate": [
+          "talent_cf10b1ab9ee5",
+          "talent_e4168d59ff93",
+          "talent_956de7fce624",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_0dd3cb5f78b3",
+          "talent_a93c1e3c27c8",
+          "talent_b5486e14008b",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_b83f00b3e14d"
+        ]
+      }
+    },
+    {
+      "heroId": "배행엄_(수경)",
+      "heroName": "배행엄 (수경)",
+      "troop": "중기병",
+      "talents": {
+        "beginner": [
+          "talent_e92cfa2a95df",
+          "talent_335716ab5e8a",
+          "talent_8a5f281b762d",
+          "talent_6365dcd8bcff",
+          "talent_cb9b4ee4e472",
+          "talent_b2ae3158820e",
+          "talent_8024db32bbb5",
+          "talent_6b16274d8247"
+        ],
+        "intermediate": [
+          "talent_cf10b1ab9ee5",
+          "talent_e4168d59ff93",
+          "talent_956de7fce624",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_0dd3cb5f78b3",
+          "talent_a93c1e3c27c8",
+          "talent_b5486e14008b",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_19b082888a8a"
+        ]
+      }
+    },
+    {
+      "heroId": "동탁_(중영)",
+      "heroName": "동탁 (중영)",
+      "troop": "중기병",
+      "talents": {
+        "beginner": [
+          "talent_e92cfa2a95df",
+          "talent_335716ab5e8a",
+          "talent_8a5f281b762d",
+          "talent_6365dcd8bcff",
+          "talent_cb9b4ee4e472",
+          "talent_b2ae3158820e",
+          "talent_8024db32bbb5",
+          "talent_6b16274d8247"
+        ],
+        "intermediate": [
+          "talent_cf10b1ab9ee5",
+          "talent_e4168d59ff93",
+          "talent_956de7fce624",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_0dd3cb5f78b3",
+          "talent_a93c1e3c27c8",
+          "talent_b5486e14008b",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_9e37e2ffbd46"
+        ]
+      }
+    },
+    {
+      "heroId": "하후연_(묘재)",
+      "heroName": "하후연 (묘재)",
+      "troop": "기병(활)",
+      "talents": {
+        "beginner": [
+          "talent_dfe96dfeb8de",
+          "talent_0ce1945dfc82",
+          "talent_164150ea303f",
+          "talent_f364bc9f049f",
+          "talent_e0ceec528a32",
+          "talent_ea902a88e101",
+          "talent_25e22a911f29",
+          "talent_34fc9727507b"
+        ],
+        "intermediate": [
+          "talent_321e7e35c61d",
+          "talent_6485e32fc329",
+          "talent_5c6426e3c7a9",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_41873b414a8a",
+          "talent_9ecd17328915",
+          "talent_a2556380b9fc",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_9577508e3c15"
+        ]
+      }
+    },
+    {
+      "heroId": "태사자_(자의)",
+      "heroName": "태사자 (자의)",
+      "troop": "기병(활)",
+      "talents": {
+        "beginner": [
+          "talent_dfe96dfeb8de",
+          "talent_0ce1945dfc82",
+          "talent_164150ea303f",
+          "talent_f364bc9f049f",
+          "talent_e0ceec528a32",
+          "talent_ea902a88e101",
+          "talent_25e22a911f29",
+          "talent_34fc9727507b"
+        ],
+        "intermediate": [
+          "talent_321e7e35c61d",
+          "talent_6485e32fc329",
+          "talent_5c6426e3c7a9",
+          "talent_a8c6b071d1d4",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_41873b414a8a",
+          "talent_9ecd17328915",
+          "talent_a2556380b9fc",
+          "talent_8cbf0a6a9308",
+          "talent_bc947a9eca2a",
+          "talent_c6067f22dd09",
+          "talent_0eb50a15885a"
+        ]
+      }
+    },
+    {
+      "heroId": "서황_(공명)",
+      "heroName": "서황 (공명)",
+      "troop": "기병(도끼)",
+      "talents": {
+        "beginner": [
+          "talent_286769e8064d",
+          "talent_f0d694a749d2",
+          "talent_366f24c924e2",
+          "talent_38800e7d0989",
+          "talent_2f3917cf559f",
+          "talent_9073dac4eb07",
+          "talent_7d1553d91284"
+        ],
+        "intermediate": [
+          "talent_83966dfb9da1",
+          "talent_8a1043864d5f",
+          "talent_40677c5a866a",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_e4a0d84a32f7",
+          "talent_700ae0d330cf",
+          "talent_d036d0ab0621",
+          "talent_34ae7e9cdb6b",
+          "talent_7c4e9855a602",
+          "talent_ffd09d8ee35c"
+        ]
+      }
+    },
+    {
+      "heroId": "정교금_(의정)",
+      "heroName": "정교금 (의정)",
+      "troop": "기병(도끼)",
+      "talents": {
+        "beginner": [
+          "talent_286769e8064d",
+          "talent_f0d694a749d2",
+          "talent_366f24c924e2",
+          "talent_38800e7d0989",
+          "talent_2f3917cf559f",
+          "talent_9073dac4eb07",
+          "talent_7d1553d91284"
+        ],
+        "intermediate": [
+          "talent_83966dfb9da1",
+          "talent_8a1043864d5f",
+          "talent_40677c5a866a",
+          "talent_afaca8b09668",
+          "talent_c71bcdfb8282",
+          "talent_7ca2bd7c2f35"
+        ],
+        "advanced": [
+          "talent_0335d3f69c29",
+          "talent_e4a0d84a32f7",
+          "talent_700ae0d330cf",
+          "talent_d036d0ab0621",
+          "talent_34ae7e9cdb6b",
+          "talent_7c4e9855a602",
+          "talent_ea5a0ab8fded"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+export const EXCLUSIVE_WEAPONS = [
+  { id: '강화_쇠뇌', name: '강화 쇠뇌', image: '/images/equipment/icons/043_강화_쇠뇌.png', href: '/equipment/강화_쇠뇌' },
+  { id: '개산부', name: '개산부', image: '/images/equipment/icons/044_개산부.png', href: '/equipment/개산부' },
+  { id: '검&방패', name: '검&방패', image: '/images/equipment/icons/045_검&방패.png', href: '/equipment/검&방패' },
+  { id: '곡궁', name: '곡궁', image: '/images/equipment/icons/046_곡궁.png', href: '/equipment/곡궁' },
+  { id: '긴창', name: '긴창', image: '/images/equipment/icons/047_긴_창.png', href: '/equipment/긴창' },
+  { id: '나무_방패', name: '나무 방패', image: '/images/equipment/icons/048_나무_방패.png', href: '/equipment/나무_방패' },
+  { id: '대검', name: '대검', image: '/images/equipment/icons/049_대검.png', href: '/equipment/대검' },
+  { id: '도끼&방패', name: '도끼&방패', image: '/images/equipment/icons/050_도끼&방패.png', href: '/equipment/도끼&방패' },
+  { id: '독궁', name: '독궁', image: '/images/equipment/icons/051_독궁.png', href: '/equipment/독궁' },
+  { id: '망치', name: '망치', image: '/images/equipment/icons/052_망치.png', href: '/equipment/망치' },
+  { id: '맥도', name: '맥도', image: '/images/equipment/icons/053_맥도.png', href: '/equipment/맥도' },
+  { id: '무거운_방패', name: '무거운 방패', image: '/images/equipment/icons/054_무거운_방패.png', href: '/equipment/무거운_방패' },
+  { id: '무쇠망치', name: '무쇠망치', image: '/images/equipment/icons/055_무쇠_망치.png', href: '/equipment/무쇠망치' },
+  { id: '사냥활', name: '사냥활', image: '/images/equipment/icons/056_사냥활.png', href: '/equipment/사냥활' },
+  { id: '삭', name: '삭', image: '/images/equipment/icons/057_삭.png', href: '/equipment/삭' },
+  { id: '쇠뇌', name: '쇠뇌', image: '/images/equipment/icons/058_쇠뇌.png', href: '/equipment/쇠뇌' },
+  { id: '쌍극', name: '쌍극', image: '/images/equipment/icons/059_쌍극.png', href: '/equipment/쌍극' },
+  { id: '양손검', name: '양손검', image: '/images/equipment/icons/060_양손검.png', href: '/equipment/양손검' },
+  { id: '언월도', name: '언월도', image: '/images/equipment/icons/061_언월도.png', href: '/equipment/언월도' },
+  { id: '장과', name: '장과', image: '/images/equipment/icons/062_장과.png', href: '/equipment/장과' },
+  { id: '장궁', name: '장궁', image: '/images/equipment/icons/063_장궁.png', href: '/equipment/장궁' },
+  { id: '장극', name: '장극', image: '/images/equipment/icons/064_장극.png', href: '/equipment/장극' },
+  { id: '장창', name: '장창', image: '/images/equipment/icons/065_장창.png', href: '/equipment/장창' },
+  { id: '화궁', name: '화궁', image: '/images/equipment/icons/066_화궁.png', href: '/equipment/화궁' },
+]
+
+export const NORMAL_EQUIPMENT = [
+  { id: '가시공', name: '가시공', image: '/images/equipment/icons/036_가시공.png', href: '/equipment/가시공' },
+  { id: '갈고리검', name: '갈고리검', image: '/images/equipment/icons/028_갈고리검.png', href: '/equipment/갈고리검' },
+  { id: '건곤도', name: '건곤도', image: '/images/equipment/icons/022_건곤도.png', href: '/equipment/건곤도' },
+  { id: '구겸', name: '구겸', image: '/images/equipment/icons/034_구겸.png', href: '/equipment/구겸' },
+  { id: '구리_방패', name: '구리 방패', image: '/images/equipment/icons/010_구리_방패.png', href: '/equipment/구리_방패' },
+  { id: '군기', name: '군기', image: '/images/equipment/icons/021_군기.png', href: '/equipment/군기' },
+  { id: '금_사슬갑옷', name: '금 사슬갑옷', image: '/images/equipment/icons/027_금_사슬갑옷.png', href: '/equipment/금_사슬갑옷' },
+  { id: '낭아봉', name: '낭아봉', image: '/images/equipment/icons/020_낭아봉.png', href: '/equipment/낭아봉' },
+  { id: '다트', name: '다트', image: '/images/equipment/icons/018_다트.png', href: '/equipment/다트' },
+  { id: '덩쿨_방패', name: '덩쿨 방패', image: '/images/equipment/icons/019_덩쿨_방패.png', href: '/equipment/덩쿨_방패' },
+  { id: '도끼', name: '도끼', image: '/images/equipment/icons/030_도끼.png', href: '/equipment/도끼' },
+  { id: '명광_갑옷', name: '명광 갑옷', image: '/images/equipment/icons/016_명광_갑옷.png', href: '/equipment/명광_갑옷' },
+  { id: '모래시계', name: '모래시계', image: '/images/equipment/icons/040_모래시계.png', href: '/equipment/모래시계' },
+  { id: '무쇠_방패', name: '무쇠 방패', image: '/images/equipment/icons/012_무쇠_방패.png', href: '/equipment/무쇠_방패' },
+  { id: '백사_채찍', name: '백사 채찍', image: '/images/equipment/icons/026_백사_채찍.png', href: '/equipment/백사_채찍' },
+  { id: '백참도', name: '백참도', image: '/images/equipment/icons/017_백참도.png', href: '/equipment/백참도' },
+  { id: '분노의_허리띠', name: '분노의 허리띠', image: '/images/equipment/icons/035_분노의_허리띠.png', href: '/equipment/분노의_허리띠' },
+  { id: '분심계', name: '분심계', image: '/images/equipment/icons/033_분심계.png', href: '/equipment/분심계' },
+  { id: '사슬갑옷', name: '사슬갑옷', image: '/images/equipment/icons/007_사슬갑옷.png', href: '/equipment/사슬갑옷' },
+  { id: '술_조롱박', name: '술 조롱박', image: '/images/equipment/icons/008_술_조롱박.png', href: '/equipment/술_조롱박' },
+  { id: '시간_깃발', name: '시간 깃발', image: '/images/equipment/icons/039_시간_깃발.png', href: '/equipment/시간_깃발' },
+  { id: '쌍도끼', name: '쌍도끼', image: '/images/equipment/icons/004_쌍도끼.png', href: '/equipment/쌍도끼' },
+  { id: '옥패', name: '옥패', image: '/images/equipment/icons/031_옥패.png', href: '/equipment/옥패' },
+  { id: '용연검', name: '용연검', image: '/images/equipment/icons/006_용연검.png', href: '/equipment/용연검' },
+  { id: '월아도', name: '월아도', image: '/images/equipment/icons/005_월아도.png', href: '/equipment/월아도' },
+  { id: '유성추', name: '유성추', image: '/images/equipment/icons/003_유성추.png', href: '/equipment/유성추' },
+  { id: '적금순', name: '적금순', image: '/images/equipment/icons/025_적금순.png', href: '/equipment/적금순' },
+  { id: '정심회', name: '정심회', image: '/images/equipment/icons/024_정심회.png', href: '/equipment/정심회' },
+  { id: '천기산', name: '천기산', image: '/images/equipment/icons/032_천기산.png', href: '/equipment/천기산' },
+  { id: '치료검', name: '치료검', image: '/images/equipment/icons/001_치료검.png', href: '/equipment/치료검' },
+  { id: '태양_갑옷', name: '태양 갑옷', image: '/images/equipment/icons/023_태양_갑옷.png', href: '/equipment/태양_갑옷' },
+  { id: '피해_반사_갑옷', name: '피해 반사 갑옷', image: '/images/equipment/icons/009_피해_반사_갑옷.png', href: '/equipment/피해_반사_갑옷' },
+  { id: '현목_영락', name: '현목 영락', image: '/images/equipment/icons/041_현목_영락.png', href: '/equipment/현목_영락' },
+  { id: '현철_지팡이', name: '현철 지팡이', image: '/images/equipment/icons/042_현철_지팡이.png', href: '/equipment/현철_지팡이' },
+  { id: '혈적자', name: '혈적자', image: '/images/equipment/icons/038_혈적자.png', href: '/equipment/혈적자' },
+  { id: '호심경', name: '호심경', image: '/images/equipment/icons/029_호심경.png', href: '/equipment/호심경' },
+  { id: '환도', name: '환도', image: '/images/equipment/icons/014_환도.png', href: '/equipment/환도' },
+  { id: '황월', name: '황월', image: '/images/equipment/icons/011_황월.png', href: '/equipment/황월' },
+  { id: '회심검', name: '회심검', image: '/images/equipment/icons/002_회심검.png', href: '/equipment/회심검' },
+  { id: '회피_신발', name: '회피 신발', image: '/images/equipment/icons/037_회피_신발.png', href: '/equipment/회피_신발' },
+  { id: '흑요석_갑옷', name: '흑요석 갑옷', image: '/images/equipment/icons/015_흑요석_갑옷.png', href: '/equipment/흑요석_갑옷' },
+  { id: '흡혈검', name: '흡혈검', image: '/images/equipment/icons/013_흡혈검.png', href: '/equipment/흡혈검' },
+]
+
+export const EXCLUSIVE_WEAPON_MAP = Object.fromEntries(
+  EXCLUSIVE_WEAPONS.map(item => [item.id, item])
+)
+
+export const NORMAL_EQUIPMENT_MAP = Object.fromEntries(
+  NORMAL_EQUIPMENT.map(item => [item.id, item])
+)
+
+export const BUILD_GROUPS = [
+  { key: 'core', label: '코어' },
+  { key: 'recommended', label: '추천' },
+  { key: 'usable', label: '쓸만함' },
+]

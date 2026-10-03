@@ -6,7 +6,7 @@ export const CATEGORIES = ['초보자', '병사·조합', '전투', '성장·운
 export const EMPTY_DOC = { type: 'doc', content: [{ type: 'paragraph' }] }
 const block = ['paragraph', 'heading', 'blockquote', 'bulletList', 'orderedList', 'codeBlock', 'horizontalRule', 'image', 'table']
 const children = { doc: block, paragraph: ['text', 'hardBreak'], heading: ['text', 'hardBreak'], blockquote: block, bulletList: ['listItem'], orderedList: ['listItem'], listItem: block, codeBlock: ['text'], table: ['tableRow'], tableRow: ['tableCell', 'tableHeader'], tableCell: block, tableHeader: block }
-const attrs = { paragraph: ['textAlign'], heading: ['level', 'textAlign'], orderedList: ['start', 'type'], codeBlock: ['language'], image: ['src', 'alt', 'title', 'width', 'height'], table: [], tableRow: [], tableCell: ['colspan', 'rowspan', 'colwidth', 'align'], tableHeader: ['colspan', 'rowspan', 'colwidth', 'align'], link: ['href', 'target', 'rel', 'class'], textStyle: ['color'] }
+const attrs = { paragraph: ['textAlign'], heading: ['level', 'textAlign'], orderedList: ['start', 'type'], codeBlock: ['language'], image: ['src', 'alt', 'title', 'width', 'height'], table: [], tableRow: [], tableCell: ['colspan', 'rowspan', 'colwidth', 'align'], tableHeader: ['colspan', 'rowspan', 'colwidth', 'align'], link: ['href', 'target', 'rel', 'class', 'title'], textStyle: ['color'] }
 const marks = ['bold', 'italic', 'strike', 'underline', 'code', 'link', 'textStyle']
 function fail() { throw new Error('지원하지 않거나 손상된 공략 본문입니다.') }
 function record(value) { return value && typeof value === 'object' && !Array.isArray(value) }

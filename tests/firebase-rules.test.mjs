@@ -49,6 +49,22 @@ before(async () => {
 beforeEach(async () => {
   await env.clearStorage();
   await env.clearFirestore();
+
+  await env.withSecurityRulesDisabled(async context => {
+    const db = context.firestore();
+
+    await setDoc(doc(db, 'roles', 'alice'), {
+      role: 'writer',
+    });
+
+    await setDoc(doc(db, 'rolePolicies', 'writer'), {
+      canWriteGuides: true,
+    });
+
+    await setDoc(doc(db, 'profiles', 'alice'), {
+      alias: 'Synthetic Author',
+    });
+  });
 });
 after(async () => { await env?.cleanup(); });
 
@@ -97,13 +113,21 @@ for (const field of Object.keys(guide())) {
   });
 }
 test('Firestore: accepts exact string upper boundaries', async () => {
+  const nickname = 'x'.repeat(30);
+
+  await env.withSecurityRulesDisabled(async context => {
+    await setDoc(doc(context.firestore(), 'profiles', 'alice'), {
+      alias: nickname,
+    });
+  });
+
   await assertSucceeds(setDoc(guideRef(actor()), guide({
-    nickname: 'x'.repeat(30), title: 'x'.repeat(120), body: 'x'.repeat(100000), status: 'published',
+    nickname, title: 'x'.repeat(120), body: 'x'.repeat(100000), status: 'published',
   })));
 });
 for (const category of ['초보자', '병사·조합', '전투', '성장·운영', '기타']) {
   test(`Firestore: accepts category ${category}`, async () => {
-    await assertSucceeds(setDoc(guideRef(actor()), guide({ category, nickname: 'x', title: 'x' })));
+    await assertSucceeds(setDoc(guideRef(actor()), guide({ category, title: 'x' })));
   });
 }
 
@@ -193,7 +217,7 @@ for (const [name, context, constraints] of [
   });
 }
 test('Firestore: no access to other collections or guide subcollections', async () => {
-  for (const path of ['users/alice', 'roles/alice', 'guides/guide/private/secret']) {
+  for (const path of ['users/alice', 'guides/guide/private/secret']) {
     await env.withSecurityRulesDisabled(context => setDoc(doc(context.firestore(), path), { secret: true }));
     for (const context of [actor(), anon()]) {
       const target = doc(context.firestore(), path);
@@ -202,6 +226,14 @@ test('Firestore: no access to other collections or guide subcollections', async 
       await assertFails(deleteDoc(target));
     }
   }
+});
+
+test('Firestore: verified user can read own role but anonymous cannot', async () => {
+  const ownerTarget = doc(actor().firestore(), 'roles', 'alice');
+  await assertSucceeds(getDoc(ownerTarget));
+
+  const anonymousTarget = doc(anon().firestore(), 'roles', 'alice');
+  await assertFails(getDoc(anonymousTarget));
 });
 
 const imagePath = (uid = 'alice', id = 'guide', filename = '0.webp') => `guide-images/${uid}/${id}/${filename}`;

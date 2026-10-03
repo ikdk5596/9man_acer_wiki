@@ -84,21 +84,16 @@ service cloud.firestore {
     }
     function validTierRows(tiers, kind) {
       return tiers is map
+        && kind in ['soldiers', 'heroes', 'policies']
         && tiers.keys().hasAll(['S', 'A', 'B', 'C', 'D', 'E', 'F'])
         && tiers.keys().hasOnly(['S', 'A', 'B', 'C', 'D', 'E', 'F'])
-        && tiers.S is list && tiers.A is list && tiers.B is list
-        && tiers.C is list && tiers.D is list && tiers.E is list && tiers.F is list
-        && (
-          (kind == 'soldiers'
-            && tiers.S.size() <= 26 && tiers.A.size() <= 26 && tiers.B.size() <= 26
-            && tiers.C.size() <= 26 && tiers.D.size() <= 26 && tiers.E.size() <= 26 && tiers.F.size() <= 26)
-          || (kind == 'heroes'
-            && tiers.S.size() <= 59 && tiers.A.size() <= 59 && tiers.B.size() <= 59
-            && tiers.C.size() <= 59 && tiers.D.size() <= 59 && tiers.E.size() <= 59 && tiers.F.size() <= 59)
-          || (kind == 'policies'
-            && tiers.S.size() <= 51 && tiers.A.size() <= 51 && tiers.B.size() <= 51
-            && tiers.C.size() <= 51 && tiers.D.size() <= 51 && tiers.E.size() <= 51 && tiers.F.size() <= 51)
-        );
+        && tiers.S is list
+        && tiers.A is list
+        && tiers.B is list
+        && tiers.C is list
+        && tiers.D is list
+        && tiers.E is list
+        && tiers.F is list;
     }
 
     function validTierBoard(board, kind) {
@@ -237,6 +232,7 @@ service cloud.firestore {
       allow delete: if false;
     }
     match /tierLists/{kind} {
+      // Existing S~F tier boards.
       allow get: if kind in ['soldiers', 'heroes', 'policies'];
       allow list: if false;
       allow create, update: if kind in ['soldiers', 'heroes', 'policies']
@@ -246,6 +242,57 @@ service cloud.firestore {
         && request.resource.data.updatedBy == request.auth.uid;
       allow delete: if false;
     }
+
+    // Hero advanced-talent ranking is intentionally separate from the
+    // generic S~F tier-board schema above.
+    match /tierLists/talents {
+      allow get: if true;
+      allow list: if false;
+
+      allow create, update: if canManagePosts()
+        && request.resource.data.keys().hasAll([
+          'heroTiers',
+          'heroTalentUpdatedAt',
+          'heroTalentUpdatedBy'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'heroTiers',
+          'heroTalentUpdatedAt',
+          'heroTalentUpdatedBy'
+        ])
+        && request.resource.data.heroTiers is map
+        && request.resource.data.heroTiers.size() <= 59
+        && request.resource.data.heroTalentUpdatedAt == request.time
+        && request.resource.data.heroTalentUpdatedBy == request.auth.uid;
+
+      allow delete: if false;
+    }
+
+    // Exclusive-weapon recommended builds are intentionally separate from
+    // the generic S~F tier-board schema above.
+    match /tierLists/weapon-builds {
+      allow get: if true;
+      allow list: if false;
+
+      allow create, update: if canManagePosts()
+        && request.resource.data.keys().hasAll([
+          'weaponBuilds',
+          'weaponBuildUpdatedAt',
+          'weaponBuildUpdatedBy'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'weaponBuilds',
+          'weaponBuildUpdatedAt',
+          'weaponBuildUpdatedBy'
+        ])
+        && request.resource.data.weaponBuilds is map
+        && request.resource.data.weaponBuilds.size() <= 24
+        && request.resource.data.weaponBuildUpdatedAt == request.time
+        && request.resource.data.weaponBuildUpdatedBy == request.auth.uid;
+
+      allow delete: if false;
+    }
+
     match /partyPosts/{partyId} {
       function validParty(data) {
         return data.keys().hasAll([

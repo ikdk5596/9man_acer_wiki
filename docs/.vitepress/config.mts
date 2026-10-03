@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress'
 import heroes from '../../scripts/data/heroes.json'
 import soldierNames from '../../scripts/data/soldier_names.json'
 
@@ -47,6 +47,8 @@ export default defineConfig({
       { text: '\uB4F1\uAE09\uD45C', items: [
         { text: '\uBCD1\uC885\uBCC4 \uB4F1\uAE09', link: '/tiers/soldiers/' },
         { text: '\uC601\uC6C5 \uD2F0\uC5B4', link: '/tiers/heroes/' },
+        { text: '\uC601\uC6C5 \uC7AC\uB2A5 \uD2F0\uC5B4', link: '/tiers/talents/' },
+        { text: '\uC804\uC6A9\uBB34\uAE30 \uCD94\uCC9C \uBE4C\uB4DC', link: '/tiers/weapons/' },
         { text: '\uC815\uCC45\uBCC4 \uB4F1\uAE09', link: '/tiers/policies/' },
       ] },
       ...(includeGuides ? [{ text: '\uAC1C\uC778\uACF5\uB7B5', link: '/guides/' }] : []),
@@ -134,6 +136,12 @@ export default defineConfig({
           ],
         },
         {
+          text: '\uC804\uC6A9\uBB34\uAE30 \uCD94\uCC9C',
+          items: [
+            { text: '\uCD94\uCC9C \uBE4C\uB4DC', link: '/tiers/weapons/' },
+          ],
+        },
+        {
           text: '전용 무기',
           collapsed: true,
           items: [
@@ -165,7 +173,10 @@ export default defineConfig({
         },
       ],
       '/hero/': [
-        { text: '\uC601\uC6C5 \uD2F0\uC5B4', items: [{ text: '\uB4F1\uAE09\uD45C', link: '/tiers/heroes/' }] },
+        { text: '\uC601\uC6C5 \uD2F0\uC5B4', items: [
+          { text: '\uB4F1\uAE09\uD45C', link: '/tiers/heroes/' },
+          { text: '\uC601\uC6C5 \uC7AC\uB2A5 \uD2F0\uC5B4', link: '/tiers/talents/' },
+        ] },
         {
           text: '영웅 도감',
           items: [{ text: '병종별 전체 목록', link: '/hero/' }],

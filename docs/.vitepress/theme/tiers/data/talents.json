@@ -1,0 +1,4725 @@
+{
+  "schemaVersion": 1,
+  "talentCount": 426,
+  "talents": [
+    {
+      "id": "talent_6e22db23376d",
+      "grade": "beginner",
+      "text": "기병(검)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_cc65080a93d9",
+      "grade": "beginner",
+      "text": "기병(검)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_1da9a0854f28",
+      "grade": "beginner",
+      "text": "기병(검)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_5f32d9071114",
+      "grade": "beginner",
+      "text": "기병(검)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_98e4879cb954",
+      "grade": "beginner",
+      "text": "기병(검)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_046969bad901",
+      "grade": "beginner",
+      "text": "기병(검)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_339088477872",
+      "grade": "beginner",
+      "text": "기병(검)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_e66676e2d98d",
+      "grade": "beginner",
+      "text": "기병(검)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_3c655bf8cb52",
+      "grade": "beginner",
+      "text": "기병(대도)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_d8028cd4aeb3",
+      "grade": "beginner",
+      "text": "기병(대도)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_5a59d596d07d",
+      "grade": "beginner",
+      "text": "기병(대도)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_e58be4d1e3aa",
+      "grade": "beginner",
+      "text": "기병(대도)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_0403be34b3df",
+      "grade": "beginner",
+      "text": "기병(대도)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_b7cbb92fbd27",
+      "grade": "beginner",
+      "text": "기병(대도)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_db14648a840d",
+      "grade": "beginner",
+      "text": "기병(대도)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_989114620340",
+      "grade": "beginner",
+      "text": "기병(대도)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_f0d694a749d2",
+      "grade": "beginner",
+      "text": "기병(도끼)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_38800e7d0989",
+      "grade": "beginner",
+      "text": "기병(도끼)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_286769e8064d",
+      "grade": "beginner",
+      "text": "기병(도끼)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_366f24c924e2",
+      "grade": "beginner",
+      "text": "기병(도끼)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_9073dac4eb07",
+      "grade": "beginner",
+      "text": "기병(도끼)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_2f3917cf559f",
+      "grade": "beginner",
+      "text": "기병(도끼)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_7d1553d91284",
+      "grade": "beginner",
+      "text": "기병(도끼)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_8a5f281b762d",
+      "grade": "beginner",
+      "text": "기병(중기병)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_cb9b4ee4e472",
+      "grade": "beginner",
+      "text": "기병(중기병)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_335716ab5e8a",
+      "grade": "beginner",
+      "text": "기병(중기병)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_6365dcd8bcff",
+      "grade": "beginner",
+      "text": "기병(중기병)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_e92cfa2a95df",
+      "grade": "beginner",
+      "text": "기병(중기병)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_8024db32bbb5",
+      "grade": "beginner",
+      "text": "기병(중기병)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_b2ae3158820e",
+      "grade": "beginner",
+      "text": "기병(중기병)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_6b16274d8247",
+      "grade": "beginner",
+      "text": "기병(중기병)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_f45dfda1387a",
+      "grade": "beginner",
+      "text": "기병(창)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_78f57c33400e",
+      "grade": "beginner",
+      "text": "기병(창)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_35979800a1fa",
+      "grade": "beginner",
+      "text": "기병(창)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_17f1445e71c9",
+      "grade": "beginner",
+      "text": "기병(창)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_a74fe04a3831",
+      "grade": "beginner",
+      "text": "기병(창)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_a56cfc8f17c0",
+      "grade": "beginner",
+      "text": "기병(창)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_0e02653befdf",
+      "grade": "beginner",
+      "text": "기병(창)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_def36aa84dbd",
+      "grade": "beginner",
+      "text": "기병(창)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_164150ea303f",
+      "grade": "beginner",
+      "text": "기병(활)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_e0ceec528a32",
+      "grade": "beginner",
+      "text": "기병(활)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_0ce1945dfc82",
+      "grade": "beginner",
+      "text": "기병(활)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_f364bc9f049f",
+      "grade": "beginner",
+      "text": "기병(활)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_dfe96dfeb8de",
+      "grade": "beginner",
+      "text": "기병(활)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_25e22a911f29",
+      "grade": "beginner",
+      "text": "기병(활)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_ea902a88e101",
+      "grade": "beginner",
+      "text": "기병(활)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_34fc9727507b",
+      "grade": "beginner",
+      "text": "기병(활)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_e627fb51fc43",
+      "grade": "beginner",
+      "text": "병사(강화 쇠뇌)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_73eaa402aec0",
+      "grade": "beginner",
+      "text": "병사(강화 쇠뇌)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_cbe2968513a1",
+      "grade": "beginner",
+      "text": "병사(강화 쇠뇌)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_2de6de832d20",
+      "grade": "beginner",
+      "text": "병사(강화 쇠뇌)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_9c96d7474c31",
+      "grade": "beginner",
+      "text": "병사(강화 쇠뇌)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_efb6665440c5",
+      "grade": "beginner",
+      "text": "병사(강화 쇠뇌)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_8bc281960413",
+      "grade": "beginner",
+      "text": "병사(강화 쇠뇌)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_c9e188074ed7",
+      "grade": "beginner",
+      "text": "병사(검&방패)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_4812be2e2ddc",
+      "grade": "beginner",
+      "text": "병사(검&방패)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_6f12a9328e65",
+      "grade": "beginner",
+      "text": "병사(검&방패)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_f9d4d199401e",
+      "grade": "beginner",
+      "text": "병사(검&방패)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_26001ca3cde0",
+      "grade": "beginner",
+      "text": "병사(검&방패)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_5024593be27f",
+      "grade": "beginner",
+      "text": "병사(검&방패)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_b3f8fe1cf8c0",
+      "grade": "beginner",
+      "text": "병사(검&방패)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_f7a44c46d174",
+      "grade": "beginner",
+      "text": "병사(검&방패)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_99361567e2c7",
+      "grade": "beginner",
+      "text": "병사(긴창)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_40507cb85128",
+      "grade": "beginner",
+      "text": "병사(긴창)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_d9a7dd96e11b",
+      "grade": "beginner",
+      "text": "병사(긴창)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_de05542197b9",
+      "grade": "beginner",
+      "text": "병사(긴창)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_22c785645a6a",
+      "grade": "beginner",
+      "text": "병사(긴창)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_5c61edf8961a",
+      "grade": "beginner",
+      "text": "병사(긴창)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_0be284ae43c7",
+      "grade": "beginner",
+      "text": "병사(긴창)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_396e6aac0d94",
+      "grade": "beginner",
+      "text": "병사(긴창)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_0a030600e018",
+      "grade": "beginner",
+      "text": "병사(도끼&방패)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_ee6e735dc872",
+      "grade": "beginner",
+      "text": "병사(도끼&방패)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_8157451ae460",
+      "grade": "beginner",
+      "text": "병사(도끼&방패)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_d015099d4541",
+      "grade": "beginner",
+      "text": "병사(도끼&방패)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_7491ed6c409d",
+      "grade": "beginner",
+      "text": "병사(도끼&방패)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_85c56eff414f",
+      "grade": "beginner",
+      "text": "병사(도끼&방패)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_0c10cfb22ad1",
+      "grade": "beginner",
+      "text": "병사(도끼&방패)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_17f575e9db41",
+      "grade": "beginner",
+      "text": "병사(도끼&방패)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_1a1f4122374e",
+      "grade": "beginner",
+      "text": "병사(독궁)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_c7389f6da737",
+      "grade": "beginner",
+      "text": "병사(독궁)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_878a7011eed8",
+      "grade": "beginner",
+      "text": "병사(독궁)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_bcdf4e46b71e",
+      "grade": "beginner",
+      "text": "병사(독궁)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_386ca8da64ed",
+      "grade": "beginner",
+      "text": "병사(독궁)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_36bc8df884c1",
+      "grade": "beginner",
+      "text": "병사(독궁)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_c3aeb6673650",
+      "grade": "beginner",
+      "text": "병사(독궁)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_0bc215483ac1",
+      "grade": "beginner",
+      "text": "병사(독궁)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_d436d2996c97",
+      "grade": "beginner",
+      "text": "병사(망치&방패)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_6fbacf6413df",
+      "grade": "beginner",
+      "text": "병사(망치&방패)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_6905f57953ae",
+      "grade": "beginner",
+      "text": "병사(망치&방패)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_0e1766580c43",
+      "grade": "beginner",
+      "text": "병사(망치&방패)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_2357e756b51d",
+      "grade": "beginner",
+      "text": "병사(망치&방패)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_b505fa3338cc",
+      "grade": "beginner",
+      "text": "병사(망치&방패)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_8c5408a9bd5b",
+      "grade": "beginner",
+      "text": "병사(망치&방패)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_b9507ccc28d4",
+      "grade": "beginner",
+      "text": "병사(망치&방패)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_66d4dc690d92",
+      "grade": "beginner",
+      "text": "병사(맥도)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_1b21c1da6d38",
+      "grade": "beginner",
+      "text": "병사(맥도)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_b402044d0445",
+      "grade": "beginner",
+      "text": "병사(맥도)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_03558950e75a",
+      "grade": "beginner",
+      "text": "병사(맥도)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_97ca3f71fdb3",
+      "grade": "beginner",
+      "text": "병사(맥도)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_c8bfceeb9ff8",
+      "grade": "beginner",
+      "text": "병사(맥도)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_39b87c19bd36",
+      "grade": "beginner",
+      "text": "병사(맥도)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_fcbf9106553d",
+      "grade": "beginner",
+      "text": "병사(무거운 방패)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_c1a0b26557a5",
+      "grade": "beginner",
+      "text": "병사(무거운 방패)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_a2a45c398de9",
+      "grade": "beginner",
+      "text": "병사(무거운 방패)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_1af0f066f6d5",
+      "grade": "beginner",
+      "text": "병사(무거운 방패)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_167063c28c96",
+      "grade": "beginner",
+      "text": "병사(무거운 방패)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_2349f3cbe2d2",
+      "grade": "beginner",
+      "text": "병사(무거운 방패)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_040d5ac18e68",
+      "grade": "beginner",
+      "text": "병사(무거운 방패)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_dfe33cfd193d",
+      "grade": "beginner",
+      "text": "병사(무거운 방패)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_78e8cab26913",
+      "grade": "beginner",
+      "text": "병사(사냥꾼)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_c5bd108b9fad",
+      "grade": "beginner",
+      "text": "병사(사냥꾼)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_e0de698820f7",
+      "grade": "beginner",
+      "text": "병사(사냥꾼)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_c004d0244880",
+      "grade": "beginner",
+      "text": "병사(사냥꾼)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_87a66919cffc",
+      "grade": "beginner",
+      "text": "병사(사냥꾼)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_3efd431c993c",
+      "grade": "beginner",
+      "text": "병사(사냥꾼)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_6ae887d5080d",
+      "grade": "beginner",
+      "text": "병사(사냥꾼)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_29f17e8e4318",
+      "grade": "beginner",
+      "text": "병사(사냥꾼)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_04106d3b74f3",
+      "grade": "beginner",
+      "text": "병사(쇠뇌)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_66a292611c1d",
+      "grade": "beginner",
+      "text": "병사(쇠뇌)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_2b80ea51348c",
+      "grade": "beginner",
+      "text": "병사(쇠뇌)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_62daeac0576b",
+      "grade": "beginner",
+      "text": "병사(쇠뇌)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_bfd0e68cfbbf",
+      "grade": "beginner",
+      "text": "병사(쇠뇌)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_9b4bcdad48c9",
+      "grade": "beginner",
+      "text": "병사(쇠뇌)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_0fc883c4f2a9",
+      "grade": "beginner",
+      "text": "병사(쇠뇌)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_cd5c32896526",
+      "grade": "beginner",
+      "text": "병사(쇠뇌)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_f7db1233170c",
+      "grade": "beginner",
+      "text": "병사(쌍창)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_7302bb0a4a1c",
+      "grade": "beginner",
+      "text": "병사(쌍창)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_ff4872286ec9",
+      "grade": "beginner",
+      "text": "병사(쌍창)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_90a3f951058d",
+      "grade": "beginner",
+      "text": "병사(쌍창)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_d8d69dc537dd",
+      "grade": "beginner",
+      "text": "병사(쌍창)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_542f3fcb38d1",
+      "grade": "beginner",
+      "text": "병사(쌍창)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_e44126313b73",
+      "grade": "beginner",
+      "text": "병사(쌍창)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_4d46cf1503cf",
+      "grade": "beginner",
+      "text": "병사(쌍창)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_27d0a62648c6",
+      "grade": "beginner",
+      "text": "병사(장검)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_4dd54fb3d7b2",
+      "grade": "beginner",
+      "text": "병사(장검)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_3991ea9614ba",
+      "grade": "beginner",
+      "text": "병사(장검)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_5a15dee3f3ab",
+      "grade": "beginner",
+      "text": "병사(장검)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_18c1868f3759",
+      "grade": "beginner",
+      "text": "병사(장검)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_9aad7df1a4ab",
+      "grade": "beginner",
+      "text": "병사(장검)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_2db4ff2bdfd5",
+      "grade": "beginner",
+      "text": "병사(장검)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_1a23e9bf8e69",
+      "grade": "beginner",
+      "text": "병사(장검)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_0e42e07b7cc4",
+      "grade": "beginner",
+      "text": "병사(장과)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_2dfc5ec27ae0",
+      "grade": "beginner",
+      "text": "병사(장과)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_011d205696c6",
+      "grade": "beginner",
+      "text": "병사(장과)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_0530edbb1f6a",
+      "grade": "beginner",
+      "text": "병사(장과)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_4358dcf7775e",
+      "grade": "beginner",
+      "text": "병사(장과)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_ac8bb1a54d2f",
+      "grade": "beginner",
+      "text": "병사(장과)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_64760b37cd38",
+      "grade": "beginner",
+      "text": "병사(장과)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_fcff9300b84e",
+      "grade": "beginner",
+      "text": "병사(장과)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_f52a9cbddd82",
+      "grade": "beginner",
+      "text": "병사(장궁)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_e72eaaa7d2b7",
+      "grade": "beginner",
+      "text": "병사(장궁)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_fe2dbae4e4b6",
+      "grade": "beginner",
+      "text": "병사(장궁)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_4b2b17f89a58",
+      "grade": "beginner",
+      "text": "병사(장궁)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_a60e9296438b",
+      "grade": "beginner",
+      "text": "병사(장궁)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_3d7993297a65",
+      "grade": "beginner",
+      "text": "병사(장궁)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_50077f4db682",
+      "grade": "beginner",
+      "text": "병사(장궁)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_ea8db2f6fbf2",
+      "grade": "beginner",
+      "text": "병사(장궁)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_9f2e532cfe24",
+      "grade": "beginner",
+      "text": "병사(장창)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_f97d7a585801",
+      "grade": "beginner",
+      "text": "병사(장창)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_6ba476f27cc2",
+      "grade": "beginner",
+      "text": "병사(장창)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_0ff5be05720a",
+      "grade": "beginner",
+      "text": "병사(장창)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_245682e13fd7",
+      "grade": "beginner",
+      "text": "병사(장창)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_ff927a8b127c",
+      "grade": "beginner",
+      "text": "병사(장창)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_5e259c21e1df",
+      "grade": "beginner",
+      "text": "병사(장창)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_8b341d0686f6",
+      "grade": "beginner",
+      "text": "병사(장창)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_c247d89adc97",
+      "grade": "beginner",
+      "text": "병사(창&방패)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_61774cfc746e",
+      "grade": "beginner",
+      "text": "병사(창&방패)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_d35997fb4130",
+      "grade": "beginner",
+      "text": "병사(창&방패)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_291f81d58c24",
+      "grade": "beginner",
+      "text": "병사(창&방패)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_80d895ace2af",
+      "grade": "beginner",
+      "text": "병사(창&방패)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_e399b42b97ed",
+      "grade": "beginner",
+      "text": "병사(창&방패)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_ae652b3ac7f4",
+      "grade": "beginner",
+      "text": "병사(창&방패)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_9b64c4297636",
+      "grade": "beginner",
+      "text": "병사(창&방패)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_9b1a434f7d74",
+      "grade": "beginner",
+      "text": "병사(칼&방패)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_2512389a1d9b",
+      "grade": "beginner",
+      "text": "병사(칼&방패)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_dd8fa6cc4a3a",
+      "grade": "beginner",
+      "text": "병사(칼&방패)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_48753ce2e2a3",
+      "grade": "beginner",
+      "text": "병사(칼&방패)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_21e96a9ffa53",
+      "grade": "beginner",
+      "text": "병사(칼&방패)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_de14013a4f1f",
+      "grade": "beginner",
+      "text": "병사(칼&방패)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_f29eeeb4e2e5",
+      "grade": "beginner",
+      "text": "병사(칼&방패)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_e55d474392f7",
+      "grade": "beginner",
+      "text": "병사(칼&방패)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_89ec7d782e3d",
+      "grade": "beginner",
+      "text": "병사(화궁)의 HP +20",
+      "maxStacks": 3,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_e131c4e9401a",
+      "grade": "beginner",
+      "text": "병사(화궁)의 HP+5%",
+      "maxStacks": 3,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_2c48b4e3af0b",
+      "grade": "beginner",
+      "text": "병사(화궁)의 공격력 +2",
+      "maxStacks": 3,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_5b76613cf348",
+      "grade": "beginner",
+      "text": "병사(화궁)의 공격력 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_707a42dc8536",
+      "grade": "beginner",
+      "text": "병사(화궁)의 스킬 시전 후 분노치 1 보류",
+      "maxStacks": 1,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_2df14a086964",
+      "grade": "beginner",
+      "text": "병사(화궁)이(가) 받는 피해 -5%",
+      "maxStacks": 3,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_18bbf9995821",
+      "grade": "beginner",
+      "text": "병사(화궁)이(가) 주는 피해 +5%",
+      "maxStacks": 3,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_90664b2e5127",
+      "grade": "beginner",
+      "text": "병사(화궁)이(가) 턴당 HP를 2회복한다",
+      "maxStacks": 3,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_77603c1fa682",
+      "grade": "intermediate",
+      "text": "궁병과 대상의 거리에 따라, 1칸당 궁병이 주는 피해가 2% 증가한다",
+      "maxStacks": 2,
+      "heroes": [
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_855df3b2dd90",
+      "grade": "intermediate",
+      "text": "궁병과 대상의 거리에 따라, 1칸당 궁병이 주는 피해가 3% 증가한다",
+      "maxStacks": 2,
+      "heroes": [
+        "손권 (중모)",
+        "손상향",
+        "양유기 (숙)",
+        "양홍옥",
+        "왕이",
+        "유비 (현덕)",
+        "유총",
+        "육손 (백언)",
+        "이유 (문우)",
+        "조휴 (문열)",
+        "주원장",
+        "채문희",
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_9f95eac90a44",
+      "grade": "intermediate",
+      "text": "궁병의 공격력 +4",
+      "maxStacks": 2,
+      "heroes": [
+        "손권 (중모)",
+        "손상향",
+        "양유기 (숙)",
+        "양홍옥",
+        "왕이",
+        "유비 (현덕)",
+        "유총",
+        "육손 (백언)",
+        "이유 (문우)",
+        "조휴 (문열)",
+        "주원장",
+        "채문희",
+        "초선",
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_74634980e0e7",
+      "grade": "intermediate",
+      "text": "궁병의 최대 분노치 -1",
+      "maxStacks": 1,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "왕이",
+        "유비 (현덕)",
+        "유총",
+        "육손 (백언)",
+        "이유 (문우)",
+        "주원장",
+        "채문희",
+        "초선",
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_539cbeecad41",
+      "grade": "intermediate",
+      "text": "궁병이 대상을 처치할 시 공격력 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "손권 (중모)",
+        "손상향",
+        "양유기 (숙)",
+        "양홍옥",
+        "왕이",
+        "유비 (현덕)",
+        "유총",
+        "육손 (백언)",
+        "이유 (문우)",
+        "조휴 (문열)",
+        "주원장",
+        "채문희",
+        "초선",
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_7d317a27d276",
+      "grade": "intermediate",
+      "text": "기병(검)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_74fbfc5527fd",
+      "grade": "intermediate",
+      "text": "기병(검)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_a68fcc94c379",
+      "grade": "intermediate",
+      "text": "기병(검)이(가) 회피율을 8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_0ab80bb3763f",
+      "grade": "intermediate",
+      "text": "기병(대도)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_36c105f434f6",
+      "grade": "intermediate",
+      "text": "기병(대도)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_0339c0af585a",
+      "grade": "intermediate",
+      "text": "기병(대도)이(가) 회피율을 8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_8a1043864d5f",
+      "grade": "intermediate",
+      "text": "기병(도끼)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_83966dfb9da1",
+      "grade": "intermediate",
+      "text": "기병(도끼)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_40677c5a866a",
+      "grade": "intermediate",
+      "text": "기병(도끼)이(가) 회피율을 8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_e4168d59ff93",
+      "grade": "intermediate",
+      "text": "기병(중기병)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_cf10b1ab9ee5",
+      "grade": "intermediate",
+      "text": "기병(중기병)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_956de7fce624",
+      "grade": "intermediate",
+      "text": "기병(중기병)이(가) 회피율을 8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_c4d32b72e55e",
+      "grade": "intermediate",
+      "text": "기병(창)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_e1ca07873a89",
+      "grade": "intermediate",
+      "text": "기병(창)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_91785ed4e1f0",
+      "grade": "intermediate",
+      "text": "기병(창)이(가) 회피율을 8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_6485e32fc329",
+      "grade": "intermediate",
+      "text": "기병(활)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_321e7e35c61d",
+      "grade": "intermediate",
+      "text": "기병(활)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_5c6426e3c7a9",
+      "grade": "intermediate",
+      "text": "기병(활)이(가) 회피율을 8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_c71bcdfb8282",
+      "grade": "intermediate",
+      "text": "기병의 HP가 처음 30% 미만으로 떨어질 경우, [최대 HP*15%]에 해당하는 HP를 회복한다",
+      "maxStacks": 2,
+      "heroes": [
+        "곽거병",
+        "관우 (운장)",
+        "관은병",
+        "동탁 (중영)",
+        "마초 (맹기)",
+        "배행엄 (수경)",
+        "서황 (공명)",
+        "여포 (봉선)",
+        "장료 (문원)",
+        "정교금 (의정)",
+        "태사자 (자의)",
+        "하후연 (묘재)",
+        "항우",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_a8c6b071d1d4",
+      "grade": "intermediate",
+      "text": "기병의 최대 분노치 -1",
+      "maxStacks": 1,
+      "heroes": [
+        "곽거병",
+        "관우 (운장)",
+        "관은병",
+        "동탁 (중영)",
+        "마초 (맹기)",
+        "배행엄 (수경)",
+        "여포 (봉선)",
+        "장료 (문원)",
+        "태사자 (자의)",
+        "하후연 (묘재)",
+        "항우",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_afaca8b09668",
+      "grade": "intermediate",
+      "text": "기병이 대상을 처치할 시 공격력 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "곽거병",
+        "관우 (운장)",
+        "관은병",
+        "동탁 (중영)",
+        "마초 (맹기)",
+        "배행엄 (수경)",
+        "서황 (공명)",
+        "여포 (봉선)",
+        "장료 (문원)",
+        "정교금 (의정)",
+        "태사자 (자의)",
+        "하후연 (묘재)",
+        "항우",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_7ca2bd7c2f35",
+      "grade": "intermediate",
+      "text": "기병이 받는 HP 회복 효과 +15%",
+      "maxStacks": 2,
+      "heroes": [
+        "곽거병",
+        "관우 (운장)",
+        "관은병",
+        "동탁 (중영)",
+        "마초 (맹기)",
+        "배행엄 (수경)",
+        "서황 (공명)",
+        "여포 (봉선)",
+        "장료 (문원)",
+        "정교금 (의정)",
+        "태사자 (자의)",
+        "하후연 (묘재)",
+        "항우",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_b2c298a6d368",
+      "grade": "intermediate",
+      "text": "방패병의 최대 분노치 -1",
+      "maxStacks": 1,
+      "heroes": [
+        "고순",
+        "등애 (사재)",
+        "맹획",
+        "번쾌",
+        "악진 (문겸)",
+        "염파",
+        "위효관",
+        "장비 (익덕)",
+        "조인 (자효)",
+        "조조 (맹덕)",
+        "주태 (유평)",
+        "하후돈 (원양)",
+        "허성 (문향)",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_5449c813098d",
+      "grade": "intermediate",
+      "text": "방패병이 디버프 효과를 받을 시 10% 확률로 해당 효과에 면역한다",
+      "maxStacks": 1,
+      "heroes": [
+        "고순",
+        "등애 (사재)",
+        "맹획",
+        "번쾌",
+        "악진 (문겸)",
+        "염파",
+        "위효관",
+        "장비 (익덕)",
+        "조인 (자효)",
+        "조조 (맹덕)",
+        "주태 (유평)",
+        "하후돈 (원양)",
+        "허성 (문향)",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_e4d30b20f7d6",
+      "grade": "intermediate",
+      "text": "방패병이 받는 HP 회복 효과 +15%",
+      "maxStacks": 2,
+      "heroes": [
+        "고순",
+        "등애 (사재)",
+        "맹획",
+        "번쾌",
+        "악진 (문겸)",
+        "염파",
+        "위효관",
+        "장비 (익덕)",
+        "조인 (자효)",
+        "조조 (맹덕)",
+        "주태 (유평)",
+        "하후돈 (원양)",
+        "허성 (문향)",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_dafc027269ac",
+      "grade": "intermediate",
+      "text": "방패병이 받는 피해 -3",
+      "maxStacks": 2,
+      "heroes": [
+        "고순",
+        "등애 (사재)",
+        "맹획",
+        "번쾌",
+        "악진 (문겸)",
+        "염파",
+        "위효관",
+        "장비 (익덕)",
+        "조인 (자효)",
+        "조조 (맹덕)",
+        "주태 (유평)",
+        "하후돈 (원양)",
+        "허성 (문향)",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_547c18447694",
+      "grade": "intermediate",
+      "text": "병사(강화 쇠뇌)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_2c4afeda5fec",
+      "grade": "intermediate",
+      "text": "병사(강화 쇠뇌)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_787bb608a3f6",
+      "grade": "intermediate",
+      "text": "병사(강화 쇠뇌)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_cba1fb008cbb",
+      "grade": "intermediate",
+      "text": "병사(검&방패)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_7a23864531f9",
+      "grade": "intermediate",
+      "text": "병사(검&방패)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_3bbf57084d8d",
+      "grade": "intermediate",
+      "text": "병사(검&방패)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_0191b226bb94",
+      "grade": "intermediate",
+      "text": "병사(긴창)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_f3d29e70111f",
+      "grade": "intermediate",
+      "text": "병사(긴창)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_8f874f77a6b4",
+      "grade": "intermediate",
+      "text": "병사(긴창)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_aa2d636d782f",
+      "grade": "intermediate",
+      "text": "병사(도끼&방패)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_0fd9104be610",
+      "grade": "intermediate",
+      "text": "병사(도끼&방패)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_7d1bbdaebbd8",
+      "grade": "intermediate",
+      "text": "병사(도끼&방패)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_d7d3380d0179",
+      "grade": "intermediate",
+      "text": "병사(독궁)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_bb0c7e91e6a9",
+      "grade": "intermediate",
+      "text": "병사(독궁)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_ffef4817c34c",
+      "grade": "intermediate",
+      "text": "병사(독궁)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_1809708f2927",
+      "grade": "intermediate",
+      "text": "병사(망치&방패)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_47acea6fc45b",
+      "grade": "intermediate",
+      "text": "병사(망치&방패)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_65b1d0f06642",
+      "grade": "intermediate",
+      "text": "병사(망치&방패)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_207a5b24e3a0",
+      "grade": "intermediate",
+      "text": "병사(맥도)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_d357e4c254ef",
+      "grade": "intermediate",
+      "text": "병사(맥도)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_d2fd928cc4bf",
+      "grade": "intermediate",
+      "text": "병사(맥도)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_1811c0e514bd",
+      "grade": "intermediate",
+      "text": "병사(무거운 방패)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_8628573e28c3",
+      "grade": "intermediate",
+      "text": "병사(무거운 방패)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_7cbe6ea54442",
+      "grade": "intermediate",
+      "text": "병사(무거운 방패)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_439ac2786385",
+      "grade": "intermediate",
+      "text": "병사(사냥꾼)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_c56092cc6354",
+      "grade": "intermediate",
+      "text": "병사(사냥꾼)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_2d149b78da5f",
+      "grade": "intermediate",
+      "text": "병사(사냥꾼)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_04b385979d71",
+      "grade": "intermediate",
+      "text": "병사(쇠뇌)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_7c5eff342fed",
+      "grade": "intermediate",
+      "text": "병사(쇠뇌)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_18c030f80a9d",
+      "grade": "intermediate",
+      "text": "병사(쇠뇌)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_c0dab2b0b7c7",
+      "grade": "intermediate",
+      "text": "병사(쌍창)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_b3bd60c5b8e0",
+      "grade": "intermediate",
+      "text": "병사(쌍창)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_1b4e8425c429",
+      "grade": "intermediate",
+      "text": "병사(쌍창)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_5f9a6ef617c8",
+      "grade": "intermediate",
+      "text": "병사(장검)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_7ee33d149e0d",
+      "grade": "intermediate",
+      "text": "병사(장검)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_77f682986651",
+      "grade": "intermediate",
+      "text": "병사(장검)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_a629f4fa4989",
+      "grade": "intermediate",
+      "text": "병사(장과)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_1c7257f5d9f7",
+      "grade": "intermediate",
+      "text": "병사(장과)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_1e5e2366bec1",
+      "grade": "intermediate",
+      "text": "병사(장과)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_6c0c875247fc",
+      "grade": "intermediate",
+      "text": "병사(장궁)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_2dfeeec013bc",
+      "grade": "intermediate",
+      "text": "병사(장궁)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_990fece20357",
+      "grade": "intermediate",
+      "text": "병사(장궁)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_bd89c886b52f",
+      "grade": "intermediate",
+      "text": "병사(장창)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_12a3ac718848",
+      "grade": "intermediate",
+      "text": "병사(장창)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_50776c82f93f",
+      "grade": "intermediate",
+      "text": "병사(장창)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_c71ca3970dc5",
+      "grade": "intermediate",
+      "text": "병사(창&방패)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_a39f880320d3",
+      "grade": "intermediate",
+      "text": "병사(창&방패)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_a8e660df061f",
+      "grade": "intermediate",
+      "text": "병사(창&방패)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_6b490262a9c3",
+      "grade": "intermediate",
+      "text": "병사(칼&방패)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_9a49d6755021",
+      "grade": "intermediate",
+      "text": "병사(칼&방패)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_04f3a650699e",
+      "grade": "intermediate",
+      "text": "병사(칼&방패)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_786334b34e87",
+      "grade": "intermediate",
+      "text": "병사(화궁)의 회피률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_e9dba3c5a951",
+      "grade": "intermediate",
+      "text": "병사(화궁)의 흡혈률 +8%",
+      "maxStacks": 2,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_17c8790f1352",
+      "grade": "intermediate",
+      "text": "병사(화궁)이(가) 회피률을 +8% 무시한다",
+      "maxStacks": 2,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_92412a021d2a",
+      "grade": "intermediate",
+      "text": "창병 받는 HP 회복 효과 +15%",
+      "maxStacks": 2,
+      "heroes": [
+        "강유 (백약)",
+        "문앙 (차건)",
+        "백기",
+        "신기질 (유안)",
+        "양묘진",
+        "여몽 (자명)",
+        "우금 (문칙)",
+        "이목",
+        "이사업",
+        "장합 (준예)",
+        "전위",
+        "조운 (자룡)",
+        "주유 (공근)",
+        "진경 (숙보)",
+        "진도 (숙지)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_3f7157c399d3",
+      "grade": "intermediate",
+      "text": "창병의 최대 분노치 -1",
+      "maxStacks": 1,
+      "heroes": [
+        "강유 (백약)",
+        "문앙 (차건)",
+        "백기",
+        "신기질 (유안)",
+        "양묘진",
+        "여몽 (자명)",
+        "이목",
+        "장합 (준예)",
+        "전위",
+        "조운 (자룡)",
+        "주유 (공근)",
+        "진경 (숙보)",
+        "진도 (숙지)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_3c1c483e467c",
+      "grade": "intermediate",
+      "text": "창병이 공격을 시전할 시, 이미 잃은 HP 10%당 이번에 주는 피해 +10%",
+      "maxStacks": 1,
+      "heroes": [
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_30935d16a9e6",
+      "grade": "intermediate",
+      "text": "창병이 공격을 시전할 시, 이미 잃은 HP 10%당 이번에 주는 피해 +10%",
+      "maxStacks": 2,
+      "heroes": [
+        "강유 (백약)",
+        "문앙 (차건)",
+        "백기",
+        "신기질 (유안)",
+        "양묘진",
+        "여몽 (자명)",
+        "우금 (문칙)",
+        "이목",
+        "이사업",
+        "장합 (준예)",
+        "전위",
+        "조운 (자룡)",
+        "주유 (공근)",
+        "진경 (숙보)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_4370196060a2",
+      "grade": "intermediate",
+      "text": "창병이 대상을 처치할 시 공격력 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "강유 (백약)",
+        "문앙 (차건)",
+        "백기",
+        "신기질 (유안)",
+        "양묘진",
+        "여몽 (자명)",
+        "우금 (문칙)",
+        "이목",
+        "이사업",
+        "장합 (준예)",
+        "전위",
+        "조운 (자룡)",
+        "주유 (공근)",
+        "진경 (숙보)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_e68cc5409537",
+      "grade": "intermediate",
+      "text": "창병이 대상을 처치할 시 공격력 +1",
+      "maxStacks": 2,
+      "heroes": [
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_c219f588a9cb",
+      "grade": "advanced",
+      "text": "교전 30분 경과 후, 전체 병사들이 부여하는 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_1b63079cef75",
+      "grade": "advanced",
+      "text": "궁병의 공격 범위 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "손권 (중모)",
+        "손상향",
+        "양유기 (숙)",
+        "양홍옥",
+        "왕이",
+        "유비 (현덕)",
+        "유총",
+        "육손 (백언)",
+        "이유 (문우)",
+        "조휴 (문열)",
+        "주원장",
+        "채문희",
+        "초선",
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_027fa19592c1",
+      "grade": "advanced",
+      "text": "궁병이 HP가 50% 이상 남은 대상에게 주는 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_9b8f9bb09a4d",
+      "grade": "advanced",
+      "text": "궁병이 공격 시 분노치가 1 추가 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "왕이",
+        "유비 (현덕)",
+        "유총",
+        "육손 (백언)",
+        "이유 (문우)",
+        "주원장",
+        "채문희",
+        "초선",
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_bd855370b084",
+      "grade": "advanced",
+      "text": "기병(검)의 HP가 처음으로 50%로 떨어질 시 공격력 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_288e2b98af22",
+      "grade": "advanced",
+      "text": "기병(검)의 도약 베기 범위 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "곽거병"
+      ]
+    },
+    {
+      "id": "talent_2b0510e70c6a",
+      "grade": "advanced",
+      "text": "기병(검)의 전용 스킬 도약 베기의 연속 발동 확률 +15%",
+      "maxStacks": 1,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_da9928ebdd2d",
+      "grade": "advanced",
+      "text": "기병(검)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "곽거병",
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_6d4f49136086",
+      "grade": "advanced",
+      "text": "기병(대도)의 전용 장비 변경 시 보류되는 피해 +10%",
+      "maxStacks": 1,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_9e5472c7a500",
+      "grade": "advanced",
+      "text": "기병(대도)의 찍기 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_756b0c67ee49",
+      "grade": "advanced",
+      "text": "기병(대도)이 스킬 시전 후 분노치가 2 보류된다",
+      "maxStacks": 1,
+      "heroes": [
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_bb81f84e7022",
+      "grade": "advanced",
+      "text": "기병(대도)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "관우 (운장)",
+        "관은병"
+      ]
+    },
+    {
+      "id": "talent_ea5a0ab8fded",
+      "grade": "advanced",
+      "text": "기병(도끼)의 공격력 +10%, 주는 피해 +10%",
+      "maxStacks": 1,
+      "heroes": [
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_ffd09d8ee35c",
+      "grade": "advanced",
+      "text": "기병(도끼)이 공격을 3회 진행할 때마다 해당 회차 공격으로 주는 피해가 50% 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "서황 (공명)"
+      ]
+    },
+    {
+      "id": "talent_700ae0d330cf",
+      "grade": "advanced",
+      "text": "기병(도끼)이 대상의 보호막에 피해를 줄 시, 피해량에 해당하는 보호막을 획득한다",
+      "maxStacks": 1,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_d036d0ab0621",
+      "grade": "advanced",
+      "text": "기병(도끼)이 보호막을 파괴할 시, 대상 주변 1칸 범위 내 최대 4명의 적에게 보호막의 100%에 해당하는 추가 고정 피해를 입힌다",
+      "maxStacks": 1,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_e4a0d84a32f7",
+      "grade": "advanced",
+      "text": "기병(도끼)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_b5486e14008b",
+      "grade": "advanced",
+      "text": "기병(중기병)이 충돌로 부여하는 기절 효과 지속 시간 +1턴",
+      "maxStacks": 1,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_0dd3cb5f78b3",
+      "grade": "advanced",
+      "text": "기병(중기병)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_fc6a6cdc7d8f",
+      "grade": "advanced",
+      "text": "기병(창)이 스위프 시전 시 공격 범위 내 가장 먼 대상에게 주는 피해 +30%",
+      "maxStacks": 1,
+      "heroes": [
+        "마초 (맹기)"
+      ]
+    },
+    {
+      "id": "talent_26efa74788dc",
+      "grade": "advanced",
+      "text": "기병(창)이 스위프 시전 시 흡혈률이 10% 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "여포 (봉선)"
+      ]
+    },
+    {
+      "id": "talent_a5518ec5c4fe",
+      "grade": "advanced",
+      "text": "기병(창)이 스킬 시전 후, 분노가 2 보류된다",
+      "maxStacks": 1,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_d71a10c8074d",
+      "grade": "advanced",
+      "text": "기병(창)이 피격당해 고정 피해를 받을 시, 그 피해의 30%에 해당하는 HP를 회복한다",
+      "maxStacks": 1,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_5e36d061b9a6",
+      "grade": "advanced",
+      "text": "기병(창)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "마초 (맹기)",
+        "여포 (봉선)",
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_a2556380b9fc",
+      "grade": "advanced",
+      "text": "기병(활)의 공격력 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_0eb50a15885a",
+      "grade": "advanced",
+      "text": "기병(활)의 분노치가 가득 찬 후, 다음 공격으로 주는 피해가 30% 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "태사자 (자의)"
+      ]
+    },
+    {
+      "id": "talent_9577508e3c15",
+      "grade": "advanced",
+      "text": "기병(활)이 1칸 이동할 때마다 공격력 +1% (최대 50회 중첩 가능)",
+      "maxStacks": 1,
+      "heroes": [
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_9ecd17328915",
+      "grade": "advanced",
+      "text": "기병(활)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_41873b414a8a",
+      "grade": "advanced",
+      "text": "기병의 이동 범위 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "태사자 (자의)",
+        "하후연 (묘재)"
+      ]
+    },
+    {
+      "id": "talent_8cbf0a6a9308",
+      "grade": "advanced",
+      "text": "기병이 공격 시 분노치가 1 추가 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "곽거병",
+        "관우 (운장)",
+        "관은병",
+        "동탁 (중영)",
+        "마초 (맹기)",
+        "배행엄 (수경)",
+        "여포 (봉선)",
+        "장료 (문원)",
+        "태사자 (자의)",
+        "하후연 (묘재)",
+        "항우",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_9874b344889d",
+      "grade": "advanced",
+      "text": "기병이 공격력이 자신보다 낮은 대상에게 주는 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "관우 (운장)"
+      ]
+    },
+    {
+      "id": "talent_34ae7e9cdb6b",
+      "grade": "advanced",
+      "text": "기병이 공격할 시, 대상에게 현재 HP의 2%에 해당하는 추가 피해를 입힌다",
+      "maxStacks": 1,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_bc947a9eca2a",
+      "grade": "advanced",
+      "text": "기병이 공격할 시, 대상에게 현재 HP의 2%에 해당하는 추가 피해를 입힌다",
+      "maxStacks": 2,
+      "heroes": [
+        "곽거병",
+        "관우 (운장)",
+        "관은병",
+        "동탁 (중영)",
+        "마초 (맹기)",
+        "배행엄 (수경)",
+        "여포 (봉선)",
+        "장료 (문원)",
+        "태사자 (자의)",
+        "하후연 (묘재)",
+        "항우",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_a91c3a086d83",
+      "grade": "advanced",
+      "text": "기병이 주변에 아군이 없는 대상에게 주는 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "장료 (문원)"
+      ]
+    },
+    {
+      "id": "talent_c6067f22dd09",
+      "grade": "advanced",
+      "text": "기병이 준 피해의 20%가 고정 피해로 전환된다",
+      "maxStacks": 1,
+      "heroes": [
+        "곽거병",
+        "관우 (운장)",
+        "관은병",
+        "동탁 (중영)",
+        "마초 (맹기)",
+        "배행엄 (수경)",
+        "여포 (봉선)",
+        "장료 (문원)",
+        "태사자 (자의)",
+        "하후연 (묘재)",
+        "항우",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_7c4e9855a602",
+      "grade": "advanced",
+      "text": "기병이 준 피해의 20%가 고정 피해로 전환된다",
+      "maxStacks": 2,
+      "heroes": [
+        "서황 (공명)",
+        "정교금 (의정)"
+      ]
+    },
+    {
+      "id": "talent_8aa08664cf38",
+      "grade": "advanced",
+      "text": "모든 아군의 최대 HP +40, 공격력 +4",
+      "maxStacks": 1,
+      "heroes": [
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_0ca855225f06",
+      "grade": "advanced",
+      "text": "모든 아군이 분노치를 상한을 초과하도록 획득할 수 있다",
+      "maxStacks": 1,
+      "heroes": [
+        "손권 (중모)"
+      ]
+    },
+    {
+      "id": "talent_f67bf302270d",
+      "grade": "advanced",
+      "text": "방패병 주변에 아군이 없을 시 받는 피해 -20%",
+      "maxStacks": 1,
+      "heroes": [
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_373786584c15",
+      "grade": "advanced",
+      "text": "방패병은 턴당 30% 확률로 1칸 범위 내 최대 4명의 적에게 [자신 최대 HP*2%]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "고순",
+        "등애 (사재)",
+        "맹획",
+        "번쾌",
+        "악진 (문겸)",
+        "염파",
+        "위효관",
+        "장비 (익덕)",
+        "조인 (자효)",
+        "조조 (맹덕)",
+        "주태 (유평)",
+        "하후돈 (원양)",
+        "허성 (문향)",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_d9032a93f68c",
+      "grade": "advanced",
+      "text": "방패병이 공격 받을 때 20% 확률로 최대 HP 1%의 추가 고정 피해를 공격자에게 반사한다",
+      "maxStacks": 1,
+      "heroes": [
+        "하후돈 (원양)"
+      ]
+    },
+    {
+      "id": "talent_92f5d10b1200",
+      "grade": "advanced",
+      "text": "방패병이 공격 시 분노치가 1 추가 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "고순",
+        "등애 (사재)",
+        "맹획",
+        "번쾌",
+        "악진 (문겸)",
+        "염파",
+        "위효관",
+        "장비 (익덕)",
+        "조인 (자효)",
+        "조조 (맹덕)",
+        "주태 (유평)",
+        "하후돈 (원양)",
+        "허성 (문향)",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_94125f8d27b3",
+      "grade": "advanced",
+      "text": "방패병이 매 턴마다 [2%*현재 HP]에 해당하는 HP를 회복한다",
+      "maxStacks": 2,
+      "heroes": [
+        "고순",
+        "등애 (사재)",
+        "맹획",
+        "번쾌",
+        "악진 (문겸)",
+        "염파",
+        "위효관",
+        "장비 (익덕)",
+        "조인 (자효)",
+        "조조 (맹덕)",
+        "주태 (유평)",
+        "하후돈 (원양)",
+        "허성 (문향)",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_fb1b5b1225f1",
+      "grade": "advanced",
+      "text": "병사(강화 쇠뇌)가 대상을 격퇴할 시, 해당 대상은 1턴간 이동하지 못한다",
+      "maxStacks": 1,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_dabea1682ec0",
+      "grade": "advanced",
+      "text": "병사(강화 쇠뇌)가 처음으로 빈사 상태에 빠질 시, [최대 HP*50%]에 해당하는 HP를 회복한다",
+      "maxStacks": 1,
+      "heroes": [
+        "손상향"
+      ]
+    },
+    {
+      "id": "talent_8ae92fe07334",
+      "grade": "advanced",
+      "text": "병사(강화 쇠뇌)가 활시위를 당긴 후, 2턴간 사격한다",
+      "maxStacks": 1,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_ec7e6bb491d0",
+      "grade": "advanced",
+      "text": "병사(강화 쇠뇌)의 활시위를 끝까지 당기기 효과가 항상 가장 먼 거리를 기준으로 계산된다",
+      "maxStacks": 1,
+      "heroes": [
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_78012e3c04a8",
+      "grade": "advanced",
+      "text": "병사(강화 쇠뇌)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "손상향",
+        "조휴 (문열)"
+      ]
+    },
+    {
+      "id": "talent_d1ac5cdeab7e",
+      "grade": "advanced",
+      "text": "병사(검&방패)에게 돌파가 최대 스택까지 중첩된 후 HP +15%, 공격력 +15%",
+      "maxStacks": 1,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_cd8c3c352e12",
+      "grade": "advanced",
+      "text": "병사(검&방패)의 전용 장비 효과 중 피해 증가량이 5%(으)로 변경된다",
+      "maxStacks": 1,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_7105e9d08681",
+      "grade": "advanced",
+      "text": "병사(검&방패)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "등애 (사재)",
+        "조조 (맹덕)"
+      ]
+    },
+    {
+      "id": "talent_3305da4abc2d",
+      "grade": "advanced",
+      "text": "병사(긴창) 투사 범위 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_5064fb174572",
+      "grade": "advanced",
+      "text": "병사(긴창)가 투사 공격으로 대상을 처치한 후 분노치 +2",
+      "maxStacks": 1,
+      "heroes": [
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_0db47484e39d",
+      "grade": "advanced",
+      "text": "병사(긴창)의 전용 장비 효과는 고정적으로 40명의 병사를 기준으로 계산된다",
+      "maxStacks": 1,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_45c6996fd1f5",
+      "grade": "advanced",
+      "text": "병사(긴창)의 투창 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "장합 (준예)"
+      ]
+    },
+    {
+      "id": "talent_66750264e5cc",
+      "grade": "advanced",
+      "text": "병사(긴창)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "장합 (준예)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_15782aa7307c",
+      "grade": "advanced",
+      "text": "병사(도끼&방패) 공격 범위 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_6769715794e0",
+      "grade": "advanced",
+      "text": "병사(도끼&방패)가 HP를 2% 잃을 때마다 흡혈을 1% 획득한다",
+      "maxStacks": 1,
+      "heroes": [
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_1d05e7eb8a2f",
+      "grade": "advanced",
+      "text": "병사(도끼&방패)가 손도끼 투척 시 손도끼가 추가로 1회 튕긴다. 방패 공격으로 대상을 기절시키는 확률이 10% 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_62a25998e7bb",
+      "grade": "advanced",
+      "text": "병사(도끼&방패)의 손도끼 투척 시전 선택 범위 +1, 손도끼 투척의 피해 +15%",
+      "maxStacks": 1,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_7d6f0718bfc4",
+      "grade": "advanced",
+      "text": "병사(도끼&방패)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "맹획",
+        "번쾌"
+      ]
+    },
+    {
+      "id": "talent_4578b34256aa",
+      "grade": "advanced",
+      "text": "병사(독궁)가 부여한 중독 효과에 의한 대상 HP 회복 효과 감소량 +15%",
+      "maxStacks": 1,
+      "heroes": [
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_c24c4233dfe8",
+      "grade": "advanced",
+      "text": "병사(독궁)가 주는 중독 피해 +40%",
+      "maxStacks": 1,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_d29e98c927dc",
+      "grade": "advanced",
+      "text": "병사(독궁)의 전용 장비 효과 중 대상 마비 확률 +10%",
+      "maxStacks": 1,
+      "heroes": [
+        "왕이"
+      ]
+    },
+    {
+      "id": "talent_0e7a401a5014",
+      "grade": "advanced",
+      "text": "병사(독궁)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_7eb0420b6f8d",
+      "grade": "advanced",
+      "text": "병사(망치&방패)가 부여하는 침묵 효과 지속 시간 +1턴",
+      "maxStacks": 1,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_aabde75d45ec",
+      "grade": "advanced",
+      "text": "병사(망치&방패)가 지진 해머 시전 시 대상의 현재 분노치를 50% 감소시킨다",
+      "maxStacks": 1,
+      "heroes": [
+        "염파",
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_2877083b7e42",
+      "grade": "advanced",
+      "text": "병사(맥도)가 피해 감면율을 30% 무시한다",
+      "maxStacks": 1,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_0e0c04691d0a",
+      "grade": "advanced",
+      "text": "병사(맥도)의 HP가 최대치인 상태에서 주는 피해가 15% 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "우금 (문칙)"
+      ]
+    },
+    {
+      "id": "talent_afcaeeeb138a",
+      "grade": "advanced",
+      "text": "병사(맥도)의 기병 압도 효과를 60%(으)로 변경한다",
+      "maxStacks": 1,
+      "heroes": [
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_1d71820c4a0e",
+      "grade": "advanced",
+      "text": "병사(맥도)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_3b29a0eedde3",
+      "grade": "advanced",
+      "text": "병사(무거운 방패) 최대 HP +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "조인 (자효)"
+      ]
+    },
+    {
+      "id": "talent_30fd79938b8e",
+      "grade": "advanced",
+      "text": "병사(무거운 방패)가 방어자세 종료 후 [잃은 HP*10%]에 해당하는 HP를 회복한다",
+      "maxStacks": 1,
+      "heroes": [
+        "위효관"
+      ]
+    },
+    {
+      "id": "talent_ade1e03cc6a4",
+      "grade": "advanced",
+      "text": "병사(무거운 방패)의 HP가 50% 미만인 상태에서 턴당 [최대 HP*1%]에 해당하는 HP를 회복한다",
+      "maxStacks": 1,
+      "heroes": [
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_f6d347827927",
+      "grade": "advanced",
+      "text": "병사(무거운 방패)의 HP가 처음 50% 미만으로 떨어질 경우, 최대 HP의 20%에 해당하는 HP를 회복한다",
+      "maxStacks": 1,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_e13089ffa915",
+      "grade": "advanced",
+      "text": "병사(무거운 방패)의 방어 자세 지속 시간 +1턴",
+      "maxStacks": 1,
+      "heroes": [
+        "위효관",
+        "조인 (자효)",
+        "주태 (유평)"
+      ]
+    },
+    {
+      "id": "talent_45bddaebf236",
+      "grade": "advanced",
+      "text": "병사(사냥꾼)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_bd1a02090263",
+      "grade": "advanced",
+      "text": "병사(쇠뇌) 전속 장비의 기본 회피 확률 +10%",
+      "maxStacks": 1,
+      "heroes": [
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_3ef1044d6e0b",
+      "grade": "advanced",
+      "text": "병사(쇠뇌)가 사격을 5회 진행할 때마다 [3%대상의 최대 HP]에 해당하는 추가 피해를 입힌다",
+      "maxStacks": 1,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_691b9324d9fd",
+      "grade": "advanced",
+      "text": "병사(쇠뇌)가 연사 시 50% 확률로 1회 추가 사격한다",
+      "maxStacks": 2,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_c60e18352186",
+      "grade": "advanced",
+      "text": "병사(쇠뇌)의 연사 횟수 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "유총"
+      ]
+    },
+    {
+      "id": "talent_048db0835090",
+      "grade": "advanced",
+      "text": "병사(쇠뇌)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "유비 (현덕)",
+        "유총",
+        "초선"
+      ]
+    },
+    {
+      "id": "talent_d2dcdd4d3dc8",
+      "grade": "advanced",
+      "text": "병사(쌍창) 난무 공격 단계 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "전위"
+      ]
+    },
+    {
+      "id": "talent_393b3e5bc44b",
+      "grade": "advanced",
+      "text": "병사(쌍창)가 난무 시전 후 공격 받아넘기기 확률 +10%",
+      "maxStacks": 1,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_e69b37063d35",
+      "grade": "advanced",
+      "text": "병사(쌍창)가 난무 시전 후 공격 받아넘기기 확률이 5% 증가하고, 받아넘기기 후 분노치가 1 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "문앙 (차건)"
+      ]
+    },
+    {
+      "id": "talent_83f4acd4e530",
+      "grade": "advanced",
+      "text": "병사(쌍창)의 난무 돌진 범위 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_0054c0e75e66",
+      "grade": "advanced",
+      "text": "병사(쌍창)의 난무 피해 10%",
+      "maxStacks": 1,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_aa0b27baa95f",
+      "grade": "advanced",
+      "text": "병사(쌍창)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "문앙 (차건)",
+        "전위",
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_fd7a43f12327",
+      "grade": "advanced",
+      "text": "병사(장검) 전용 장비 효과가 피해량의 60%에 해당하는 HP를 회복하는 것으로 변경된다",
+      "maxStacks": 1,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_39752c12f274",
+      "grade": "advanced",
+      "text": "병사(장검)가 출혈 효과 부여 시, 추가로 대상의 HP 회복 효과를 50% 차감한다",
+      "maxStacks": 1,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_9954aa757a3b",
+      "grade": "advanced",
+      "text": "병사(장검)의 공격력이 8, 피해 감소율이 15% 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "강유 (백약)"
+      ]
+    },
+    {
+      "id": "talent_5aa8e718ccb6",
+      "grade": "advanced",
+      "text": "병사(장검)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "강유 (백약)",
+        "신기질 (유안)",
+        "여몽 (자명)"
+      ]
+    },
+    {
+      "id": "talent_e19e7c098560",
+      "grade": "advanced",
+      "text": "병사(장과)가 공격 시 추가로 대상 주변 1칸 범위 내 최대 4명의 적군에게 [공격력*20%]에 해당하는 추가 고정 피해를 입힌다",
+      "maxStacks": 1,
+      "heroes": [
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_24a36c940680",
+      "grade": "advanced",
+      "text": "병사(장과)의 초기 분노치가 최대치로 적용",
+      "maxStacks": 1,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_a5705522d455",
+      "grade": "advanced",
+      "text": "병사(장과)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_a97d2078ab94",
+      "grade": "advanced",
+      "text": "병사(장궁)가 분산 사격 시 50% 확률로 1명의 대상을 추가로 공격한다",
+      "maxStacks": 2,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_38cc6f508010",
+      "grade": "advanced",
+      "text": "병사(장궁)의 공격력 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_b74e9ccb71e4",
+      "grade": "advanced",
+      "text": "병사(장궁)의 최대 분노치 +1, 주는 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "한당 (의공)"
+      ]
+    },
+    {
+      "id": "talent_29c57db2ec23",
+      "grade": "advanced",
+      "text": "병사(장궁)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "한당 (의공)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_4eb4172945e9",
+      "grade": "advanced",
+      "text": "병사(장창) 회피 성공 시 최대 HP의 2%에 해당하는 HP를 회복한다",
+      "maxStacks": 1,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_bc6f65d82162",
+      "grade": "advanced",
+      "text": "병사(장창)가 공격할 시, 대상에게 최대 HP의 2%에 해당하는 추가 고정 피해를 입힌다",
+      "maxStacks": 1,
+      "heroes": [
+        "양묘진"
+      ]
+    },
+    {
+      "id": "talent_02f82e107738",
+      "grade": "advanced",
+      "text": "병사(장창)가 찌르기 공격 시전 시, HP 회복 효과는 [50%*이미 손실한 HP]에 해당하는 값으로 변경된다",
+      "maxStacks": 1,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_1b66a0fcf3f7",
+      "grade": "advanced",
+      "text": "병사(장창)가 찌르기 공격 시전 시, 소속 군대 중 HP(%)가 가장 낮은 병사에게 손실된 HP의 20%에 해당하는 HP를 회복시킨다",
+      "maxStacks": 1,
+      "heroes": [
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_b670ae5bb85e",
+      "grade": "advanced",
+      "text": "병사(장창)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_e9ffd0383abf",
+      "grade": "advanced",
+      "text": "병사(창&방패)가 주는 돌격 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_31d71607c209",
+      "grade": "advanced",
+      "text": "병사(창&방패)가 주변에 아군이 없을 시 주는 피해 -20%",
+      "maxStacks": 1,
+      "heroes": [
+        "고순"
+      ]
+    },
+    {
+      "id": "talent_f52af989911c",
+      "grade": "advanced",
+      "text": "병사(창&방패)의 차단 횟수 +1",
+      "maxStacks": 2,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_251df7cb93ce",
+      "grade": "advanced",
+      "text": "병사(창&방패)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "고순",
+        "장비 (익덕)"
+      ]
+    },
+    {
+      "id": "talent_e0cadeaa9f78",
+      "grade": "advanced",
+      "text": "병사(칼&방패)가 보호막 보유 시 받는 피해가 20% 감소한다",
+      "maxStacks": 1,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_71240300f3f5",
+      "grade": "advanced",
+      "text": "병사(칼&방패)가 추가로 2명의 아군에게 보호막을 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_5e3ed3168335",
+      "grade": "advanced",
+      "text": "병사(칼&방패)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_794b79a533ca",
+      "grade": "advanced",
+      "text": "병사(화궁)가 불화살 발사 시 50% 확률로 공격이 적군 방향으로 1칸 확산된다",
+      "maxStacks": 1,
+      "heroes": [
+        "육손 (백언)"
+      ]
+    },
+    {
+      "id": "talent_d4ba3b23035c",
+      "grade": "advanced",
+      "text": "병사(화궁)가 주는 화염 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_6df706ba8a08",
+      "grade": "advanced",
+      "text": "병사(화궁)의 불길 최고 레벨 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_9c686aaa6fec",
+      "grade": "advanced",
+      "text": "병사(화궁)이(가) 공격 시 30% 확률로 [30%*공격력]에 해당하는 고정 피해를 추가 부여한다",
+      "maxStacks": 1,
+      "heroes": [
+        "육손 (백언)",
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_1d30ede20f3b",
+      "grade": "advanced",
+      "text": "사냥꾼 전용 장비 효과로 회복하는 아군 HP +5",
+      "maxStacks": 1,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_fc3130248a43",
+      "grade": "advanced",
+      "text": "사냥꾼의 최대 분노치 -50%",
+      "maxStacks": 1,
+      "heroes": [
+        "양유기 (숙)"
+      ]
+    },
+    {
+      "id": "talent_5747bf5aa3b2",
+      "grade": "advanced",
+      "text": "사냥꾼이 격려를 시전 시 20% 확률로 아군의 디버프 효과를 1개 제거한다",
+      "maxStacks": 1,
+      "heroes": [
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_d69e0c497e37",
+      "grade": "advanced",
+      "text": "사냥꾼이 시전한 격려의 지속 시간 +1턴",
+      "maxStacks": 1,
+      "heroes": [
+        "양홍옥"
+      ]
+    },
+    {
+      "id": "talent_2f1c13ae9d60",
+      "grade": "advanced",
+      "text": "사냥꾼이 야외 몬스터를 공격할 시, 공격력 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "손권 (중모)",
+        "양유기 (숙)",
+        "양홍옥",
+        "채문희"
+      ]
+    },
+    {
+      "id": "talent_d5a2401ef5af",
+      "grade": "advanced",
+      "text": "아군 전원이 20% 확률로 건물의 공격을 회피한다",
+      "maxStacks": 1,
+      "heroes": [
+        "악진 (문겸)"
+      ]
+    },
+    {
+      "id": "talent_ab29fd1e6d9c",
+      "grade": "advanced",
+      "text": "아군 전원이 공격측으로 전투 시 공격력이 15% 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "맹획"
+      ]
+    },
+    {
+      "id": "talent_57ae704b3703",
+      "grade": "advanced",
+      "text": "아군 전원이 주는 피해가 10% 증가하고, 받는 피해가 10% 감소한다",
+      "maxStacks": 1,
+      "heroes": [
+        "염파"
+      ]
+    },
+    {
+      "id": "talent_aa4531e49ba6",
+      "grade": "advanced",
+      "text": "아군 화염 효과 안의 대상에게 입히는 피해가 20% 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "주원장"
+      ]
+    },
+    {
+      "id": "talent_65b952203a9c",
+      "grade": "advanced",
+      "text": "아군이 전사할 시, 1칸 범위 내 최대 4명의 최대 HP +10(최대 20회 중첩 가능)",
+      "maxStacks": 1,
+      "heroes": [
+        "황개 (공복)"
+      ]
+    },
+    {
+      "id": "talent_0335d3f69c29",
+      "grade": "advanced",
+      "text": "영웅이 주는 피해 +30%, 받는 피해 -30%",
+      "maxStacks": 1,
+      "heroes": [
+        "강유 (백약)",
+        "고순",
+        "곽거병",
+        "관우 (운장)",
+        "관은병",
+        "동탁 (중영)",
+        "등애 (사재)",
+        "마초 (맹기)",
+        "맹획",
+        "문앙 (차건)",
+        "배행엄 (수경)",
+        "백기",
+        "번쾌",
+        "서황 (공명)",
+        "손권 (중모)",
+        "신기질 (유안)",
+        "악진 (문겸)",
+        "양묘진",
+        "양유기 (숙)",
+        "양홍옥",
+        "여몽 (자명)",
+        "여포 (봉선)",
+        "염파",
+        "왕이",
+        "우금 (문칙)",
+        "위효관",
+        "유비 (현덕)",
+        "유총",
+        "육손 (백언)",
+        "이목",
+        "이사업",
+        "이유 (문우)",
+        "장료 (문원)",
+        "장비 (익덕)",
+        "장합 (준예)",
+        "전위",
+        "정교금 (의정)",
+        "조운 (자룡)",
+        "조인 (자효)",
+        "조조 (맹덕)",
+        "조휴 (문열)",
+        "주원장",
+        "주유 (공근)",
+        "주태 (유평)",
+        "진경 (숙보)",
+        "진도 (숙지)",
+        "진양옥 (정소)",
+        "채문희",
+        "초선",
+        "태사자 (자의)",
+        "하후돈 (원양)",
+        "하후연 (묘재)",
+        "한당 (의공)",
+        "항우",
+        "허성 (문향)",
+        "허저 (중강)",
+        "황개 (공복)",
+        "황충 (한승)"
+      ]
+    },
+    {
+      "id": "talent_bf5ee3e68681",
+      "grade": "advanced",
+      "text": "영웅이 주는 피해 +30%, 받는 피해 -30%",
+      "maxStacks": 2,
+      "heroes": [
+        "손상향"
+      ]
+    },
+    {
+      "id": "talent_cc6f956a8281",
+      "grade": "advanced",
+      "text": "적군 병사가 아군보다 많을 경우, 전체 아군 병사가 주는 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "항우"
+      ]
+    },
+    {
+      "id": "talent_04ab30aaa6dd",
+      "grade": "advanced",
+      "text": "적이 전사할 시 1칸 내 최대 4명의 아군 공격력 +1 (최대 20회 중첩 가능)",
+      "maxStacks": 1,
+      "heroes": [
+        "백기"
+      ]
+    },
+    {
+      "id": "talent_9e37e2ffbd46",
+      "grade": "advanced",
+      "text": "적이 전사할 시, 3칸 범위 내 HP(%)가 가장 낮은 아군에게 [최대 HP*5%]에 해당하는 HP를 회복시킨다",
+      "maxStacks": 1,
+      "heroes": [
+        "동탁 (중영)"
+      ]
+    },
+    {
+      "id": "talent_9cd54b31b84c",
+      "grade": "advanced",
+      "text": "전체 아군의 보호막 효과 +30%",
+      "maxStacks": 1,
+      "heroes": [
+        "악진 (문겸)",
+        "하후돈 (원양)",
+        "허성 (문향)"
+      ]
+    },
+    {
+      "id": "talent_6411e1dc00f9",
+      "grade": "advanced",
+      "text": "전체 아군의 피해 감소율 +15%",
+      "maxStacks": 1,
+      "heroes": [
+        "이목"
+      ]
+    },
+    {
+      "id": "talent_a93c1e3c27c8",
+      "grade": "advanced",
+      "text": "전체 아군이 기절된 대상에게 주는 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "동탁 (중영)",
+        "배행엄 (수경)",
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_578a7b575cbe",
+      "grade": "advanced",
+      "text": "전체 아군이 무장 해제된 대상에게 주는 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "백기",
+        "이목",
+        "주유 (공근)"
+      ]
+    },
+    {
+      "id": "talent_307b6c445fc2",
+      "grade": "advanced",
+      "text": "전체 아군이 받는 HP 회복 효과 +30%",
+      "maxStacks": 1,
+      "heroes": [
+        "유비 (현덕)"
+      ]
+    },
+    {
+      "id": "talent_734d424e3530",
+      "grade": "advanced",
+      "text": "전체 아군이 중독된 대상에게 주는 피해 +20%",
+      "maxStacks": 1,
+      "heroes": [
+        "왕이",
+        "이유 (문우)"
+      ]
+    },
+    {
+      "id": "talent_b83f00b3e14d",
+      "grade": "advanced",
+      "text": "중기병의 충돌 피해가 30% 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "허저 (중강)"
+      ]
+    },
+    {
+      "id": "talent_19b082888a8a",
+      "grade": "advanced",
+      "text": "중기병이 전투 돌입 후 첫 3턴간 받는 피해가 30% 감소한다",
+      "maxStacks": 1,
+      "heroes": [
+        "배행엄 (수경)"
+      ]
+    },
+    {
+      "id": "talent_8ecf0fd1a313",
+      "grade": "advanced",
+      "text": "창병 임의 회피 +5%, 회피 후 분노치 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "조운 (자룡)"
+      ]
+    },
+    {
+      "id": "talent_46c40785eff5",
+      "grade": "advanced",
+      "text": "창병의 공격 범위 +1",
+      "maxStacks": 1,
+      "heroes": [
+        "강유 (백약)",
+        "문앙 (차건)",
+        "백기",
+        "신기질 (유안)",
+        "양묘진",
+        "여몽 (자명)",
+        "우금 (문칙)",
+        "이목",
+        "이사업",
+        "장합 (준예)",
+        "전위",
+        "조운 (자룡)",
+        "주유 (공근)",
+        "진경 (숙보)",
+        "진도 (숙지)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_b73981304217",
+      "grade": "advanced",
+      "text": "창병이 공격 시 (5*자신의 레벨)에 해당하는 HP를 회복한다",
+      "maxStacks": 1,
+      "heroes": [
+        "양묘진",
+        "조운 (자룡)",
+        "진도 (숙지)"
+      ]
+    },
+    {
+      "id": "talent_64c3640bd463",
+      "grade": "advanced",
+      "text": "창병이 공격 시 분노치가 1 추가 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "강유 (백약)",
+        "문앙 (차건)",
+        "백기",
+        "신기질 (유안)",
+        "양묘진",
+        "여몽 (자명)",
+        "이목",
+        "장합 (준예)",
+        "전위",
+        "조운 (자룡)",
+        "주유 (공근)",
+        "진경 (숙보)",
+        "진도 (숙지)",
+        "진양옥 (정소)"
+      ]
+    },
+    {
+      "id": "talent_1cac8c231e94",
+      "grade": "advanced",
+      "text": "창병이 피해를 받을 시, 공격자의 공격력이 자신보다 더 높을 경우, 해당 피해는 30%감소되어 적용된다",
+      "maxStacks": 1,
+      "heroes": [
+        "우금 (문칙)",
+        "이사업"
+      ]
+    },
+    {
+      "id": "talent_5d833bccfc6f",
+      "grade": "advanced",
+      "text": "창병이(가) 영웅에게 주는 피해 +30%",
+      "maxStacks": 1,
+      "heroes": [
+        "진경 (숙보)"
+      ]
+    },
+    {
+      "id": "talent_d56856a740e7",
+      "grade": "advanced",
+      "text": "첫 20회의 공격으로 주는 피해가 20% 증가한다",
+      "maxStacks": 1,
+      "heroes": [
+        "신기질 (유안)"
+      ]
+    },
+    {
+      "id": "talent_ebec253512b0",
+      "grade": "advanced",
+      "text": "턴 시작 시마다 아군 전체는 HP를 10 회복한다",
+      "maxStacks": 1,
+      "heroes": [
+        "등애 (사재)"
+      ]
+    }
+  ]
+}
