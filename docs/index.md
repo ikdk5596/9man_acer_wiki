@@ -20,28 +20,99 @@ hero:
     - theme: alt
       text: 영웅 도감 보기
       link: /hero/
+---
 
-features:
-  - icon: 📜
-    title: 정책 도감
-    link: /policies/
-    linkText: 바로가기
-  - icon: ⚔️
-    title: 병사 도감
-    link: /soldiers/
-    linkText: 바로가기
-  - icon: 🛡️
-    title: 장비 도감
-    link: /equipment/
-    linkText: 바로가기
-  - icon: 👑
-    title: 영웅 도감
-    link: /hero/
-    linkText: 바로가기
-  - icon: ✍️
-    title: 개인공략
-    link: /guides/
-    linkText: 바로가기
+<div class="home-sections">
+
+<section class="home-menu-section">
+
+## 도감
+
+<div class="home-menu-grid">
+
+<a class="home-menu-card" href="/policies/">
+  <span class="home-menu-icon">📜</span>
+  <span class="home-menu-title">정책 도감</span>
+  <span class="home-menu-link">바로가기 →</span>
+</a>
+
+<a class="home-menu-card" href="/soldiers/">
+  <span class="home-menu-icon">⚔️</span>
+  <span class="home-menu-title">병사 도감</span>
+  <span class="home-menu-link">바로가기 →</span>
+</a>
+
+<a class="home-menu-card" href="/equipment/">
+  <span class="home-menu-icon">🛡️</span>
+  <span class="home-menu-title">장비 도감</span>
+  <span class="home-menu-link">바로가기 →</span>
+</a>
+
+<a class="home-menu-card" href="/hero/">
+  <span class="home-menu-icon">👑</span>
+  <span class="home-menu-title">영웅 도감</span>
+  <span class="home-menu-link">바로가기 →</span>
+</a>
+
+</div>
+</section>
+
+<section class="home-menu-section">
+
+## 등급표 / 추천 빌드
+
+<div class="home-menu-grid">
+
+<a class="home-menu-card" href="/tiers/soldiers/">
+  <span class="home-menu-icon">🏆</span>
+  <span class="home-menu-title">병종별 등급</span>
+  <span class="home-menu-link">바로가기 →</span>
+</a>
+
+<a class="home-menu-card" href="/tiers/heroes/">
+  <span class="home-menu-icon">👑</span>
+  <span class="home-menu-title">영웅 티어</span>
+  <span class="home-menu-link">바로가기 →</span>
+</a>
+
+<a class="home-menu-card" href="/tiers/talents/">
+  <span class="home-menu-icon">✨</span>
+  <span class="home-menu-title">영웅 재능 티어</span>
+  <span class="home-menu-link">바로가기 →</span>
+</a>
+
+<a class="home-menu-card" href="/tiers/weapons/">
+  <span class="home-menu-icon">⚒️</span>
+  <span class="home-menu-title">전용무기 추천 빌드</span>
+  <span class="home-menu-link">바로가기 →</span>
+</a>
+
+<a class="home-menu-card" href="/tiers/policies/">
+  <span class="home-menu-icon">📊</span>
+  <span class="home-menu-title">정책별 등급</span>
+  <span class="home-menu-link">바로가기 →</span>
+</a>
+
+</div>
+</section>
+
+<section class="home-menu-section">
+
+## 커뮤니티
+
+<div class="home-menu-grid home-menu-grid-small">
+
+<a class="home-menu-card" href="/guides/">
+  <span class="home-menu-icon">✍️</span>
+  <span class="home-menu-title">개인공략</span>
+  <span class="home-menu-link">바로가기 →</span>
+</a>
+
+</div>
+</section>
+
+</div>
+
 ---
 
 ## Thanks to

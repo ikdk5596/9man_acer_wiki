@@ -224,3 +224,123 @@
 .dark .guide-document [style*="color: rgb(0, 0, 0)"] {
   color: var(--vp-c-text-1) !important;
 }
+
+/* Home navigation sections */
+.home-sections {
+  margin-top: 8px;
+}
+
+.home-menu-section {
+  margin: 26px 0 30px;
+}
+
+.home-menu-section h2 {
+  margin: 0 0 14px;
+  padding: 0;
+  border-top: 0;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.home-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.home-menu-grid-small {
+  max-width: 260px;
+  grid-template-columns: 1fr;
+}
+
+.home-menu-card {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  align-items: center;
+
+  min-height: 82px;
+  padding: 12px 14px;
+
+  border: 1px solid var(--acer-card-border, var(--vp-c-divider));
+  border-radius: 10px;
+  background: var(--acer-card-bg, var(--vp-c-bg-soft));
+
+  color: var(--vp-c-text-1) !important;
+  text-decoration: none !important;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.home-menu-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.home-menu-icon {
+  grid-row: 1 / 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+
+  font-size: 20px;
+  line-height: 1;
+}
+
+.home-menu-title {
+  align-self: end;
+  min-width: 0;
+
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.home-menu-link {
+  align-self: start;
+  margin-top: 4px;
+
+  color: var(--vp-c-brand-1);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@media (max-width: 959px) {
+  .home-menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-menu-grid-small {
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .home-menu-section {
+    margin: 22px 0 26px;
+  }
+
+  .home-menu-grid,
+  .home-menu-grid-small {
+    grid-template-columns: 1fr;
+  }
+
+  .home-menu-card {
+    min-height: 72px;
+    padding: 10px 12px;
+  }
+}

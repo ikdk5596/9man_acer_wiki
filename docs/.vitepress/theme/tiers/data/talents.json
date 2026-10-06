@@ -3457,7 +3457,7 @@
       "id": "talent_34ae7e9cdb6b",
       "grade": "advanced",
       "text": "기병이 공격할 시, 대상에게 현재 HP의 2%에 해당하는 추가 피해를 입힌다",
-      "maxStacks": 1,
+      "maxStacks": 2,
       "heroes": [
         "서황 (공명)",
         "정교금 (의정)"
@@ -3516,7 +3516,7 @@
       "id": "talent_7c4e9855a602",
       "grade": "advanced",
       "text": "기병이 준 피해의 20%가 고정 피해로 전환된다",
-      "maxStacks": 2,
+      "maxStacks": 1,
       "heroes": [
         "서황 (공명)",
         "정교금 (의정)"

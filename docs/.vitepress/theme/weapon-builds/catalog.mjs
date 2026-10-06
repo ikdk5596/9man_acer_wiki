@@ -35,7 +35,7 @@ export const NORMAL_EQUIPMENT = [
   { id: '금_사슬갑옷', name: '금 사슬갑옷', image: '/images/equipment/icons/027_금_사슬갑옷.png', href: '/equipment/금_사슬갑옷' },
   { id: '낭아봉', name: '낭아봉', image: '/images/equipment/icons/020_낭아봉.png', href: '/equipment/낭아봉' },
   { id: '다트', name: '다트', image: '/images/equipment/icons/018_다트.png', href: '/equipment/다트' },
-  { id: '덩쿨_방패', name: '덩쿨 방패', image: '/images/equipment/icons/019_덩쿨_방패.png', href: '/equipment/덩쿨_방패' },
+  { id: '덩쿨_방패', name: '덩굴 방패', image: '/images/equipment/icons/019_덩쿨_방패.png', href: '/equipment/덩쿨_방패' },
   { id: '도끼', name: '도끼', image: '/images/equipment/icons/030_도끼.png', href: '/equipment/도끼' },
   { id: '명광_갑옷', name: '명광 갑옷', image: '/images/equipment/icons/016_명광_갑옷.png', href: '/equipment/명광_갑옷' },
   { id: '모래시계', name: '모래시계', image: '/images/equipment/icons/040_모래시계.png', href: '/equipment/모래시계' },
