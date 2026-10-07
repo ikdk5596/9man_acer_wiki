@@ -182,7 +182,7 @@ export async function deleteGuideAsManager(guide) {
   requireUser(auth)
   await dbSdk.deleteDoc(dbSdk.doc(db, 'guides', guide.id))
   const failures = []
-  for (let slot = 0; slot < 10; slot++) {
+  for (let slot = 0; slot < 30; slot++) {
     try { await storageSdk.deleteObject(storageSdk.ref(storage, `guide-images/${guide.authorId}/${guide.id}/${slot}.webp`)) }
     catch (error) { if (error?.code !== 'storage/object-not-found') failures.push({ slot, error }) }
   }

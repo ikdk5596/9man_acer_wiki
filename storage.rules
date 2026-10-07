@@ -22,7 +22,7 @@ service firebase.storage {
     }
     match /guide-images/{uid}/{guideId}/{filename} {
       function validSlot() {
-        return filename.matches('^[0-9]\\.webp$');
+        return filename.matches('^(?:[0-9]|[12][0-9])\\.webp$');
       }
       function matchingParent() {
         return parentExists(guideId) && parent(guideId).authorId == uid;

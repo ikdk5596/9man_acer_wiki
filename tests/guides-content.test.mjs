@@ -5,7 +5,7 @@ import * as content from '../docs/.vitepress/theme/guides/content.mjs'
 test('untrusted bodies reject executable URLs, HTML, alien nodes and attributes', () => {
   const invalid = [
     { type: 'doc', content: [{ type: 'image', attrs: { src: 'https://evil.example/pixel' } }] },
-    { type: 'doc', content: [{ type: 'image', attrs: { src: 'guide-image:10' } }] },
+    { type: 'doc', content: [{ type: 'image', attrs: { src: 'guide-image:30' } }] },
     { type: 'doc', content: [{ type: 'script', text: 'alert(1)' }] },
     { type: 'doc', content: [{ type: 'paragraph', attrs: { onclick: 'alert(1)' } }] },
     { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'x', marks: [{ type: 'link', attrs: { href: 'javascript:alert(1)' } }] }] }] },
@@ -28,8 +28,9 @@ test('image slots resolve only through a current-guide map and never persist blo
   assert.equal(content.serializeEditor(resolved, map), JSON.stringify(doc))
   assert.throws(() => content.serializeEditor(resolved, new Map()))
   assert.deepEqual(content.imageSlots(doc), [2])
+  assert.deepEqual(content.imageSlots({ type: 'doc', content: [{ type: 'image', attrs: { src: 'guide-image:29' } }] }), [29])
   assert.equal(content.nextImageSlot([0, 1], [2, 3]), 4)
-  assert.equal(content.nextImageSlot([0,1,2,3,4,5,6,7,8,9], []), null)
+  assert.equal(content.nextImageSlot(Array.from({ length: 30 }, (_, i) => i), []), null)
   assert.equal(content.resolveImages(doc, new Map()).content[0].type, 'paragraph')
 })
 
@@ -71,7 +72,7 @@ test('write boundary preserves owner/createdAt and checks account races', async 
   await assert.rejects(() => api.save(saved.id, fields, 'alice'), /계정/)
   uid = 'alice'; await api.remove(saved.id, 'alice')
   assert.equal(calls[2][0], 'remove')
-  assert.equal(calls.filter(c => c[0] === 'deleteImage').length, 10)
+  assert.equal(calls.filter(c => c[0] === 'deleteImage').length, 30)
 })
 
 test('editor schema supports safe tables, links and headings without external image parsing', async () => {

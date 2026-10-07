@@ -125,7 +125,7 @@ async function insertFiles(files) {
       if (!current()) return
       const currentDoc = parseBody(serializeEditor(editor.value.getJSON(), urls))
       const slot = nextImageSlot(persistedSlots, imageSlots(currentDoc))
-      if (slot === null) throw new Error('사진은 최대 10장입니다. 기존 사진을 지운 뒤 먼저 저장해야 해당 자리를 다시 사용할 수 있습니다.')
+      if (slot === null) throw new Error('사진은 최대 30장입니다. 기존 사진을 지운 뒤 먼저 저장해야 해당 자리를 다시 사용할 수 있습니다.')
       const blob = await compressImage(file)
       if (!current()) return
       const client = await getClient(); const stored = await client.upload(guideId.value, slot, blob, uid)
@@ -220,7 +220,7 @@ onBeforeUnmount(() => {
       <EditorContent v-if="editor" :editor="editor" class="guide-document guide-edit-document" />
     </div>
     <input ref="fileInput" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden @change="insertFiles($event.target.files)">
-    <p class="guide-hint">사진 최대 10장 · JPEG/PNG/WebP 원본 12 MiB 이하 · 자동으로 1600px / 1 MiB 이하 WebP 변환. 작성자명은 내 프로필의 공개 별명으로 자동 저장됩니다.</p>
+    <p class="guide-hint">사진 최대 30장 · JPEG/PNG/WebP 원본 12 MiB 이하 · 자동으로 1600px / 1 MiB 이하 WebP 변환. 작성자명은 내 프로필의 공개 별명으로 자동 저장됩니다.</p>
     <footer class="guide-savebar">
       <span role="status">{{ uploading ? '사진 변환·업로드 중…' : busy ? '서버에 저장 중…' : dirty ? '저장하지 않은 변경사항' : status === 'published' ? '공개 공략' : '나만 보는 초안' }}</span>
       <div class="guide-actions"><button :disabled="locked" @click="togglePreview">{{ preview ? '편집으로' : '미리보기' }}</button><button :disabled="!canSave" @click="save(status)">{{ status === 'published' ? '변경 저장' : '초안 저장' }}</button><button v-if="status !== 'published'" class="primary" :disabled="!canSave" @click="save('published')">공개하기</button></div>

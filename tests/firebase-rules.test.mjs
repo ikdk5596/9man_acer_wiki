@@ -292,13 +292,13 @@ test('Storage: rejects unspecified MIME type', async () => {
   await seed();
   await assertFails(uploadBytes(imageRef(actor()), imageBytes));
 });
-test('Storage: accepts only the ten numbered slots', async () => {
+test('Storage: accepts only the thirty numbered slots', async () => {
   await seed();
-  for (let slot = 0; slot < 10; slot++) {
+  for (let slot = 0; slot < 30; slot++) {
     await assertSucceeds(upload(actor(), imagePath('alice', 'guide', `${slot}.webp`)));
   }
 });
-for (const filename of ['10.webp', '-1.webp', '00.webp', 'x.webp', '0.png', '0.WEBP', '0.webp.exe', '0xwebp', 'nested/0.webp']) {
+for (const filename of ['30.webp', '-1.webp', '00.webp', 'x.webp', '0.png', '0.WEBP', '0.webp.exe', '0xwebp', 'nested/0.webp']) {
   test(`Storage: rejects filename ${filename}`, async () => {
     await seed();
     await assertFails(upload(actor(), imagePath('alice', 'guide', filename)));
@@ -371,7 +371,7 @@ test('Storage: object listing denied including owner and public parent', async (
 });
 test('Storage: all other paths and invalid filenames deny read/write/delete', async () => {
   await seed('guide', { status: 'published' });
-  for (const path of ['other/alice/guide/0.webp', 'guide-images/alice/guide/10.webp', 'guide-images/alice/0.webp']) {
+  for (const path of ['other/alice/guide/0.webp', 'guide-images/alice/guide/30.webp', 'guide-images/alice/0.webp']) {
     await assertFails(upload(actor(), path));
     await seedImage(path);
     for (const context of [actor(), anon()]) {

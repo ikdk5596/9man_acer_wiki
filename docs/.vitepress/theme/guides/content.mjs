@@ -15,7 +15,7 @@ function checkAttrs(type, value = {}) {
   for (const [key, v] of Object.entries(value)) {
     if (!(attrs[type] || []).includes(key)) fail()
     if (v === null && !['src', 'href', 'level'].includes(key)) continue
-    if (key === 'src' && !/^guide-image:[0-9]$/.test(v)) fail()
+    if (key === 'src' && !/^guide-image:(?:[0-9]|[12][0-9])$/.test(v)) fail()
     if (key === 'href' && !safeLink(v)) fail()
     if (key === 'color' && (typeof v !== 'string' || !/^(#[\da-f]{3,8}|rgba?\(\s*[\d.%,\s]+\))$/i.test(v))) fail()
     if (['textAlign', 'align'].includes(key) && !['left', 'center', 'right', 'justify'].includes(v)) fail()
@@ -41,7 +41,7 @@ export function validateDoc(doc) {
     if (Object.keys(node).some(k => !['type', 'content', 'attrs', 'marks', 'text'].includes(k))) fail()
     if (parent ? !(children[parent] || []).includes(node.type) : node.type !== 'doc') fail()
     checkAttrs(node.type, node.attrs)
-    if (node.type === 'image' && ++imageCount > 10) fail()
+    if (node.type === 'image' && ++imageCount > 30) fail()
     if (node.type === 'text') { if (typeof node.text !== 'string' || !node.text.length || node.content) fail() }
     else if ('text' in node) fail()
     if (node.marks !== undefined) {
@@ -90,7 +90,7 @@ export function serializeEditor(doc, urls) {
 }
 export function nextImageSlot(persisted, current) {
   const occupied = new Set([...persisted, ...current])
-  for (let slot = 0; slot < 10; slot++) if (!occupied.has(slot)) return slot
+  for (let slot = 0; slot < 30; slot++) if (!occupied.has(slot)) return slot
   return null
 }
 export function validateMetadata({ nickname, title, category }) {

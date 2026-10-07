@@ -88,7 +88,7 @@ async function initialize() {
   }
   const imageRef = (uid, id, slot) => {
     guideRef(id)
-    if (!/^[a-zA-Z0-9_-]{1,128}$/.test(uid) || !Number.isInteger(slot) || slot < 0 || slot > 9) throw new Error('올바르지 않은 사진 경로입니다.')
+    if (!/^[a-zA-Z0-9_-]{1,128}$/.test(uid) || !Number.isInteger(slot) || slot < 0 || slot > 29) throw new Error('올바르지 않은 사진 경로입니다.')
     return storageSdk.ref(storage, `guide-images/${uid}/${id}/${slot}.webp`)
   }
   async function read(id) {

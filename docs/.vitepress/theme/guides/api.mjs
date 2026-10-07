@@ -35,7 +35,7 @@ export function createGuideApi(io) {
       guard(uid)
       // Deleting the document first immediately revokes public image access.
       const failures = []
-      for (let slot = 0; slot < 10; slot++) {
+      for (let slot = 0; slot < 30; slot++) {
         guard(uid)
         try { await io.deleteImage(uid, id, slot) }
         catch (error) { if (error.code !== 'storage/object-not-found') failures.push({ slot, error }) }
